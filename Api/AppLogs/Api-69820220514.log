@@ -1,0 +1,40 @@
+2022-05-14 10:15:54.966 -05:00 [INF] Now listening on: https://localhost:7170
+2022-05-14 10:15:55.025 -05:00 [INF] Now listening on: http://localhost:5094
+2022-05-14 10:15:55.035 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-05-14 10:15:55.036 -05:00 [INF] Hosting environment: Development
+2022-05-14 10:15:55.037 -05:00 [INF] Content root path: D:\GitHub\AirportManagementApi\Api\
+2022-05-14 10:15:55.589 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/ - -
+2022-05-14 10:15:55.659 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 10:15:55.662 -05:00 [INF] Response:
+StatusCode: 404
+2022-05-14 10:15:55.668 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/ - - - 404 0 - 84.9027ms
+2022-05-14 10:15:58.508 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-05-14 10:15:58.579 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 70.7356ms
+2022-05-14 10:15:58.595 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/swagger-ui.css - -
+2022-05-14 10:15:58.610 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-05-14 10:15:58.612 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/swagger-ui.css - - - 200 143632 text/css 16.0777ms
+2022-05-14 10:15:58.736 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-05-14 10:15:58.744 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/favicon-32x32.png - -
+2022-05-14 10:15:58.746 -05:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2022-05-14 10:15:58.748 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/favicon-32x32.png - - - 200 628 image/png 3.4221ms
+2022-05-14 10:15:58.890 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 154.2120ms
+2022-05-14 10:16:22.970 -05:00 [INF] Application is shutting down...

@@ -1,0 +1,168 @@
+2022-05-14 11:23:53.241 -05:00 [INF] Now listening on: https://localhost:7170
+2022-05-14 11:23:53.302 -05:00 [INF] Now listening on: http://localhost:5094
+2022-05-14 11:23:53.311 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-05-14 11:23:53.312 -05:00 [INF] Hosting environment: Development
+2022-05-14 11:23:53.313 -05:00 [INF] Content root path: D:\GitHub\AirportManagementApi\Api\
+2022-05-14 11:23:54.074 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/ - -
+2022-05-14 11:23:54.208 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 11:23:54.212 -05:00 [INF] Response:
+StatusCode: 404
+2022-05-14 11:23:54.221 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/ - - - 404 0 - 154.1382ms
+2022-05-14 11:23:58.290 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/City/SaveAll application/json 133
+2022-05-14 11:23:58.297 -05:00 [INF] CORS policy execution successful.
+2022-05-14 11:23:58.300 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/City/SaveAll
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 133
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 11:23:58.309 -05:00 [INF] Executing endpoint 'Api.Controllers.CityController.Save (Api)'
+2022-05-14 11:23:58.349 -05:00 [INF] Route matched with {action = "Save", controller = "City"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Boolean]] Save(System.Collections.Generic.IEnumerable`1[Application.Airport.Http.Request.CityRequest]) on controller Api.Controllers.CityController (Api).
+2022-05-14 11:23:59.648 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 11:24:00.544 -05:00 [ERR] Failed executing DbCommand (100ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (DbType = Guid), @p7='?' (Size = 4000), @p8='?' (DbType = DateTime2), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (DbType = Guid), @p13='?' (Size = 4000), @p14='?' (DbType = DateTime2), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 4000), @p18='?' (DbType = Guid), @p19='?' (Size = 4000), @p20='?' (DbType = DateTime2), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] uniqueidentifier, [_Position] [int]);
+MERGE [Airport].[City] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, 0),
+(@p6, @p7, @p8, @p9, @p10, @p11, 1),
+(@p12, @p13, @p14, @p15, @p16, @p17, 2),
+(@p18, @p19, @p20, @p21, @p22, @p23, 3)) AS i ([Id], [CreatedBy], [CreatedOn], [Name], [Status], [UpdatedBy], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Id], [CreatedBy], [CreatedOn], [Name], [Status], [UpdatedBy])
+VALUES (i.[Id], i.[CreatedBy], i.[CreatedOn], i.[Name], i.[Status], i.[UpdatedBy])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[LastModifiedOn] FROM [Airport].[City] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];
+2022-05-14 11:24:00.660 -05:00 [ERR] An exception occurred in the database while saving changes for context type 'Infrastructure.Repository.PersistenceContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'UpdatedBy', table 'AirportManager.Airport.City'; column does not allow nulls. UPDATE fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:d8b3a985-59cc-4204-83b4-de51bd8822e0
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'UpdatedBy', table 'AirportManager.Airport.City'; column does not allow nulls. UPDATE fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:d8b3a985-59cc-4204-83b4-de51bd8822e0
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2022-05-14 11:24:00.708 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-14 11:24:00.731 -05:00 [INF] Executed action Api.Controllers.CityController.Save (Api) in 2365.6539ms
+2022-05-14 11:24:00.735 -05:00 [INF] Executed endpoint 'Api.Controllers.CityController.Save (Api)'
+2022-05-14 11:24:00.739 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sat, 14 May 2022 16:24:00 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-14 11:24:00.759 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/City/SaveAll application/json 133 - 200 - application/json;+charset=utf-8 2469.2818ms
+2022-05-14 11:24:05.250 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/City/GetAll - -
+2022-05-14 11:24:05.256 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/City/GetAll
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 11:24:05.257 -05:00 [INF] Executing endpoint 'Api.Controllers.CityController.GetAll (Api)'
+2022-05-14 11:24:05.262 -05:00 [INF] Route matched with {action = "GetAll", controller = "City"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Airport.Http.Dto.CityDto]]] GetAll() on controller Api.Controllers.CityController (Api).
+2022-05-14 11:24:05.315 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 11:24:05.638 -05:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedBy], [c].[CreatedOn], [c].[LastModifiedOn], [c].[Name], [c].[Status], [c].[UpdatedBy]
+FROM [Airport].[City] AS [c]
+2022-05-14 11:24:05.674 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Airport.Http.Dto.CityDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-14 11:24:05.676 -05:00 [INF] Executed action Api.Controllers.CityController.GetAll (Api) in 412.7147ms
+2022-05-14 11:24:05.678 -05:00 [INF] Executed endpoint 'Api.Controllers.CityController.GetAll (Api)'
+2022-05-14 11:24:05.679 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sat, 14 May 2022 16:24:05 GMT
+Server: Kestrel
+2022-05-14 11:24:05.681 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/City/GetAll - - - 200 - application/json;+charset=utf-8 430.9370ms
+2022-05-14 11:26:25.770 -05:00 [INF] Application is shutting down...

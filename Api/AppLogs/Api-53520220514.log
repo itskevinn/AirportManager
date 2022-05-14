@@ -1,0 +1,32 @@
+2022-05-14 07:50:01.691 -05:00 [INF] User profile is available. Using 'C:\Users\kevin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-05-14 07:50:01.852 -05:00 [INF] Now listening on: https://localhost:7170
+2022-05-14 07:50:01.853 -05:00 [INF] Now listening on: http://localhost:5094
+2022-05-14 07:50:01.859 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-05-14 07:50:01.860 -05:00 [INF] Hosting environment: Development
+2022-05-14 07:50:01.861 -05:00 [INF] Content root path: D:\GitHub\AirportManagementApi\Api\
+2022-05-14 07:50:12.485 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/ - -
+2022-05-14 07:50:12.531 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 07:50:12.534 -05:00 [INF] Response:
+StatusCode: 404
+2022-05-14 07:50:12.539 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/ - - - 404 0 - 58.2462ms
+2022-05-14 07:50:39.564 -05:00 [INF] Application is shutting down...

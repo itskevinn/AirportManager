@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "vJqh7XYAz79T8gqvjYaNFG1gEbMmfx3OAibctW/8JtFh/3pVTUG/JYaVi6XrxmCiOpbY7pA1OYj5zKLURJqbdQ==",
+  "success": true,
+  "projectFilePath": "D:\\GitHub\\AirportManagementApi\\Application\\Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kevin\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\kevin\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

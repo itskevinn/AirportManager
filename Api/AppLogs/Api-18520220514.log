@@ -1,0 +1,102 @@
+2022-05-14 10:03:11.352 -05:00 [INF] User profile is available. Using 'C:\Users\kevin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-05-14 10:03:11.524 -05:00 [INF] Now listening on: https://localhost:7170
+2022-05-14 10:03:11.526 -05:00 [INF] Now listening on: http://localhost:5094
+2022-05-14 10:03:11.531 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-05-14 10:03:11.531 -05:00 [INF] Hosting environment: Development
+2022-05-14 10:03:11.533 -05:00 [INF] Content root path: D:\GitHub\AirportManagementApi\Api\
+2022-05-14 10:03:11.813 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/ - -
+2022-05-14 10:03:11.899 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 10:03:11.902 -05:00 [INF] Response:
+StatusCode: 404
+2022-05-14 10:03:11.911 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/ - - - 404 0 - 103.5278ms
+2022-05-14 10:03:14.414 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-05-14 10:03:14.478 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 64.0802ms
+2022-05-14 10:03:14.497 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/swagger-ui.css - -
+2022-05-14 10:03:14.515 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-05-14 10:03:14.516 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/swagger-ui.css - - - 200 143632 text/css 18.3434ms
+2022-05-14 10:03:14.822 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-05-14 10:03:14.972 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 149.9799ms
+2022-05-14 10:08:21.779 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-05-14 10:08:21.791 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 12.8828ms
+2022-05-14 10:08:21.808 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/swagger-ui.css - -
+2022-05-14 10:08:21.811 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-05-14 10:08:21.812 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/swagger-ui.css - - - 200 143632 text/css 4.1847ms
+2022-05-14 10:08:22.064 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-05-14 10:08:22.073 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/favicon-32x32.png - -
+2022-05-14 10:08:22.075 -05:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2022-05-14 10:08:22.077 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/favicon-32x32.png - - - 200 628 image/png 4.0266ms
+2022-05-14 10:08:22.093 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - Api.Controllers.FlightController.Save (Api). See inner exception
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'System.Web.Http, Version=5.2.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'. El sistema no puede encontrar el archivo especificado.
+File name: 'System.Web.Http, Version=5.2.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at System.ModuleHandle.ResolveType(QCallModule module, Int32 typeToken, IntPtr* typeInstArgs, Int32 typeInstCount, IntPtr* methodInstArgs, Int32 methodInstCount, ObjectHandleOnStack type)
+   at System.ModuleHandle.ResolveTypeHandle(Int32 typeToken, RuntimeTypeHandle[] typeInstantiationContext, RuntimeTypeHandle[] methodInstantiationContext)
+   at System.Reflection.RuntimeModule.ResolveType(Int32 metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+   at System.Reflection.CustomAttribute.FilterCustomAttributeRecord(MetadataToken caCtorToken, MetadataImport& scope, RuntimeModule decoratedModule, MetadataToken decoratedToken, RuntimeType attributeFilterType, Boolean mustBeInheritable, ListBuilder`1& derivedAttributes, RuntimeType& attributeType, IRuntimeMethodInfo& ctorWithParameters, Boolean& isVarArg)
+   at System.Reflection.CustomAttribute.AddCustomAttributes(ListBuilder`1& attributes, RuntimeModule decoratedModule, Int32 decoratedMetadataToken, RuntimeType attributeFilterType, Boolean mustBeInheritable, ListBuilder`1 derivedAttributes)
+   at System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeType type, RuntimeType caType, Boolean inherit)
+   at Swashbuckle.AspNetCore.SwaggerGen.ApiDescriptionExtensions.CustomAttributes(ApiDescription apiDescription)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.InferRequestContentTypes(ApiDescription apiDescription)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBodyFromBodyParameter(ApiDescription apiDescription, SchemaRepository schemaRepository, ApiParameterDescription bodyParameter)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBody(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperation(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperation(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-05-14 10:08:22.111 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 500 - text/plain;+charset=utf-8 47.1997ms
+2022-05-14 10:08:53.020 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-05-14 10:08:53.030 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 9.9647ms
+2022-05-14 10:08:53.047 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/swagger-ui.css - -
+2022-05-14 10:08:53.079 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-05-14 10:08:53.086 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/swagger-ui.css - - - 200 143632 text/css 38.4957ms
+2022-05-14 10:08:53.437 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-05-14 10:08:53.446 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - Api.Controllers.FlightController.Save (Api). See inner exception
+ ---> System.IO.FileNotFoundException: Could not load file or assembly 'System.Web.Http, Version=5.2.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'. El sistema no puede encontrar el archivo especificado.
+File name: 'System.Web.Http, Version=5.2.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+   at System.ModuleHandle.ResolveType(QCallModule module, Int32 typeToken, IntPtr* typeInstArgs, Int32 typeInstCount, IntPtr* methodInstArgs, Int32 methodInstCount, ObjectHandleOnStack type)
+   at System.ModuleHandle.ResolveTypeHandle(Int32 typeToken, RuntimeTypeHandle[] typeInstantiationContext, RuntimeTypeHandle[] methodInstantiationContext)
+   at System.Reflection.RuntimeModule.ResolveType(Int32 metadataToken, Type[] genericTypeArguments, Type[] genericMethodArguments)
+   at System.Reflection.CustomAttribute.FilterCustomAttributeRecord(MetadataToken caCtorToken, MetadataImport& scope, RuntimeModule decoratedModule, MetadataToken decoratedToken, RuntimeType attributeFilterType, Boolean mustBeInheritable, ListBuilder`1& derivedAttributes, RuntimeType& attributeType, IRuntimeMethodInfo& ctorWithParameters, Boolean& isVarArg)
+   at System.Reflection.CustomAttribute.AddCustomAttributes(ListBuilder`1& attributes, RuntimeModule decoratedModule, Int32 decoratedMetadataToken, RuntimeType attributeFilterType, Boolean mustBeInheritable, ListBuilder`1 derivedAttributes)
+   at System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeType type, RuntimeType caType, Boolean inherit)
+   at Swashbuckle.AspNetCore.SwaggerGen.ApiDescriptionExtensions.CustomAttributes(ApiDescription apiDescription)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.InferRequestContentTypes(ApiDescription apiDescription)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBodyFromBodyParameter(ApiDescription apiDescription, SchemaRepository schemaRepository, ApiParameterDescription bodyParameter)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateRequestBody(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperation(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperation(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-05-14 10:08:53.450 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/favicon-32x32.png - -
+2022-05-14 10:08:53.468 -05:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2022-05-14 10:08:53.468 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 500 - text/plain;+charset=utf-8 30.3843ms
+2022-05-14 10:08:53.475 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/favicon-32x32.png - - - 200 628 image/png 24.2714ms
+2022-05-14 10:09:12.527 -05:00 [INF] Application is shutting down...

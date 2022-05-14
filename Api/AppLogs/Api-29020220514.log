@@ -1,0 +1,55 @@
+2022-05-14 10:09:23.707 -05:00 [INF] Now listening on: https://localhost:7170
+2022-05-14 10:09:23.782 -05:00 [INF] Now listening on: http://localhost:5094
+2022-05-14 10:09:23.792 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-05-14 10:09:23.793 -05:00 [INF] Hosting environment: Development
+2022-05-14 10:09:23.794 -05:00 [INF] Content root path: D:\GitHub\AirportManagementApi\Api\
+2022-05-14 10:09:24.332 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/ - -
+2022-05-14 10:09:24.530 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 10:09:24.534 -05:00 [INF] Response:
+StatusCode: 404
+2022-05-14 10:09:24.546 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/ - - - 404 0 - 225.5557ms
+2022-05-14 10:09:27.202 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-05-14 10:09:27.270 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 67.9163ms
+2022-05-14 10:09:27.287 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/swagger-ui.css - -
+2022-05-14 10:09:27.305 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-05-14 10:09:27.306 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/swagger-ui.css - - - 200 143632 text/css 19.4897ms
+2022-05-14 10:09:27.452 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-05-14 10:09:27.648 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 196.3570ms
+2022-05-14 10:15:26.091 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/Flight/findAll application/json 81
+2022-05-14 10:15:26.096 -05:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/Flight/findAll
+Accept: */*
+Connection: keep-alive
+Host: localhost:7170
+User-Agent: PostmanRuntime/7.29.0
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/json
+Content-Length: 81
+Postman-Token: [Redacted]
+2022-05-14 10:15:26.097 -05:00 [INF] Response:
+StatusCode: 404
+2022-05-14 10:15:26.101 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/api/Flight/findAll application/json 81 - 404 0 - 9.3303ms
+2022-05-14 10:15:46.972 -05:00 [INF] Application is shutting down...
