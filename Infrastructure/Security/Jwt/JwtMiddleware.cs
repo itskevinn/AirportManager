@@ -1,7 +1,7 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Text;
-using Application.Security.Service;
 using Infrastructure.Helpers;
+using Infrastructure.Security.Authentication.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -19,17 +19,17 @@ public class JwtMiddleware
         _appSettings = appSettings.Value;
     }
 
-    public async Task Invoke(HttpContext context, IUserService userService)
+    public async Task Invoke(HttpContext context, IAuthService authService)
     {
         var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
 
         if (token != null)
-            AttachUserToContext(context, userService, token);
+            AttachUserToContext(context, authService, token);
 
         await _next(context);
     }
 
-    private void AttachUserToContext(HttpContext context, IUserService userService, string token)
+    private void AttachUserToContext(HttpContext context, IAuthService authService, string token)
     {
         try
         {
@@ -47,7 +47,7 @@ public class JwtMiddleware
             var jwtToken = (JwtSecurityToken)validatedToken;
             var userId = Guid.Parse(jwtToken.Claims.First(x => x.Type == "id").Value);
 
-            context.Items["User"] = userService.GetOnlyUserById(userId);
+            context.Items["User"] = authService.GetOnlyUserById(userId);
         }
         catch
         {

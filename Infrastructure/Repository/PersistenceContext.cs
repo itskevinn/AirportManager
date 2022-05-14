@@ -107,7 +107,7 @@ public class PersistenceContext : DbContext
                 entity.Property(f => f.FlightStatus)
                     .HasConversion(
                         v => v.ToString(),
-                        v => (FlightStatusEnum)Enum.Parse(typeof(FlightStatusEnum), v))
+                        v => (FlightStatus)Enum.Parse(typeof(FlightStatus), v))
                     .IsRequired();
                 entity.Property(f => f.CheckInTime).IsRequired();
                 entity.Property(f => f.CheckOutTime).IsRequired();
