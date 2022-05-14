@@ -68,7 +68,7 @@ public class PersistenceContext : DbContext
             .WithMany(r => r.UserRoles)
             .HasForeignKey(ur => ur.RoleId);
         modelBuilder.Entity<UserRole>().HasOne(ur => ur.User)
-            .WithMany(r => r.UserRoles)
+            .WithMany(u => u.UserRoles)
             .HasForeignKey(ur => ur.UserId);
     }
 

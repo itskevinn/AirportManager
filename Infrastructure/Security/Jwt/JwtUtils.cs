@@ -10,17 +10,12 @@ namespace Infrastructure.Security.Jwt;
 
 public class JwtUtils : IJwtUtils
 {
-    private readonly AppSettings _appSettings;
-
-    public JwtUtils(IOptions<AppSettings> appSettings)
-    {
-        _appSettings = appSettings.Value;
-    }
+    private readonly string secret = "601e1dc4-2df5-4ff6-bebc-bf6f8c858965";
 
     public string GenerateJwtToken(UserDto userDto)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
-        var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+        var key = Encoding.ASCII.GetBytes(secret);
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Subject = new ClaimsIdentity(new[] { new Claim("id", userDto.Id.ToString()) }),
@@ -38,7 +33,7 @@ public class JwtUtils : IJwtUtils
             return Guid.Empty;
 
         var tokenHandler = new JwtSecurityTokenHandler();
-        var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+        var key = Encoding.ASCII.GetBytes(secret);
         try
         {
             tokenHandler.ValidateToken(token, new TokenValidationParameters

@@ -19,13 +19,13 @@ public class UserController : Controller
         _userService = userService;
     }
 
+    [AllowAnonymous]
     [HttpPost("Authenticate")]
     public async Task<Response<AuthenticateDto>> Authenticate(AuthenticateRequest authenticateRequest)
     {
         return await _authService.Authenticate(authenticateRequest);
     }
 
-    [Authorize]
     [HttpGet("FindAll")]
     public async Task<Response<IEnumerable<UserDto>>> GetAll()
     {
@@ -39,7 +39,6 @@ public class UserController : Controller
         return await _userService.GetById(id);
     }
 
-    [Authorize]
     [HttpPost("Save")]
     public async Task<Response<UserDto>> Save(UserRequest userRequest)
     {

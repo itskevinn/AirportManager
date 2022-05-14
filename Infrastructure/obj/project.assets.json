@@ -6693,7 +6693,7 @@
       "Microsoft.AspNetCore.Http.Features >= 6.0.0-preview.4.21253.5",
       "Microsoft.EntityFrameworkCore >= 5.0.10",
       "Microsoft.EntityFrameworkCore.Relational >= 5.0.10",
-      "Microsoft.EntityFrameworkCore.Sqlserver >= 5.0.10",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.10",
       "Microsoft.Extensions.Configuration.Abstractions >= 5.0.0",
       "Microsoft.Extensions.Configuration.Binder >= 5.0.0"
     ]
@@ -6754,7 +6754,7 @@
             "target": "Package",
             "version": "[5.0.10, )"
           },
-          "Microsoft.EntityFrameworkCore.Sqlserver": {
+          "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[5.0.10, )"
           },
