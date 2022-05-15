@@ -10,5 +10,5 @@ public class FlightRequest
     public Guid DepartureCityId { get; set; }
     public Guid DestinyCityId { get; set; }
     public DateTime CheckOutDate { get; set; }
-    public FlightStatusEnum FlightStatus { get; set; } = default!;
+    public FlightStatus FlightStatus { get; set; } = default!;
 }

@@ -3,7 +3,7 @@ using Application.Security.Http.Request;
 
 namespace Application.Security.Service;
 
-public interface IUserService
+public interface IUserService : ITransientService
 {
     public Task<Response<UserDto>> GetById(Guid id);
     public Task<Response<IEnumerable<UserDto>>> GetAll();

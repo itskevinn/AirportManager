@@ -1,0 +1,100 @@
+2022-05-14 19:17:33.917 -05:00 [INF] User profile is available. Using 'C:\Users\kevin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-05-14 19:17:34.267 -05:00 [INF] Now listening on: https://localhost:7170
+2022-05-14 19:17:34.270 -05:00 [INF] Now listening on: http://localhost:5094
+2022-05-14 19:17:34.276 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-05-14 19:17:34.280 -05:00 [INF] Hosting environment: Development
+2022-05-14 19:17:34.283 -05:00 [INF] Content root path: D:\GitHub\AirportManagementApi\Api\
+2022-05-14 19:17:34.721 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/ - -
+2022-05-14 19:17:34.931 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 19:17:34.999 -05:00 [INF] Response:
+StatusCode: 404
+2022-05-14 19:17:35.010 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/ - - - 404 0 - 307.0936ms
+2022-05-14 19:17:39.012 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 47
+2022-05-14 19:17:39.016 -05:00 [INF] CORS policy execution successful.
+2022-05-14 19:17:39.022 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/User/Authenticate
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 47
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 19:17:39.034 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-14 19:17:39.064 -05:00 [INF] Route matched with {action = "Authenticate", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.AuthenticateDto]] Authenticate(Application.Security.Http.Request.AuthenticateRequest) on controller Api.Controllers.UserController (Api).
+2022-05-14 19:17:49.031 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 19:17:49.722 -05:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+FROM [Airport].[User] AS [u]
+2022-05-14 19:19:49.112 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[Application.Security.Http.Dto.AuthenticateDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-05-14 19:19:49.147 -05:00 [INF] Executed action Api.Controllers.UserController.Authenticate (Api) in 130069.3664ms
+2022-05-14 19:19:49.150 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-14 19:19:49.153 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 00:19:49 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-14 19:19:49.159 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 47 - 200 - application/json;+charset=utf-8 130147.5124ms
+2022-05-14 19:19:54.039 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 47
+2022-05-14 19:19:54.051 -05:00 [INF] CORS policy execution successful.
+2022-05-14 19:19:54.056 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/User/Authenticate
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 47
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 19:19:54.060 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-14 19:19:54.062 -05:00 [INF] Route matched with {action = "Authenticate", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.AuthenticateDto]] Authenticate(Application.Security.Http.Request.AuthenticateRequest) on controller Api.Controllers.UserController (Api).
+2022-05-14 19:19:59.427 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 19:19:59.511 -05:00 [INF] Executed DbCommand (57ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+FROM [Airport].[User] AS [u]

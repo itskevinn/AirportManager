@@ -1,5 +1,10 @@
-﻿namespace Api.Controllers;
+﻿using System.Net;
+using Application.Security.Http.Dto;
+using Infrastructure.Security;
 
+namespace Api.Controllers;
+
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class AirlineController : Controller

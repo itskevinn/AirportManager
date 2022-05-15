@@ -1,0 +1,432 @@
+2022-05-14 23:37:21.373 -05:00 [INF] User profile is available. Using 'C:\Users\kevin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-05-14 23:37:21.577 -05:00 [INF] Now listening on: https://localhost:7170
+2022-05-14 23:37:21.578 -05:00 [INF] Now listening on: http://localhost:5094
+2022-05-14 23:37:21.583 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-05-14 23:37:21.584 -05:00 [INF] Hosting environment: Development
+2022-05-14 23:37:21.585 -05:00 [INF] Content root path: D:\GitHub\AirportManagementApi\Api\
+2022-05-14 23:37:22.293 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/ - -
+2022-05-14 23:37:22.718 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 23:37:22.772 -05:00 [INF] Response:
+StatusCode: 404
+2022-05-14 23:37:22.783 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/ - - - 404 0 - 501.0688ms
+2022-05-14 23:37:26.329 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159118 - -
+2022-05-14 23:37:28.296 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 23:37:29.412 -05:00 [INF] Executed DbCommand (83ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-14 23:37:29.723 -05:00 [INF] Executed DbCommand (9ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-14 23:37:29.819 -05:00 [INF] Executed DbCommand (27ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-14 23:37:29.881 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159118
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 23:37:29.901 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.GetById (Api)'
+2022-05-14 23:37:29.933 -05:00 [INF] Route matched with {action = "GetById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.UserDto]] GetById(System.Guid) on controller Api.Controllers.UserController (Api).
+2022-05-14 23:37:29.976 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-14 23:37:29.988 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-14 23:37:29.996 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-14 23:37:30.014 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedOn], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2022-05-14 23:37:30.041 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[Application.Security.Http.Dto.UserDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-05-14 23:37:30.126 -05:00 [INF] Executed action Api.Controllers.UserController.GetById (Api) in 178.8743ms
+2022-05-14 23:37:30.129 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.GetById (Api)'
+2022-05-14 23:37:30.135 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 04:37:29 GMT
+Server: Kestrel
+2022-05-14 23:37:30.148 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159118 - - - 200 - application/json;+charset=utf-8 3819.0695ms
+2022-05-14 23:39:19.162 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159118 - -
+2022-05-14 23:39:19.224 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 23:39:19.232 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-14 23:39:19.240 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-14 23:39:19.248 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-14 23:39:19.253 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159118
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 23:39:19.257 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.GetById (Api)'
+2022-05-14 23:39:19.259 -05:00 [INF] Route matched with {action = "GetById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.UserDto]] GetById(System.Guid) on controller Api.Controllers.UserController (Api).
+2022-05-14 23:39:19.263 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-14 23:39:19.270 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-14 23:39:19.274 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-14 23:39:19.295 -05:00 [INF] Executed DbCommand (15ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedOn], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2022-05-14 23:39:19.307 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedOn], [m].[RouterLink], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+2022-05-14 23:39:19.312 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[Application.Security.Http.Dto.UserDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-05-14 23:39:19.314 -05:00 [INF] Executed action Api.Controllers.UserController.GetById (Api) in 53.2861ms
+2022-05-14 23:39:19.315 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.GetById (Api)'
+2022-05-14 23:39:19.316 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 04:39:18 GMT
+Server: Kestrel
+2022-05-14 23:39:19.317 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159118 - - - 200 - application/json;+charset=utf-8 155.5471ms
+2022-05-14 23:39:20.916 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159118 - -
+2022-05-14 23:39:20.929 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 23:39:20.933 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-14 23:39:20.938 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-14 23:39:20.942 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-14 23:39:20.945 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159118
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 23:39:20.947 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.GetById (Api)'
+2022-05-14 23:39:20.948 -05:00 [INF] Route matched with {action = "GetById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.UserDto]] GetById(System.Guid) on controller Api.Controllers.UserController (Api).
+2022-05-14 23:39:20.951 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-14 23:39:20.955 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-14 23:39:20.960 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-14 23:39:20.963 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedOn], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2022-05-14 23:39:20.967 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedOn], [m].[RouterLink], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+2022-05-14 23:39:20.970 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[Application.Security.Http.Dto.UserDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-05-14 23:39:20.971 -05:00 [INF] Executed action Api.Controllers.UserController.GetById (Api) in 21.8681ms
+2022-05-14 23:39:20.972 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.GetById (Api)'
+2022-05-14 23:39:20.973 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 04:39:20 GMT
+Server: Kestrel
+2022-05-14 23:39:20.974 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159118 - - - 200 - application/json;+charset=utf-8 57.9190ms
+2022-05-14 23:40:02.848 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159118 - -
+2022-05-14 23:40:02.851 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 23:40:02.858 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-14 23:40:02.865 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-14 23:40:02.873 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-14 23:40:02.891 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159118
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 23:40:02.893 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.GetById (Api)'
+2022-05-14 23:40:02.894 -05:00 [INF] Route matched with {action = "GetById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.UserDto]] GetById(System.Guid) on controller Api.Controllers.UserController (Api).
+2022-05-14 23:40:02.896 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-14 23:40:02.900 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-14 23:40:02.905 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-14 23:40:02.909 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedOn], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2022-05-14 23:40:02.913 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedOn], [m].[RouterLink], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+2022-05-14 23:40:02.917 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[Application.Security.Http.Dto.UserDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-05-14 23:40:02.921 -05:00 [INF] Executed action Api.Controllers.UserController.GetById (Api) in 25.993ms
+2022-05-14 23:40:02.923 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.GetById (Api)'
+2022-05-14 23:40:02.924 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 04:40:02 GMT
+Server: Kestrel
+2022-05-14 23:40:02.924 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159118 - - - 200 - application/json;+charset=utf-8 76.3984ms
+2022-05-14 23:40:03.811 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159118 - -
+2022-05-14 23:40:03.814 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 23:40:03.817 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-14 23:40:03.822 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-14 23:40:03.829 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-14 23:40:03.832 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159118
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 23:40:03.834 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.GetById (Api)'
+2022-05-14 23:40:03.835 -05:00 [INF] Route matched with {action = "GetById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.UserDto]] GetById(System.Guid) on controller Api.Controllers.UserController (Api).
+2022-05-14 23:40:03.837 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-14 23:40:03.841 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-14 23:40:03.845 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-14 23:40:03.849 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedOn], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2022-05-14 23:40:03.852 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedOn], [m].[RouterLink], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+2022-05-14 23:40:03.855 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[Application.Security.Http.Dto.UserDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-05-14 23:40:03.861 -05:00 [INF] Executed action Api.Controllers.UserController.GetById (Api) in 24.7948ms
+2022-05-14 23:40:03.862 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.GetById (Api)'
+2022-05-14 23:40:03.863 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 04:40:02 GMT
+Server: Kestrel
+2022-05-14 23:40:03.864 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159118 - - - 200 - application/json;+charset=utf-8 52.9086ms
+2022-05-14 23:41:57.102 -05:00 [INF] Application is shutting down...

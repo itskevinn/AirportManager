@@ -1,0 +1,403 @@
+2022-05-14 17:42:01.222 -05:00 [INF] User profile is available. Using 'C:\Users\kevin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-05-14 17:42:01.700 -05:00 [INF] Now listening on: https://localhost:7170
+2022-05-14 17:42:01.701 -05:00 [INF] Now listening on: http://localhost:5094
+2022-05-14 17:42:01.707 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-05-14 17:42:01.707 -05:00 [INF] Hosting environment: Development
+2022-05-14 17:42:01.708 -05:00 [INF] Content root path: D:\GitHub\AirportManagementApi\Api\
+2022-05-14 17:42:02.818 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/ - -
+2022-05-14 17:42:03.344 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 17:42:04.418 -05:00 [INF] Response:
+StatusCode: 404
+2022-05-14 17:42:04.435 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/ - - - 404 0 - 1621.6079ms
+2022-05-14 17:42:32.469 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-05-14 17:42:32.644 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 174.5498ms
+2022-05-14 17:42:32.675 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/swagger-ui-standalone-preset.js - -
+2022-05-14 17:42:32.675 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/swagger-ui-bundle.js - -
+2022-05-14 17:42:32.676 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/swagger-ui.css - -
+2022-05-14 17:42:32.745 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-05-14 17:42:32.748 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/swagger-ui.css - - - 200 143632 text/css 72.8588ms
+2022-05-14 17:42:32.753 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-05-14 17:42:32.760 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/swagger-ui-standalone-preset.js - - - 200 337162 application/javascript 84.8257ms
+2022-05-14 17:42:32.774 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-05-14 17:42:32.776 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/swagger-ui-bundle.js - - - 200 1092889 application/javascript 100.8438ms
+2022-05-14 17:42:33.011 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-05-14 17:42:33.307 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 296.0241ms
+2022-05-14 17:42:49.423 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 51
+2022-05-14 17:42:49.431 -05:00 [INF] CORS policy execution successful.
+2022-05-14 17:42:49.436 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/User/Authenticate
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 51
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 17:42:49.444 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-14 17:42:49.495 -05:00 [INF] Route matched with {action = "Authenticate", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.AuthenticateDto]] Authenticate(Application.Security.Http.Request.AuthenticateRequest) on controller Api.Controllers.UserController (Api).
+2022-05-14 17:42:51.419 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 17:42:52.773 -05:00 [INF] Executed DbCommand (160ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+FROM [Airport].[User] AS [u]
+2022-05-14 17:42:53.296 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[Application.Security.Http.Dto.AuthenticateDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-05-14 17:42:53.340 -05:00 [INF] Executed action Api.Controllers.UserController.Authenticate (Api) in 3828.9016ms
+2022-05-14 17:42:53.345 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-14 17:42:53.352 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sat, 14 May 2022 22:42:52 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-14 17:42:53.361 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 51 - 200 - application/json;+charset=utf-8 3937.8768ms
+2022-05-14 17:43:10.202 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/Airline/GetAll - -
+2022-05-14 17:43:10.214 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/Airline/GetAll
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 17:43:14.586 -05:00 [ERR] Exception occurred while processing message.
+System.InvalidOperationException: IDX20803: Unable to obtain configuration from: 'System.String'.
+ ---> System.IO.IOException: IDX20804: Unable to retrieve document from: 'System.String'.
+ ---> System.Net.Http.HttpRequestException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión. (localhost:7150)
+ ---> System.Net.Sockets.SocketException (10061): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|277_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(HttpRequestMessage request)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Microsoft.IdentityModel.Protocols.HttpDocumentRetriever.GetDocumentAsync(String address, CancellationToken cancel)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.Protocols.HttpDocumentRetriever.GetDocumentAsync(String address, CancellationToken cancel)
+   at Microsoft.IdentityModel.Protocols.OpenIdConnect.OpenIdConnectConfigurationRetriever.GetAsync(String address, IDocumentRetriever retriever, CancellationToken cancel)
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.GetConfigurationAsync(CancellationToken cancel)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.GetConfigurationAsync(CancellationToken cancel)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2022-05-14 17:43:14.664 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: IDX20803: Unable to obtain configuration from: 'System.String'.
+ ---> System.IO.IOException: IDX20804: Unable to retrieve document from: 'System.String'.
+ ---> System.Net.Http.HttpRequestException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión. (localhost:7150)
+ ---> System.Net.Sockets.SocketException (10061): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|277_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(HttpRequestMessage request)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Microsoft.IdentityModel.Protocols.HttpDocumentRetriever.GetDocumentAsync(String address, CancellationToken cancel)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.Protocols.HttpDocumentRetriever.GetDocumentAsync(String address, CancellationToken cancel)
+   at Microsoft.IdentityModel.Protocols.OpenIdConnect.OpenIdConnectConfigurationRetriever.GetAsync(String address, IDocumentRetriever retriever, CancellationToken cancel)
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.GetConfigurationAsync(CancellationToken cancel)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.GetConfigurationAsync(CancellationToken cancel)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.AuthenticateAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context)
+   at Infrastructure.Security.Jwt.JwtMiddleware.Invoke(HttpContext context, IAuthService authService) in D:\GitHub\AirportManagementApi\Infrastructure\Security\Jwt\JwtMiddleware.cs:line 29
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-05-14 17:43:14.690 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/Airline/GetAll - - - 500 - text/plain;+charset=utf-8 4487.5638ms
+2022-05-14 17:44:40.800 -05:00 [INF] Application is shutting down...
+2022-05-14 19:56:47.017 -05:00 [INF] User profile is available. Using 'C:\Users\kevin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-05-14 19:56:47.251 -05:00 [INF] Now listening on: https://localhost:7170
+2022-05-14 19:56:47.252 -05:00 [INF] Now listening on: http://localhost:5094
+2022-05-14 19:56:47.257 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-05-14 19:56:47.258 -05:00 [INF] Hosting environment: Development
+2022-05-14 19:56:47.259 -05:00 [INF] Content root path: D:\GitHub\AirportManagementApi\Api\
+2022-05-14 19:56:47.610 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/ - -
+2022-05-14 19:56:47.858 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 19:56:47.901 -05:00 [INF] Response:
+StatusCode: 404
+2022-05-14 19:56:47.908 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/ - - - 404 0 - 304.0979ms
+2022-05-14 19:56:50.127 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-05-14 19:56:50.201 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 74.2498ms
+2022-05-14 19:56:50.491 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-05-14 19:56:50.714 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 223.4048ms
+2022-05-14 19:56:59.872 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/User/FindAll - -
+2022-05-14 19:56:59.877 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/User/FindAll
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 19:56:59.889 -05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-05-14 19:56:59.900 -05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-05-14 19:56:59.901 -05:00 [INF] Response:
+StatusCode: 401
+WWW-Authenticate: [Redacted]
+2022-05-14 19:56:59.902 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/User/FindAll - - - 401 0 - 30.5380ms
+2022-05-14 19:57:19.445 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 47
+2022-05-14 19:57:19.455 -05:00 [INF] CORS policy execution successful.
+2022-05-14 19:57:19.459 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/User/Authenticate
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 47
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 19:57:19.470 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-14 19:57:19.506 -05:00 [INF] Route matched with {action = "Authenticate", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.AuthenticateDto]] Authenticate(Application.Security.Http.Request.AuthenticateRequest) on controller Api.Controllers.UserController (Api).
+2022-05-14 19:57:20.803 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 19:57:21.571 -05:00 [INF] Executed DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+FROM [Airport].[User] AS [u]
+2022-05-14 19:57:21.870 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[Application.Security.Http.Dto.AuthenticateDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-05-14 19:57:21.909 -05:00 [INF] Executed action Api.Controllers.UserController.Authenticate (Api) in 2389.1071ms
+2022-05-14 19:57:21.913 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-14 19:57:21.919 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 00:57:21 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-14 19:57:21.937 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 47 - 200 - application/json;+charset=utf-8 2491.6731ms
+2022-05-14 19:57:39.715 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/User/FindAll - -
+2022-05-14 19:57:39.849 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 19:57:40.021 -05:00 [INF] Executed DbCommand (32ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+FROM [Airport].[User] AS [u]
+WHERE [u].[Id] = @__get_Item_0
+2022-05-14 19:57:40.128 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/User/FindAll
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 19:57:40.131 -05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-05-14 19:57:40.245 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/.well-known/openid-configuration - -
+2022-05-14 19:57:40.247 -05:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: https
+PathBase: 
+Path: /.well-known/openid-configuration
+Host: localhost:7170
+User-Agent: Microsoft ASP.NET Core JwtBearer handler
+traceparent: [Redacted]
+2022-05-14 19:57:40.248 -05:00 [INF] Response:
+StatusCode: 404
+2022-05-14 19:57:40.249 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/.well-known/openid-configuration - - - 404 0 - 4.1215ms
+2022-05-14 19:57:40.300 -05:00 [ERR] Exception occurred while processing message.
+System.InvalidOperationException: IDX20803: Unable to obtain configuration from: 'System.String'.
+ ---> System.IO.IOException: IDX20807: Unable to retrieve document from: 'System.String'. HttpResponseMessage: 'System.Net.Http.HttpResponseMessage', HttpResponseMessage.Content: 'System.String'.
+   at Microsoft.IdentityModel.Protocols.HttpDocumentRetriever.GetDocumentAsync(String address, CancellationToken cancel)
+   at Microsoft.IdentityModel.Protocols.OpenIdConnect.OpenIdConnectConfigurationRetriever.GetAsync(String address, IDocumentRetriever retriever, CancellationToken cancel)
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.GetConfigurationAsync(CancellationToken cancel)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.GetConfigurationAsync(CancellationToken cancel)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2022-05-14 19:57:40.319 -05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-05-14 19:57:40.324 -05:00 [INF] Response:
+StatusCode: 401
+WWW-Authenticate: [Redacted]
+2022-05-14 19:57:40.326 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/User/FindAll - - - 401 0 - 611.2086ms
+2022-05-14 19:57:42.873 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/User/FindAll - -
+2022-05-14 19:57:42.891 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 19:57:42.902 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+FROM [Airport].[User] AS [u]
+WHERE [u].[Id] = @__get_Item_0
+2022-05-14 19:57:42.907 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/User/FindAll
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 19:57:42.909 -05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-05-14 19:57:42.911 -05:00 [ERR] Exception occurred while processing message.
+System.InvalidOperationException: IDX20803: Unable to obtain configuration from: 'System.String'.
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.GetConfigurationAsync(CancellationToken cancel)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2022-05-14 19:57:42.914 -05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-05-14 19:57:42.915 -05:00 [INF] Response:
+StatusCode: 401
+WWW-Authenticate: [Redacted]
+2022-05-14 19:57:42.916 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/User/FindAll - - - 401 0 - 42.9849ms
+2022-05-14 19:57:43.740 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/User/FindAll - -
+2022-05-14 19:57:43.742 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 19:57:43.746 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+FROM [Airport].[User] AS [u]
+WHERE [u].[Id] = @__get_Item_0
+2022-05-14 19:57:43.751 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/User/FindAll
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 19:57:43.752 -05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-05-14 19:57:43.754 -05:00 [ERR] Exception occurred while processing message.
+System.InvalidOperationException: IDX20803: Unable to obtain configuration from: 'System.String'.
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.GetConfigurationAsync(CancellationToken cancel)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2022-05-14 19:57:43.760 -05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-05-14 19:57:43.762 -05:00 [INF] Response:
+StatusCode: 401
+WWW-Authenticate: [Redacted]
+2022-05-14 19:57:43.763 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/User/FindAll - - - 401 0 - 23.5402ms
+2022-05-14 19:59:30.369 -05:00 [INF] Application is shutting down...

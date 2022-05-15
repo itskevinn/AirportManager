@@ -15,5 +15,5 @@ public class Flight : Entity<Guid>
     [JsonIgnore] [NotMapped] public City? DepartureCity { get; set; } = default!;
     [JsonIgnore] [NotMapped] public City? DestinyCity { get; set; } = default!;
     public DateTime CheckOutDate { get; set; }
-    public FlightStatusEnum FlightStatus { get; set; }
+    public FlightStatus FlightStatus { get; set; }
 }

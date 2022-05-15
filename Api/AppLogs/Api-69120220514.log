@@ -1,0 +1,76 @@
+2022-05-14 14:08:02.958 -05:00 [INF] Now listening on: https://localhost:7170
+2022-05-14 14:08:03.017 -05:00 [INF] Now listening on: http://localhost:5094
+2022-05-14 14:08:03.025 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-05-14 14:08:03.026 -05:00 [INF] Hosting environment: Development
+2022-05-14 14:08:03.028 -05:00 [INF] Content root path: D:\GitHub\AirportManagementApi\Api\
+2022-05-14 14:08:03.491 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/ - -
+2022-05-14 14:08:03.779 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 14:08:03.782 -05:00 [INF] Response:
+StatusCode: 404
+2022-05-14 14:08:03.790 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/ - - - 404 0 - 302.7771ms
+2022-05-14 14:08:06.592 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2022-05-14 14:08:06.666 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 74.3473ms
+2022-05-14 14:08:06.744 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/swagger-ui.css - -
+2022-05-14 14:08:06.783 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-05-14 14:08:06.786 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/swagger-ui.css - - - 200 143632 text/css 41.4438ms
+2022-05-14 14:08:07.166 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2022-05-14 14:08:07.175 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/favicon-32x32.png - -
+2022-05-14 14:08:07.177 -05:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2022-05-14 14:08:07.179 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/favicon-32x32.png - - - 200 628 image/png 3.4367ms
+2022-05-14 14:08:07.355 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 189.0999ms
+2022-05-14 14:08:35.110 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/User/Save application/json 93
+2022-05-14 14:08:35.117 -05:00 [INF] CORS policy execution successful.
+2022-05-14 14:08:35.122 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/User/Save
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 93
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 14:08:35.164 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Endpoint Api.Controllers.UserController.Save (Api) contains authorization metadata, but a middleware was not found that supports authorization.
+Configure your application startup by adding app.UseAuthorization() in the application startup code. If there are calls to app.UseRouting() and app.UseEndpoints(...), the call to app.UseAuthorization() must go between them.
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingAuthMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context)
+   at Infrastructure.Security.Jwt.JwtMiddleware.Invoke(HttpContext context, IAuthService authService) in D:\GitHub\AirportManagementApi\Infrastructure\Security\Jwt\JwtMiddleware.cs:line 29
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-05-14 14:08:35.171 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/User/Save application/json 93 - 500 - text/plain;+charset=utf-8 61.6458ms
+2022-05-14 14:09:20.761 -05:00 [INF] Application is shutting down...

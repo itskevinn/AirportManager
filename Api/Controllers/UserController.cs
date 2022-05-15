@@ -1,7 +1,6 @@
 ﻿using Application.Security.Http.Dto;
 using Application.Security.Http.Request;
 using Application.Security.Service;
-using Infrastructure.Security.Authentication.Service;
 using Microsoft.AspNetCore.Authorization;
 
 namespace Api.Controllers;
@@ -25,20 +24,21 @@ public class UserController : Controller
     {
         return await _authService.Authenticate(authenticateRequest);
     }
-
+    [Infrastructure.Security.Authorize]
     [HttpGet("FindAll")]
     public async Task<Response<IEnumerable<UserDto>>> GetAll()
     {
         return await _userService.GetAll();
     }
 
-    [Authorize]
+    [Infrastructure.Security.Authorize]
     [HttpGet("FindById/{id:guid}")]
     public async Task<Response<UserDto>> GetById(Guid id)
     {
         return await _userService.GetById(id);
     }
 
+    [Infrastructure.Security.Authorize]
     [HttpPost("Save")]
     public async Task<Response<UserDto>> Save(UserRequest userRequest)
     {

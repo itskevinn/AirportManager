@@ -1,0 +1,113 @@
+2022-05-14 18:57:30.894 -05:00 [INF] User profile is available. Using 'C:\Users\kevin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-05-14 18:57:31.186 -05:00 [INF] Now listening on: https://localhost:7170
+2022-05-14 18:57:31.187 -05:00 [INF] Now listening on: http://localhost:5094
+2022-05-14 18:57:31.193 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-05-14 18:57:31.194 -05:00 [INF] Hosting environment: Development
+2022-05-14 18:57:31.197 -05:00 [INF] Content root path: D:\GitHub\AirportManagementApi\Api\
+2022-05-14 18:57:31.937 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/ - -
+2022-05-14 18:57:32.367 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 18:57:32.419 -05:00 [INF] Response:
+StatusCode: 404
+2022-05-14 18:57:32.430 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/ - - - 404 0 - 500.7351ms
+2022-05-14 18:57:48.535 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/User/Save application/json 89
+2022-05-14 18:57:48.549 -05:00 [INF] CORS policy execution successful.
+2022-05-14 18:57:48.554 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/User/Save
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 89
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 18:57:48.565 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.Save (Api)'
+2022-05-14 18:57:48.612 -05:00 [INF] Route matched with {action = "Save", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.UserDto]] Save(Application.Security.Http.Request.UserRequest) on controller Api.Controllers.UserController (Api).
+2022-05-14 18:57:49.959 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 18:57:51.001 -05:00 [INF] Executed DbCommand (104ms) [Parameters=[@__userRequest_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+FROM [Airport].[User] AS [u]
+WHERE LOWER([u].[Username]) = @__userRequest_Username_0
+2022-05-14 18:57:51.084 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[Application.Security.Http.Dto.UserDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-05-14 18:57:51.128 -05:00 [INF] Executed action Api.Controllers.UserController.Save (Api) in 2503.2033ms
+2022-05-14 18:57:51.130 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.Save (Api)'
+2022-05-14 18:57:51.131 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sat, 14 May 2022 23:57:51 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-14 18:57:51.137 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/User/Save application/json 89 - 200 - application/json;+charset=utf-8 2601.9950ms
+2022-05-14 18:57:56.469 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/User/Save application/json 88
+2022-05-14 18:57:56.476 -05:00 [INF] CORS policy execution successful.
+2022-05-14 18:57:56.480 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/User/Save
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 88
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 18:57:56.484 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.Save (Api)'
+2022-05-14 18:57:56.486 -05:00 [INF] Route matched with {action = "Save", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.UserDto]] Save(Application.Security.Http.Request.UserRequest) on controller Api.Controllers.UserController (Api).
+2022-05-14 18:57:56.527 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 18:57:56.546 -05:00 [INF] Executed DbCommand (9ms) [Parameters=[@__userRequest_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+FROM [Airport].[User] AS [u]
+WHERE LOWER([u].[Username]) = @__userRequest_Username_0
+2022-05-14 18:57:56.552 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[Application.Security.Http.Dto.UserDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-05-14 18:57:56.554 -05:00 [INF] Executed action Api.Controllers.UserController.Save (Api) in 66.7617ms
+2022-05-14 18:57:56.557 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.Save (Api)'
+2022-05-14 18:57:56.558 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sat, 14 May 2022 23:57:56 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-14 18:57:56.559 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/User/Save application/json 88 - 200 - application/json;+charset=utf-8 89.3596ms
+2022-05-14 19:00:52.515 -05:00 [INF] Application is shutting down...

@@ -1,6 +1,6 @@
 ﻿namespace Domain.Constants.Enum;
 
-public enum FlightStatusEnum
+public enum FlightStatus
 {
     
 }

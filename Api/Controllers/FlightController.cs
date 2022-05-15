@@ -17,13 +17,13 @@ public class FlightController : Controller
         return await _flightService.SaveAsync(flightRequest);
     }
 
-    [HttpGet("FindAll")]
+    [HttpGet("GetAll")]
     public async Task<Response<IEnumerable<FlightDto>>> GetAll()
     {
         return await _flightService.GetAllAsync();
     }
 
-    [HttpGet("FindById/{id:guid}")]
+    [HttpGet("GetById/{id:guid}")]
     public async Task<Response<FlightDto>> GetById(Guid id)
     {
         return await _flightService.GetByIdAsync(id);

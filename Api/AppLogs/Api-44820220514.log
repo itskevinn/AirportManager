@@ -1,0 +1,63 @@
+2022-05-14 18:29:49.668 -05:00 [INF] User profile is available. Using 'C:\Users\kevin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-05-14 18:29:49.843 -05:00 [INF] Now listening on: https://localhost:7170
+2022-05-14 18:29:49.844 -05:00 [INF] Now listening on: http://localhost:5094
+2022-05-14 18:29:49.848 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-05-14 18:29:49.849 -05:00 [INF] Hosting environment: Development
+2022-05-14 18:29:49.850 -05:00 [INF] Content root path: D:\GitHub\AirportManagementApi\Api\
+2022-05-14 18:29:50.793 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/ - -
+2022-05-14 18:29:51.200 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 18:29:51.341 -05:00 [INF] Response:
+StatusCode: 404
+2022-05-14 18:29:51.349 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/ - - - 404 0 - 562.8108ms
+2022-05-14 18:29:58.414 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/Airline/GetAll - -
+2022-05-14 18:29:58.419 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/Airline/GetAll
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 18:29:58.428 -05:00 [INF] Executing endpoint 'Api.Controllers.AirlineController.GetAll (Api)'
+2022-05-14 18:29:58.456 -05:00 [INF] Route matched with {action = "GetAll", controller = "Airline"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Airport.Http.Dto.AirlineDto]]] GetAll() on controller Api.Controllers.AirlineController (Api).
+2022-05-14 18:29:58.461 -05:00 [INF] Authorization failed for the request at filter 'Infrastructure.Security.AuthorizeAttribute'.
+2022-05-14 18:29:58.470 -05:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2022-05-14 18:29:58.503 -05:00 [INF] Executed action Api.Controllers.AirlineController.GetAll (Api) in 35.5849ms
+2022-05-14 18:29:58.510 -05:00 [INF] Executed endpoint 'Api.Controllers.AirlineController.GetAll (Api)'
+2022-05-14 18:29:58.512 -05:00 [INF] Response:
+StatusCode: 401
+Content-Type: application/problem+json; charset=utf-8
+Date: Sat, 14 May 2022 23:29:57 GMT
+Server: Kestrel
+2022-05-14 18:29:58.516 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/Airline/GetAll - - - 401 - application/problem+json;+charset=utf-8 101.6112ms
+2022-05-14 18:30:33.707 -05:00 [INF] Application is shutting down...

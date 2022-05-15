@@ -11,4 +11,5 @@ public class User : Entity<Guid>
 
     [JsonIgnore] [Column("pazzword")] public string Password { get; set; } = default!;
     public IEnumerable<UserRole> UserRoles { get; set; } = default!;
+    [NotMapped] [JsonIgnore] public IEnumerable<Role> Roles { get; set; } = default!;
 }

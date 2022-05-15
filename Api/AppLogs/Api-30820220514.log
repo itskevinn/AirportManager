@@ -1,0 +1,77 @@
+2022-05-14 14:13:19.521 -05:00 [INF] User profile is available. Using 'C:\Users\kevin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-05-14 14:13:19.725 -05:00 [INF] Now listening on: https://localhost:7170
+2022-05-14 14:13:19.727 -05:00 [INF] Now listening on: http://localhost:5094
+2022-05-14 14:13:19.733 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-05-14 14:13:19.734 -05:00 [INF] Hosting environment: Development
+2022-05-14 14:13:19.736 -05:00 [INF] Content root path: D:\GitHub\AirportManagementApi\Api\
+2022-05-14 14:13:20.015 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/ - -
+2022-05-14 14:13:20.251 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 14:13:20.293 -05:00 [INF] Response:
+StatusCode: 404
+2022-05-14 14:13:20.302 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/ - - - 404 0 - 292.6434ms
+2022-05-14 14:13:23.291 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/User/Save application/json 93
+2022-05-14 14:13:23.299 -05:00 [INF] CORS policy execution successful.
+2022-05-14 14:13:23.302 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/User/Save
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 93
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 14:13:23.311 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.Save (Api)'
+2022-05-14 14:13:23.366 -05:00 [INF] Route matched with {action = "Save", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.UserDto]] Save(Application.Security.Http.Request.UserRequest) on controller Api.Controllers.UserController (Api).
+2022-05-14 14:13:23.397 -05:00 [ERR] Unable to resolve service for type 'Application.Security.Service.IUserService' while attempting to activate 'Api.Controllers.UserController'.
+System.InvalidOperationException: Unable to resolve service for type 'Application.Security.Service.IUserService' while attempting to activate 'Api.Controllers.UserController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method12(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass7_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2022-05-14 14:13:23.417 -05:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-14 14:13:23.448 -05:00 [INF] Executed action Api.Controllers.UserController.Save (Api) in 69.45ms
+2022-05-14 14:13:23.454 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.Save (Api)'
+2022-05-14 14:13:23.456 -05:00 [INF] Response:
+StatusCode: 500
+Content-Type: application/json; charset=utf-8
+Date: Sat, 14 May 2022 19:13:22 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-14 14:13:23.457 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/User/Save application/json 93 - 500 - application/json;+charset=utf-8 165.8967ms
+2022-05-14 14:13:51.020 -05:00 [INF] Application is shutting down...

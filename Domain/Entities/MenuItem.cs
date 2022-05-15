@@ -1,9 +1,11 @@
-﻿namespace Domain.Entities;
+﻿using Domain.Entities.Base;
 
-public class MenuItem
+namespace Domain.Entities;
+
+public class MenuItem : Entity<Guid>
 {
-    public string IconClass { get; set; }
-    public string Route { get; set; }
-    public string Title { get; set; }
-    public IEnumerable<MenuItemRole> MenuItemRoles { get; set; }
+    public string Icon { get; set; } = default!;
+    public string RouterLink { get; set; } = default!;
+    public string Label { get; set; } = default!;
+    public IEnumerable<MenuItemRole> MenuItemRoles { get; set; } = default!;
 }

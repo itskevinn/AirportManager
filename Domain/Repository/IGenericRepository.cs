@@ -12,6 +12,11 @@ namespace Domain.Repository
         Task<bool> ExistsAsync(object id);
         Task CreateAllAsync(IEnumerable<T> entities);
 
+        T Find(
+            Expression<Func<T, bool>>? filter = null,
+            bool isTracking = false,
+            string includeStringProperties = "");
+
         Task<IEnumerable<T>> GetAsync(
             Expression<Func<T, bool>>? filter = null,
             Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,

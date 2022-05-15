@@ -1,0 +1,619 @@
+2022-05-14 15:20:58.676 -05:00 [INF] User profile is available. Using 'C:\Users\kevin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-05-14 15:20:59.089 -05:00 [INF] Now listening on: https://localhost:7170
+2022-05-14 15:20:59.093 -05:00 [INF] Now listening on: http://localhost:5094
+2022-05-14 15:20:59.101 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-05-14 15:20:59.106 -05:00 [INF] Hosting environment: Development
+2022-05-14 15:20:59.110 -05:00 [INF] Content root path: D:\GitHub\AirportManagementApi\Api\
+2022-05-14 15:20:59.709 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/ - -
+2022-05-14 15:20:59.933 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 15:21:00.030 -05:00 [INF] Response:
+StatusCode: 404
+2022-05-14 15:21:00.038 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/ - - - 404 0 - 334.4329ms
+2022-05-14 15:21:04.201 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/User/FindAll - -
+2022-05-14 15:21:04.209 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/User/FindAll
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 15:21:04.215 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.GetAll (Api)'
+2022-05-14 15:21:04.237 -05:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Security.Http.Dto.UserDto]]] GetAll() on controller Api.Controllers.UserController (Api).
+2022-05-14 15:21:05.215 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 15:21:06.146 -05:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+ORDER BY [u].[Id], [u0].[RoleId], [u0].[UserId]
+2022-05-14 15:22:32.237 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Security.Http.Dto.UserDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-14 15:22:32.273 -05:00 [INF] Executed action Api.Controllers.UserController.GetAll (Api) in 88030.5689ms
+2022-05-14 15:22:32.276 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.GetAll (Api)'
+2022-05-14 15:22:32.279 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sat, 14 May 2022 20:22:32 GMT
+Server: Kestrel
+2022-05-14 15:22:32.287 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/User/FindAll - - - 200 - application/json;+charset=utf-8 88085.9040ms
+2022-05-14 15:22:45.962 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/User/FindAll - -
+2022-05-14 15:22:45.968 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/User/FindAll
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 15:22:45.971 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.GetAll (Api)'
+2022-05-14 15:22:45.973 -05:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Security.Http.Dto.UserDto]]] GetAll() on controller Api.Controllers.UserController (Api).
+2022-05-14 15:22:45.996 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 15:22:46.070 -05:00 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [t].[RoleId], [t].[UserId], [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[RoleName], [t].[Status], [t].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+    FROM [Airport].[UserRole] AS [u0]
+    INNER JOIN [Airport].[Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [t] ON [u].[Id] = [t].[UserId]
+ORDER BY [u].[Id], [t].[RoleId], [t].[UserId], [t].[Id]
+2022-05-14 15:23:12.926 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Security.Http.Dto.UserDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-14 15:23:12.945 -05:00 [INF] Executed action Api.Controllers.UserController.GetAll (Api) in 26971.0844ms
+2022-05-14 15:23:12.948 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.GetAll (Api)'
+2022-05-14 15:23:12.950 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sat, 14 May 2022 20:23:12 GMT
+Server: Kestrel
+2022-05-14 15:23:12.951 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/User/FindAll - - - 200 - application/json;+charset=utf-8 26988.4075ms
+2022-05-14 15:23:37.896 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/User/FindAll - -
+2022-05-14 15:23:37.897 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/User/FindAll
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 15:23:37.899 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.GetAll (Api)'
+2022-05-14 15:23:37.900 -05:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Security.Http.Dto.UserDto]]] GetAll() on controller Api.Controllers.UserController (Api).
+2022-05-14 15:23:37.908 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 15:23:38.083 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Security.Http.Dto.UserDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-14 15:23:38.085 -05:00 [INF] Executed action Api.Controllers.UserController.GetAll (Api) in 182.7733ms
+2022-05-14 15:23:38.086 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.GetAll (Api)'
+2022-05-14 15:23:38.087 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sat, 14 May 2022 20:23:37 GMT
+Server: Kestrel
+2022-05-14 15:23:38.088 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/User/FindAll - - - 200 - application/json;+charset=utf-8 192.3589ms
+2022-05-14 15:24:09.671 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/User/FindAll - -
+2022-05-14 15:24:09.673 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/User/FindAll
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 15:24:09.674 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.GetAll (Api)'
+2022-05-14 15:24:09.675 -05:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Security.Http.Dto.UserDto]]] GetAll() on controller Api.Controllers.UserController (Api).
+2022-05-14 15:24:09.679 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 15:24:09.762 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Security.Http.Dto.UserDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-14 15:24:09.764 -05:00 [INF] Executed action Api.Controllers.UserController.GetAll (Api) in 87.4777ms
+2022-05-14 15:24:09.766 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.GetAll (Api)'
+2022-05-14 15:24:09.768 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sat, 14 May 2022 20:24:08 GMT
+Server: Kestrel
+2022-05-14 15:24:09.769 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/User/FindAll - - - 200 - application/json;+charset=utf-8 98.5850ms
+2022-05-14 15:24:14.039 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/User/FindAll - -
+2022-05-14 15:24:14.041 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/User/FindAll
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 15:24:14.043 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.GetAll (Api)'
+2022-05-14 15:24:14.044 -05:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Security.Http.Dto.UserDto]]] GetAll() on controller Api.Controllers.UserController (Api).
+2022-05-14 15:24:14.060 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 15:24:14.074 -05:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [t].[RoleId], [t].[UserId], [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[RoleName], [t].[Status], [t].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+    FROM [Airport].[UserRole] AS [u0]
+    INNER JOIN [Airport].[Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [t] ON [u].[Id] = [t].[UserId]
+ORDER BY [u].[Id], [t].[RoleId], [t].[UserId], [t].[Id]
+2022-05-14 15:24:14.077 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Security.Http.Dto.UserDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-14 15:24:14.079 -05:00 [INF] Executed action Api.Controllers.UserController.GetAll (Api) in 24.9006ms
+2022-05-14 15:24:14.081 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.GetAll (Api)'
+2022-05-14 15:24:14.083 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sat, 14 May 2022 20:24:13 GMT
+Server: Kestrel
+2022-05-14 15:24:14.084 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/User/FindAll - - - 200 - application/json;+charset=utf-8 44.3892ms
+2022-05-14 15:24:24.596 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/User/FindById/c82a18c6-e473-4976-5f2e-08da35e4eb6e - -
+2022-05-14 15:24:24.598 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/User/FindById/c82a18c6-e473-4976-5f2e-08da35e4eb6e
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 15:24:24.609 -05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-05-14 15:24:24.617 -05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-05-14 15:24:24.619 -05:00 [INF] Response:
+StatusCode: 401
+WWW-Authenticate: [Redacted]
+2022-05-14 15:24:24.623 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/User/FindById/c82a18c6-e473-4976-5f2e-08da35e4eb6e - - - 401 0 - 27.3937ms
+2022-05-14 15:24:54.292 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 51
+2022-05-14 15:24:54.297 -05:00 [INF] CORS policy execution successful.
+2022-05-14 15:24:54.300 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/User/Authenticate
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 51
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 15:24:54.301 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-14 15:24:54.314 -05:00 [INF] Route matched with {action = "Authenticate", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.AuthenticateDto]] Authenticate(Application.Security.Http.Request.AuthenticateRequest) on controller Api.Controllers.UserController (Api).
+2022-05-14 15:24:54.348 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 15:24:54.358 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+FROM [Airport].[User] AS [u]
+2022-05-14 15:24:54.550 -05:00 [ERR] String reference not set to an instance of a String. (Parameter 's')
+System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at Infrastructure.Security.Jwt.JwtUtils.GenerateJwtToken(UserDto userDto) in D:\GitHub\AirportManagementApi\Infrastructure\Security\Jwt\JwtUtils.cs:line 23
+   at Infrastructure.Security.Authentication.Service.Implementation.AuthService.Authenticate(AuthenticateRequest authenticateRequest) in D:\GitHub\AirportManagementApi\Infrastructure\Security\Authentication\Service\Implementation\AuthService.cs:line 37
+   at Api.Controllers.UserController.Authenticate(AuthenticateRequest authenticateRequest) in D:\GitHub\AirportManagementApi\Api\Controllers\UserController.cs:line 26
+   at lambda_method43(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2022-05-14 15:24:54.563 -05:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-14 15:24:54.567 -05:00 [INF] Executed action Api.Controllers.UserController.Authenticate (Api) in 250.3963ms
+2022-05-14 15:24:54.569 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-14 15:24:54.570 -05:00 [INF] Response:
+StatusCode: 500
+Content-Type: application/json; charset=utf-8
+Date: Sat, 14 May 2022 20:24:54 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-14 15:24:54.572 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 51 - 500 - application/json;+charset=utf-8 280.0244ms
+2022-05-14 15:25:21.265 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 51
+2022-05-14 15:25:21.267 -05:00 [INF] CORS policy execution successful.
+2022-05-14 15:25:21.268 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/User/Authenticate
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 51
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 15:25:21.270 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-14 15:25:21.271 -05:00 [INF] Route matched with {action = "Authenticate", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.AuthenticateDto]] Authenticate(Application.Security.Http.Request.AuthenticateRequest) on controller Api.Controllers.UserController (Api).
+2022-05-14 15:25:27.278 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 15:25:27.444 -05:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+FROM [Airport].[User] AS [u]
+2022-05-14 15:26:22.698 -05:00 [ERR] String reference not set to an instance of a String. (Parameter 's')
+System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at Infrastructure.Security.Jwt.JwtUtils.GenerateJwtToken(UserDto userDto) in D:\GitHub\AirportManagementApi\Infrastructure\Security\Jwt\JwtUtils.cs:line 23
+   at Infrastructure.Security.Authentication.Service.Implementation.AuthService.Authenticate(AuthenticateRequest authenticateRequest) in D:\GitHub\AirportManagementApi\Infrastructure\Security\Authentication\Service\Implementation\AuthService.cs:line 37
+   at Api.Controllers.UserController.Authenticate(AuthenticateRequest authenticateRequest) in D:\GitHub\AirportManagementApi\Api\Controllers\UserController.cs:line 26
+   at lambda_method43(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2022-05-14 15:26:22.706 -05:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-14 15:26:22.708 -05:00 [INF] Executed action Api.Controllers.UserController.Authenticate (Api) in 61435.1052ms
+2022-05-14 15:26:22.710 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-14 15:26:22.711 -05:00 [INF] Response:
+StatusCode: 500
+Content-Type: application/json; charset=utf-8
+Date: Sat, 14 May 2022 20:26:22 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-14 15:26:22.713 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 51 - 500 - application/json;+charset=utf-8 61447.7852ms
+2022-05-14 15:26:28.611 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 51
+2022-05-14 15:26:28.614 -05:00 [INF] CORS policy execution successful.
+2022-05-14 15:26:28.615 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/User/Authenticate
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 51
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 15:26:28.617 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-14 15:26:28.618 -05:00 [INF] Route matched with {action = "Authenticate", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.AuthenticateDto]] Authenticate(Application.Security.Http.Request.AuthenticateRequest) on controller Api.Controllers.UserController (Api).
+2022-05-14 15:26:33.590 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 15:26:33.665 -05:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+FROM [Airport].[User] AS [u]
+2022-05-14 15:26:49.004 -05:00 [ERR] String reference not set to an instance of a String. (Parameter 's')
+System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at Infrastructure.Security.Jwt.JwtUtils.GenerateJwtToken(UserDto userDto) in D:\GitHub\AirportManagementApi\Infrastructure\Security\Jwt\JwtUtils.cs:line 23
+   at Infrastructure.Security.Authentication.Service.Implementation.AuthService.Authenticate(AuthenticateRequest authenticateRequest) in D:\GitHub\AirportManagementApi\Infrastructure\Security\Authentication\Service\Implementation\AuthService.cs:line 37
+   at Api.Controllers.UserController.Authenticate(AuthenticateRequest authenticateRequest) in D:\GitHub\AirportManagementApi\Api\Controllers\UserController.cs:line 26
+   at lambda_method43(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2022-05-14 15:26:49.011 -05:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-14 15:26:49.012 -05:00 [INF] Executed action Api.Controllers.UserController.Authenticate (Api) in 20392.7315ms
+2022-05-14 15:26:49.014 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-14 15:26:49.015 -05:00 [INF] Response:
+StatusCode: 500
+Content-Type: application/json; charset=utf-8
+Date: Sat, 14 May 2022 20:26:48 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-14 15:26:49.016 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 51 - 500 - application/json;+charset=utf-8 20404.7145ms
+2022-05-14 15:26:51.156 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 51
+2022-05-14 15:26:51.158 -05:00 [INF] CORS policy execution successful.
+2022-05-14 15:26:51.168 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/User/Authenticate
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 51
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 15:26:51.169 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-14 15:26:51.171 -05:00 [INF] Route matched with {action = "Authenticate", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.AuthenticateDto]] Authenticate(Application.Security.Http.Request.AuthenticateRequest) on controller Api.Controllers.UserController (Api).
+2022-05-14 15:26:52.650 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 15:26:52.660 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+FROM [Airport].[User] AS [u]
+2022-05-14 15:29:01.764 -05:00 [ERR] String reference not set to an instance of a String. (Parameter 's')
+System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at Infrastructure.Security.Jwt.JwtUtils.GenerateJwtToken(UserDto userDto) in D:\GitHub\AirportManagementApi\Infrastructure\Security\Jwt\JwtUtils.cs:line 23
+   at Infrastructure.Security.Authentication.Service.Implementation.AuthService.Authenticate(AuthenticateRequest authenticateRequest) in D:\GitHub\AirportManagementApi\Infrastructure\Security\Authentication\Service\Implementation\AuthService.cs:line 37
+   at Api.Controllers.UserController.Authenticate(AuthenticateRequest authenticateRequest) in D:\GitHub\AirportManagementApi\Api\Controllers\UserController.cs:line 26
+   at lambda_method43(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2022-05-14 15:29:01.772 -05:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-14 15:29:01.774 -05:00 [INF] Executed action Api.Controllers.UserController.Authenticate (Api) in 130600.6375ms
+2022-05-14 15:29:01.776 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-14 15:29:01.778 -05:00 [INF] Response:
+StatusCode: 500
+Content-Type: application/json; charset=utf-8
+Date: Sat, 14 May 2022 20:29:01 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-14 15:29:01.779 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 51 - 500 - application/json;+charset=utf-8 130623.1504ms
+2022-05-14 15:29:06.947 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 51
+2022-05-14 15:29:06.950 -05:00 [INF] CORS policy execution successful.
+2022-05-14 15:29:06.951 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/User/Authenticate
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 51
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 15:29:06.953 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-14 15:29:06.954 -05:00 [INF] Route matched with {action = "Authenticate", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.AuthenticateDto]] Authenticate(Application.Security.Http.Request.AuthenticateRequest) on controller Api.Controllers.UserController (Api).
+2022-05-14 15:29:12.097 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 15:29:12.108 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+FROM [Airport].[User] AS [u]
+2022-05-14 15:29:15.794 -05:00 [ERR] String reference not set to an instance of a String. (Parameter 's')
+System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at Infrastructure.Security.Jwt.JwtUtils.GenerateJwtToken(UserDto userDto) in D:\GitHub\AirportManagementApi\Infrastructure\Security\Jwt\JwtUtils.cs:line 23
+   at Infrastructure.Security.Authentication.Service.Implementation.AuthService.Authenticate(AuthenticateRequest authenticateRequest) in D:\GitHub\AirportManagementApi\Infrastructure\Security\Authentication\Service\Implementation\AuthService.cs:line 37
+   at Api.Controllers.UserController.Authenticate(AuthenticateRequest authenticateRequest) in D:\GitHub\AirportManagementApi\Api\Controllers\UserController.cs:line 26
+   at lambda_method43(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2022-05-14 15:29:15.802 -05:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-14 15:29:15.803 -05:00 [INF] Executed action Api.Controllers.UserController.Authenticate (Api) in 8847.5803ms
+2022-05-14 15:29:15.804 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-14 15:29:15.805 -05:00 [INF] Response:
+StatusCode: 500
+Content-Type: application/json; charset=utf-8
+Date: Sat, 14 May 2022 20:29:15 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-14 15:29:15.806 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 51 - 500 - application/json;+charset=utf-8 8860.2480ms
+2022-05-14 15:29:17.786 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 51
+2022-05-14 15:29:17.788 -05:00 [INF] CORS policy execution successful.
+2022-05-14 15:29:17.789 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/User/Authenticate
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 51
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 15:29:17.791 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-14 15:29:17.793 -05:00 [INF] Route matched with {action = "Authenticate", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.AuthenticateDto]] Authenticate(Application.Security.Http.Request.AuthenticateRequest) on controller Api.Controllers.UserController (Api).
+2022-05-14 15:29:19.782 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 15:29:19.841 -05:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+FROM [Airport].[User] AS [u]
+2022-05-14 15:29:24.735 -05:00 [ERR] String reference not set to an instance of a String. (Parameter 's')
+System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at Infrastructure.Security.Jwt.JwtUtils.GenerateJwtToken(UserDto userDto) in D:\GitHub\AirportManagementApi\Infrastructure\Security\Jwt\JwtUtils.cs:line 23
+   at Infrastructure.Security.Authentication.Service.Implementation.AuthService.Authenticate(AuthenticateRequest authenticateRequest) in D:\GitHub\AirportManagementApi\Infrastructure\Security\Authentication\Service\Implementation\AuthService.cs:line 37
+   at Api.Controllers.UserController.Authenticate(AuthenticateRequest authenticateRequest) in D:\GitHub\AirportManagementApi\Api\Controllers\UserController.cs:line 26
+   at lambda_method43(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2022-05-14 15:29:24.742 -05:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-14 15:29:24.743 -05:00 [INF] Executed action Api.Controllers.UserController.Authenticate (Api) in 6947.4184ms
+2022-05-14 15:29:24.744 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-14 15:29:24.745 -05:00 [INF] Response:
+StatusCode: 500
+Content-Type: application/json; charset=utf-8
+Date: Sat, 14 May 2022 20:29:24 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-14 15:29:24.747 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 51 - 500 - application/json;+charset=utf-8 6961.3844ms
+2022-05-14 15:29:26.800 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 51
+2022-05-14 15:29:26.801 -05:00 [INF] CORS policy execution successful.
+2022-05-14 15:29:26.802 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/User/Authenticate
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 51
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-14 15:29:26.805 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-14 15:29:26.806 -05:00 [INF] Route matched with {action = "Authenticate", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.AuthenticateDto]] Authenticate(Application.Security.Http.Request.AuthenticateRequest) on controller Api.Controllers.UserController (Api).
+2022-05-14 15:29:28.156 -05:00 [INF] Entity Framework Core 5.0.10 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-14 15:29:28.166 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+FROM [Airport].[User] AS [u]
+2022-05-14 15:30:10.076 -05:00 [ERR] String reference not set to an instance of a String. (Parameter 's')
+System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at Infrastructure.Security.Jwt.JwtUtils.GenerateJwtToken(UserDto userDto) in D:\GitHub\AirportManagementApi\Infrastructure\Security\Jwt\JwtUtils.cs:line 23
+   at Infrastructure.Security.Authentication.Service.Implementation.AuthService.Authenticate(AuthenticateRequest authenticateRequest) in D:\GitHub\AirportManagementApi\Infrastructure\Security\Authentication\Service\Implementation\AuthService.cs:line 37
+   at Api.Controllers.UserController.Authenticate(AuthenticateRequest authenticateRequest) in D:\GitHub\AirportManagementApi\Api\Controllers\UserController.cs:line 26
+   at lambda_method43(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2022-05-14 15:30:10.083 -05:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-14 15:30:10.084 -05:00 [INF] Executed action Api.Controllers.UserController.Authenticate (Api) in 43273.6128ms
+2022-05-14 15:30:10.086 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-14 15:30:10.087 -05:00 [INF] Response:
+StatusCode: 500
+Content-Type: application/json; charset=utf-8
+Date: Sat, 14 May 2022 20:30:09 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-14 15:30:10.088 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 51 - 500 - application/json;+charset=utf-8 43288.3678ms
+2022-05-14 15:30:11.966 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 51

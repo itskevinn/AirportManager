@@ -1,6 +1,8 @@
 ﻿using System.Linq.Expressions;
+using Domain.Entities;
 using Domain.Entities.Base;
 using Domain.Repository;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repository
@@ -12,6 +14,26 @@ namespace Infrastructure.Repository
         public GenericRepository(PersistenceContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context), $"{nameof(context)} is unavailable");
+        }
+
+        public T Find(Expression<Func<T, bool>>? filter = null, bool isTracking = false,
+            string includeStringProperties = "")
+        {
+            IQueryable<T> query = _context.Set<T>();
+
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
+
+            if (!string.IsNullOrEmpty(includeStringProperties))
+            {
+                query = includeStringProperties.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                    .Aggregate(query, (current, includeProperty) => current.Include(includeProperty));
+            }
+
+            if (query.ToList().Count == 0) return null!;
+            return (!isTracking) ? query.AsNoTracking().First() : query.First();
         }
 
         public async Task<IEnumerable<T>> GetAsync(Expression<Func<T, bool>>? filter = null,

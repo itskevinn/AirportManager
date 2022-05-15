@@ -42,13 +42,17 @@ public class PersistenceContext : DbContext
 
     private static void MenuItemRoleInterceptorConfig(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<MenuItemRole>().HasKey(mi => new { mi.RoleId, mi.MenuItemId });
-        modelBuilder.Entity<MenuItemRole>().HasOne(mi => mi.Role)
-            .WithMany(r => r.RoleMenuItems)
-            .HasForeignKey(mi => mi.RoleId);
-        modelBuilder.Entity<MenuItemRole>().HasOne(mi => mi.MenuItem)
-            .WithMany(r => r.MenuItemRoles)
-            .HasForeignKey(mi => mi.MenuItemId);
+        modelBuilder.Entity<MenuItemRole>(mi =>
+        {
+            mi.HasKey(mi => new { mi.RoleId, mi.MenuItemId });
+            mi.HasOne(mi => mi.Role)
+                .WithMany(r => r.RoleMenuItems)
+                .HasForeignKey(mi => mi.RoleId);
+            mi.HasOne(mi => mi.MenuItem)
+                .WithMany(r => r.MenuItemRoles)
+                .HasForeignKey(mi => mi.MenuItemId);
+            mi.Property("CreatedBy").IsRequired(false);
+        });
     }
 
     private static void RoleEntityConfig(ModelBuilder modelBuilder)
@@ -67,6 +71,7 @@ public class PersistenceContext : DbContext
         modelBuilder.Entity<UserRole>().HasOne(ur => ur.Role)
             .WithMany(r => r.UserRoles)
             .HasForeignKey(ur => ur.RoleId);
+        modelBuilder.Entity<UserRole>(ur => ur.Property(r => r.CreatedBy).IsRequired(false));
         modelBuilder.Entity<UserRole>().HasOne(ur => ur.User)
             .WithMany(u => u.UserRoles)
             .HasForeignKey(ur => ur.UserId);
@@ -95,6 +100,7 @@ public class PersistenceContext : DbContext
             modelBuilder.Entity(entityType.Name).Property<DateTime>("CreatedOn").HasDefaultValueSql("GETDATE()");
             modelBuilder.Entity(entityType.Name).Property<DateTime>("LastModifiedOn")
                 .HasDefaultValueSql("GETDATE()");
+            modelBuilder.Entity(entityType.Name).Property<string>("UpdatedBy").IsRequired(false);
         }
     }
 
