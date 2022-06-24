@@ -1,0 +1,322 @@
+2022-06-02 15:30:53.119 -05:00 [INF] User profile is available. Using 'C:\Users\kevin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-06-02 15:30:53.455 -05:00 [INF] Now listening on: https://localhost:7170
+2022-06-02 15:30:53.458 -05:00 [INF] Now listening on: http://localhost:5094
+2022-06-02 15:30:53.465 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-06-02 15:30:53.468 -05:00 [INF] Hosting environment: Development
+2022-06-02 15:30:53.470 -05:00 [INF] Content root path: D:\GitHub\AirportManagementApi\Api\
+2022-06-02 15:30:54.256 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/ - -
+2022-06-02 15:30:54.662 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36 Edg/102.0.1245.30
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Cookie: [Redacted]
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-06-02 15:30:54.753 -05:00 [INF] Response:
+StatusCode: 404
+2022-06-02 15:30:54.766 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/ - - - 404 0 - 513.3853ms
+2022-06-02 15:30:56.616 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 48
+2022-06-02 15:30:56.631 -05:00 [INF] CORS policy execution successful.
+2022-06-02 15:30:56.635 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/User/Authenticate
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36 Edg/102.0.1245.30
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Cookie: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 48
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-06-02 15:30:56.645 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-06-02 15:30:56.672 -05:00 [INF] Route matched with {action = "Authenticate", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.AuthenticateDto]] Authenticate(Application.Security.Http.Request.AuthenticateRequest) on controller Api.Controllers.UserController (Api).
+2022-06-02 15:30:57.499 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-06-02 15:30:58.108 -05:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+FROM [Airport].[User] AS [u]
+2022-06-02 15:30:58.339 -05:00 [INF] Executed DbCommand (18ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-06-02 15:30:58.432 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-06-02 15:30:58.462 -05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-06-02 15:30:58.492 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedOn], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2022-06-02 15:30:58.506 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+2022-06-02 15:30:58.517 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+2022-06-02 15:30:58.528 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+2022-06-02 15:30:58.535 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+2022-06-02 15:30:58.754 -05:00 [ERR] Object does not match target type.
+System.Reflection.TargetException: Object does not match target type.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.GetValue(Object obj, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Infrastructure.Security.Jwt.JwtUtils`1.GenerateJwtToken(T userDto) in D:\GitHub\AirportManagementApi\Infrastructure\Security\Jwt\JwtUtils.cs:line 25
+   at Application.Security.Service.Implementation.AuthService.Authenticate(AuthenticateRequest authenticateRequest) in D:\GitHub\AirportManagementApi\Application\Security\Service\Implementation\AuthService.cs:line 39
+   at Api.Controllers.UserController.Authenticate(AuthenticateRequest authenticateRequest) in D:\GitHub\AirportManagementApi\Api\Controllers\UserController.cs:line 25
+   at lambda_method8(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2022-06-02 15:30:58.770 -05:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-06-02 15:30:58.788 -05:00 [INF] Executed action Api.Controllers.UserController.Authenticate (Api) in 2108.0489ms
+2022-06-02 15:30:58.791 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-06-02 15:30:58.794 -05:00 [INF] Response:
+StatusCode: 500
+Content-Type: application/json; charset=utf-8
+Date: Thu, 02 Jun 2022 20:30:58 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-06-02 15:30:58.801 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 48 - 500 - application/json;+charset=utf-8 2185.2648ms
+2022-06-02 15:31:14.284 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 48
+2022-06-02 15:31:14.287 -05:00 [INF] CORS policy execution successful.
+2022-06-02 15:31:14.290 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/User/Authenticate
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36 Edg/102.0.1245.30
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Cookie: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 48
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-06-02 15:31:14.298 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-06-02 15:31:14.301 -05:00 [INF] Route matched with {action = "Authenticate", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.AuthenticateDto]] Authenticate(Application.Security.Http.Request.AuthenticateRequest) on controller Api.Controllers.UserController (Api).
+2022-06-02 15:31:14.329 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-06-02 15:31:14.374 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+FROM [Airport].[User] AS [u]
+2022-06-02 15:31:14.383 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-06-02 15:31:14.388 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-06-02 15:31:14.397 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-06-02 15:31:14.403 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedOn], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2022-06-02 15:31:14.410 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+2022-06-02 15:31:14.416 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+2022-06-02 15:31:14.424 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+2022-06-02 15:31:14.432 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+2022-06-02 15:31:48.358 -05:00 [ERR] Object does not match target type.
+System.Reflection.TargetException: Object does not match target type.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.GetValue(Object obj, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Infrastructure.Security.Jwt.JwtUtils`1.GenerateJwtToken(T userDto) in D:\GitHub\AirportManagementApi\Infrastructure\Security\Jwt\JwtUtils.cs:line 25
+   at Application.Security.Service.Implementation.AuthService.Authenticate(AuthenticateRequest authenticateRequest) in D:\GitHub\AirportManagementApi\Application\Security\Service\Implementation\AuthService.cs:line 39
+   at Api.Controllers.UserController.Authenticate(AuthenticateRequest authenticateRequest) in D:\GitHub\AirportManagementApi\Api\Controllers\UserController.cs:line 25
+   at lambda_method8(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2022-06-02 15:31:48.366 -05:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-06-02 15:31:48.368 -05:00 [INF] Executed action Api.Controllers.UserController.Authenticate (Api) in 34065.6731ms
+2022-06-02 15:31:48.369 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-06-02 15:31:48.371 -05:00 [INF] Response:
+StatusCode: 500
+Content-Type: application/json; charset=utf-8
+Date: Thu, 02 Jun 2022 20:31:48 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-06-02 15:31:48.395 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 48 - 500 - application/json;+charset=utf-8 34111.9386ms
+2022-06-02 15:31:55.361 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 48
+2022-06-02 15:31:55.363 -05:00 [INF] CORS policy execution successful.
+2022-06-02 15:31:55.364 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/User/Authenticate
+Accept: text/plain
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36 Edg/102.0.1245.30
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Cookie: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 48
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-06-02 15:31:55.374 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-06-02 15:31:55.381 -05:00 [INF] Route matched with {action = "Authenticate", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.AuthenticateDto]] Authenticate(Application.Security.Http.Request.AuthenticateRequest) on controller Api.Controllers.UserController (Api).
+2022-06-02 15:31:55.393 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-06-02 15:31:55.401 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+FROM [Airport].[User] AS [u]
+2022-06-02 15:32:39.815 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-06-02 15:32:39.822 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-06-02 15:32:39.850 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-06-02 15:32:39.860 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedOn], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2022-06-02 15:32:39.867 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+2022-06-02 15:32:39.873 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+2022-06-02 15:32:39.879 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+2022-06-02 15:32:39.898 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+2022-06-02 15:33:05.971 -05:00 [ERR] Object does not match target type.
+System.Reflection.TargetException: Object does not match target type.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.GetValue(Object obj, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Infrastructure.Security.Jwt.JwtUtils`1.GenerateJwtToken(T userDto) in D:\GitHub\AirportManagementApi\Infrastructure\Security\Jwt\JwtUtils.cs:line 25
+   at Application.Security.Service.Implementation.AuthService.Authenticate(AuthenticateRequest authenticateRequest) in D:\GitHub\AirportManagementApi\Application\Security\Service\Implementation\AuthService.cs:line 39
+   at Api.Controllers.UserController.Authenticate(AuthenticateRequest authenticateRequest) in D:\GitHub\AirportManagementApi\Api\Controllers\UserController.cs:line 25
+   at lambda_method8(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2022-06-02 15:33:05.980 -05:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-06-02 15:33:05.982 -05:00 [INF] Executed action Api.Controllers.UserController.Authenticate (Api) in 70598.5055ms
+2022-06-02 15:33:05.984 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-06-02 15:33:05.986 -05:00 [INF] Response:
+StatusCode: 500
+Content-Type: application/json; charset=utf-8
+Date: Thu, 02 Jun 2022 20:33:05 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-06-02 15:33:05.988 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 48 - 500 - application/json;+charset=utf-8 70627.0106ms

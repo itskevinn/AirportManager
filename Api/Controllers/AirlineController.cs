@@ -1,10 +1,9 @@
-﻿using System.Net;
-using Application.Security.Http.Dto;
-using Infrastructure.Security;
+﻿using Application.Security;
+using Infrastructure.Common.Response;
 
 namespace Api.Controllers;
 
-[Authorize]
+[Authorize(new []{"Admin"})]
 [ApiController]
 [Route("api/[controller]")]
 public class AirlineController : Controller
@@ -35,7 +34,7 @@ public class AirlineController : Controller
     }
 
     [HttpPut("Update")]
-    public async Task<Response<Boolean>> Update(AirlineUpdateRequest airlineRequest)
+    public async Task<Response<AirlineDto>> Update(AirlineUpdateRequest airlineRequest)
     {
         return await _airlineService.UpdateAsync(airlineRequest);
     }

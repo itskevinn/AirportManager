@@ -1,6 +1,10 @@
-﻿namespace Api.Controllers;
+﻿using Application.Security;
+using Infrastructure.Common.Response;
+
+namespace Api.Controllers;
 
 [ApiController]
+[Authorize(new []{"Admin"})]
 [Route("api/[controller]")]
 public class CityController : Controller
 {

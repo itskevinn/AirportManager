@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace Application.Common.Response;
+namespace Infrastructure.Common.Response;
 
 public class Response<T>
 {
@@ -11,6 +11,7 @@ public class Response<T>
         Message = message;
         Success = success;
         Data = data;
+        Exception = exception;
         ExceptionMessage = exception?.Message;
     }
 
@@ -19,4 +20,5 @@ public class Response<T>
     public bool Success { get; set; }
     public T Data { get; set; }
     public string? ExceptionMessage { get; set; }
+    public Exception Exception { get; set; }
 }

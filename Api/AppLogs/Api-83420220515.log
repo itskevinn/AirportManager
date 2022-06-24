@@ -1,0 +1,1682 @@
+2022-05-15 13:02:46.070 -05:00 [INF] User profile is available. Using 'C:\Users\kevin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-05-15 13:02:46.270 -05:00 [INF] Now listening on: https://localhost:7170
+2022-05-15 13:02:46.271 -05:00 [INF] Now listening on: http://localhost:5094
+2022-05-15 13:02:46.276 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-05-15 13:02:46.277 -05:00 [INF] Hosting environment: Development
+2022-05-15 13:02:46.278 -05:00 [INF] Content root path: D:\GitHub\AirportManagementApi\Api\
+2022-05-15 13:02:46.921 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/ - -
+2022-05-15 13:02:47.339 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:02:47.407 -05:00 [INF] Response:
+StatusCode: 404
+2022-05-15 13:02:47.419 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/ - - - 404 0 - 506.1677ms
+2022-05-15 13:02:52.599 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/Flight/GetAll - -
+2022-05-15 13:02:52.618 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:02:52.622 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/Flight/GetAll - - - 204 - - 23.3112ms
+2022-05-15 13:02:52.631 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/Flight/GetAll - -
+2022-05-15 13:02:54.394 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:02:55.530 -05:00 [INF] Executed DbCommand (69ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:02:55.770 -05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:02:55.869 -05:00 [INF] Executed DbCommand (26ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:02:55.920 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:02:55.924 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/Flight/GetAll
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:02:55.943 -05:00 [INF] Executing endpoint 'Api.Controllers.FlightController.GetAll (Api)'
+2022-05-15 13:02:55.959 -05:00 [INF] Route matched with {action = "GetAll", controller = "Flight"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Airport.Http.Dto.FlightDto]]] GetAll() on controller Api.Controllers.FlightController (Api).
+2022-05-15 13:02:55.998 -05:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[AirlineId], [f].[CheckInTime], [f].[CheckOutDate], [f].[CheckOutTime], [f].[CreatedBy], [f].[CreatedOn], [f].[DepartureCityId], [f].[DestinyCityId], [f].[FlightStatus], [f].[LastModifiedOn], [f].[Status], [f].[UpdatedBy], [c].[Id], [c].[CreatedBy], [c].[CreatedOn], [c].[LastModifiedOn], [c].[Name], [c].[Status], [c].[UpdatedBy], [c0].[Id], [c0].[CreatedBy], [c0].[CreatedOn], [c0].[LastModifiedOn], [c0].[Name], [c0].[Status], [c0].[UpdatedBy], [a].[Id], [a].[CreatedBy], [a].[CreatedOn], [a].[LastModifiedOn], [a].[Name], [a].[Status], [a].[UpdatedBy]
+FROM [Airport].[Flight] AS [f]
+INNER JOIN [Airport].[City] AS [c] ON [f].[DepartureCityId] = [c].[Id]
+INNER JOIN [Airport].[City] AS [c0] ON [f].[DestinyCityId] = [c0].[Id]
+INNER JOIN [Airport].[Airline] AS [a] ON [f].[AirlineId] = [a].[Id]
+2022-05-15 13:02:56.038 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Airport.Http.Dto.FlightDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-15 13:02:56.119 -05:00 [INF] Executed action Api.Controllers.FlightController.GetAll (Api) in 149.1238ms
+2022-05-15 13:02:56.124 -05:00 [INF] Executed endpoint 'Api.Controllers.FlightController.GetAll (Api)'
+2022-05-15 13:02:56.129 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:02:55 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:02:56.141 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/Flight/GetAll - - - 200 - application/json;+charset=utf-8 3510.8040ms
+2022-05-15 13:02:58.341 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/Airline/GetAll - -
+2022-05-15 13:02:58.342 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/City/GetAll - -
+2022-05-15 13:02:58.344 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:02:58.344 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:02:58.346 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/Airline/GetAll - - - 204 - - 5.2237ms
+2022-05-15 13:02:58.347 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/City/GetAll - - - 204 - - 5.6598ms
+2022-05-15 13:02:58.349 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/Airline/GetAll - -
+2022-05-15 13:02:58.351 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/City/GetAll - -
+2022-05-15 13:02:58.418 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:02:58.418 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:02:58.427 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:02:58.430 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:02:58.433 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:02:58.437 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:02:58.442 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:02:58.445 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:02:58.448 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:02:58.449 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:02:58.451 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/City/GetAll
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:02:58.451 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/Airline/GetAll
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:02:58.457 -05:00 [INF] Executing endpoint 'Api.Controllers.CityController.GetAll (Api)'
+2022-05-15 13:02:58.457 -05:00 [INF] Executing endpoint 'Api.Controllers.AirlineController.GetAll (Api)'
+2022-05-15 13:02:58.463 -05:00 [INF] Route matched with {action = "GetAll", controller = "Airline"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Airport.Http.Dto.AirlineDto]]] GetAll() on controller Api.Controllers.AirlineController (Api).
+2022-05-15 13:02:58.462 -05:00 [INF] Route matched with {action = "GetAll", controller = "City"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Airport.Http.Dto.CityDto]]] GetAll() on controller Api.Controllers.CityController (Api).
+2022-05-15 13:02:58.478 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreatedBy], [a].[CreatedOn], [a].[LastModifiedOn], [a].[Name], [a].[Status], [a].[UpdatedBy]
+FROM [Airport].[Airline] AS [a]
+2022-05-15 13:02:58.479 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedBy], [c].[CreatedOn], [c].[LastModifiedOn], [c].[Name], [c].[Status], [c].[UpdatedBy]
+FROM [Airport].[City] AS [c]
+2022-05-15 13:02:58.486 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Airport.Http.Dto.AirlineDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-15 13:02:58.492 -05:00 [INF] Executed action Api.Controllers.AirlineController.GetAll (Api) in 28.1513ms
+2022-05-15 13:02:58.494 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Airport.Http.Dto.CityDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-15 13:02:58.495 -05:00 [INF] Executed endpoint 'Api.Controllers.AirlineController.GetAll (Api)'
+2022-05-15 13:02:58.498 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:02:58 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:02:58.500 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/Airline/GetAll - - - 200 - application/json;+charset=utf-8 150.8575ms
+2022-05-15 13:02:58.501 -05:00 [INF] Executed action Api.Controllers.CityController.GetAll (Api) in 33.7029ms
+2022-05-15 13:02:58.506 -05:00 [INF] Executed endpoint 'Api.Controllers.CityController.GetAll (Api)'
+2022-05-15 13:02:58.507 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:02:58 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:02:58.508 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/City/GetAll - - - 200 - application/json;+charset=utf-8 157.3502ms
+2022-05-15 13:03:05.221 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/Flight/GetAll - -
+2022-05-15 13:03:05.223 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:03:05.224 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/Flight/GetAll - - - 204 - - 2.9766ms
+2022-05-15 13:03:05.228 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/Flight/GetAll - -
+2022-05-15 13:03:05.245 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:03:05.250 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:03:05.255 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:03:05.261 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:03:05.267 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:03:05.270 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/Flight/GetAll
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:03:05.273 -05:00 [INF] Executing endpoint 'Api.Controllers.FlightController.GetAll (Api)'
+2022-05-15 13:03:05.274 -05:00 [INF] Route matched with {action = "GetAll", controller = "Flight"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Airport.Http.Dto.FlightDto]]] GetAll() on controller Api.Controllers.FlightController (Api).
+2022-05-15 13:03:05.276 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[AirlineId], [f].[CheckInTime], [f].[CheckOutDate], [f].[CheckOutTime], [f].[CreatedBy], [f].[CreatedOn], [f].[DepartureCityId], [f].[DestinyCityId], [f].[FlightStatus], [f].[LastModifiedOn], [f].[Status], [f].[UpdatedBy], [c].[Id], [c].[CreatedBy], [c].[CreatedOn], [c].[LastModifiedOn], [c].[Name], [c].[Status], [c].[UpdatedBy], [c0].[Id], [c0].[CreatedBy], [c0].[CreatedOn], [c0].[LastModifiedOn], [c0].[Name], [c0].[Status], [c0].[UpdatedBy], [a].[Id], [a].[CreatedBy], [a].[CreatedOn], [a].[LastModifiedOn], [a].[Name], [a].[Status], [a].[UpdatedBy]
+FROM [Airport].[Flight] AS [f]
+INNER JOIN [Airport].[City] AS [c] ON [f].[DepartureCityId] = [c].[Id]
+INNER JOIN [Airport].[City] AS [c0] ON [f].[DestinyCityId] = [c0].[Id]
+INNER JOIN [Airport].[Airline] AS [a] ON [f].[AirlineId] = [a].[Id]
+2022-05-15 13:03:05.281 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Airport.Http.Dto.FlightDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-15 13:03:05.283 -05:00 [INF] Executed action Api.Controllers.FlightController.GetAll (Api) in 7.3451ms
+2022-05-15 13:03:05.285 -05:00 [INF] Executed endpoint 'Api.Controllers.FlightController.GetAll (Api)'
+2022-05-15 13:03:05.286 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:03:05 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:03:05.287 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/Flight/GetAll - - - 200 - application/json;+charset=utf-8 59.6682ms
+2022-05-15 13:03:05.870 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/City/GetAll - -
+2022-05-15 13:03:05.872 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:03:05.873 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/City/GetAll - - - 204 - - 2.9574ms
+2022-05-15 13:03:05.875 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/City/GetAll - -
+2022-05-15 13:03:05.879 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:03:05.889 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:03:05.903 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:03:05.917 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:03:05.923 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:03:05.930 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/City/GetAll
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:03:05.934 -05:00 [INF] Executing endpoint 'Api.Controllers.CityController.GetAll (Api)'
+2022-05-15 13:03:05.935 -05:00 [INF] Route matched with {action = "GetAll", controller = "City"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Airport.Http.Dto.CityDto]]] GetAll() on controller Api.Controllers.CityController (Api).
+2022-05-15 13:03:05.939 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedBy], [c].[CreatedOn], [c].[LastModifiedOn], [c].[Name], [c].[Status], [c].[UpdatedBy]
+FROM [Airport].[City] AS [c]
+2022-05-15 13:03:05.942 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Airport.Http.Dto.CityDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-15 13:03:05.944 -05:00 [INF] Executed action Api.Controllers.CityController.GetAll (Api) in 5.7351ms
+2022-05-15 13:03:05.945 -05:00 [INF] Executed endpoint 'Api.Controllers.CityController.GetAll (Api)'
+2022-05-15 13:03:05.949 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:03:05 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:03:05.951 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/City/GetAll - - - 200 - application/json;+charset=utf-8 75.5032ms
+2022-05-15 13:03:15.350 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/City/Create - -
+2022-05-15 13:03:15.358 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:03:15.359 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/City/Create - - - 204 - - 9.7369ms
+2022-05-15 13:03:15.362 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/City/Create application/json 79
+2022-05-15 13:03:15.368 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:03:15.381 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:03:15.393 -05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:03:15.402 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:03:15.407 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:03:15.408 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/City/Create
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 79
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:03:15.410 -05:00 [INF] Executing endpoint 'Api.Controllers.CityController.Save (Api)'
+2022-05-15 13:03:15.430 -05:00 [INF] Route matched with {action = "Save", controller = "City"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Airport.Http.Dto.CityDto]] Save(Application.Airport.Http.Request.CityRequest) on controller Api.Controllers.CityController (Api).
+2022-05-15 13:03:15.468 -05:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-05-15 13:03:15.471 -05:00 [INF] Executed action Api.Controllers.CityController.Save (Api) in 38.7848ms
+2022-05-15 13:03:15.473 -05:00 [INF] Executed endpoint 'Api.Controllers.CityController.Save (Api)'
+2022-05-15 13:03:15.474 -05:00 [INF] Response:
+StatusCode: 400
+Content-Type: application/problem+json; charset=utf-8
+Date: Sun, 15 May 2022 18:03:15 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:03:15.476 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/City/Create application/json 79 - 400 - application/problem+json;+charset=utf-8 114.3284ms
+2022-05-15 13:03:16.209 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/City/GetAll - -
+2022-05-15 13:03:16.214 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:03:16.216 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/City/GetAll - - - 204 - - 6.7188ms
+2022-05-15 13:03:16.219 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/City/GetAll - -
+2022-05-15 13:03:16.222 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:03:16.229 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:03:16.235 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:03:16.244 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:03:16.247 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:03:16.248 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/City/GetAll
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:03:16.250 -05:00 [INF] Executing endpoint 'Api.Controllers.CityController.GetAll (Api)'
+2022-05-15 13:03:16.251 -05:00 [INF] Route matched with {action = "GetAll", controller = "City"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Airport.Http.Dto.CityDto]]] GetAll() on controller Api.Controllers.CityController (Api).
+2022-05-15 13:03:16.255 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedBy], [c].[CreatedOn], [c].[LastModifiedOn], [c].[Name], [c].[Status], [c].[UpdatedBy]
+FROM [Airport].[City] AS [c]
+2022-05-15 13:03:16.258 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Airport.Http.Dto.CityDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-15 13:03:16.261 -05:00 [INF] Executed action Api.Controllers.CityController.GetAll (Api) in 7.815ms
+2022-05-15 13:03:16.262 -05:00 [INF] Executed endpoint 'Api.Controllers.CityController.GetAll (Api)'
+2022-05-15 13:03:16.263 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:03:16 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:03:16.268 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/City/GetAll - - - 200 - application/json;+charset=utf-8 49.3919ms
+2022-05-15 13:03:46.874 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/User/Authenticate - -
+2022-05-15 13:03:46.876 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:03:46.877 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/User/Authenticate - - - 204 - - 2.8244ms
+2022-05-15 13:03:46.879 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 39
+2022-05-15 13:03:46.881 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:03:46.881 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/User/Authenticate
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 39
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:03:46.884 -05:00 [INF] Executing endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-15 13:03:46.889 -05:00 [INF] Route matched with {action = "Authenticate", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Security.Http.Dto.AuthenticateDto]] Authenticate(Application.Security.Http.Request.AuthenticateRequest) on controller Api.Controllers.UserController (Api).
+2022-05-15 13:03:46.901 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:03:46.917 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+FROM [Airport].[User] AS [u]
+2022-05-15 13:03:46.927 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:03:46.934 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:03:46.944 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:03:46.985 -05:00 [INF] Executed DbCommand (27ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedOn], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2022-05-15 13:03:47.011 -05:00 [INF] Executed DbCommand (13ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+2022-05-15 13:03:47.021 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+2022-05-15 13:03:47.026 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+2022-05-15 13:03:47.029 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status], [m].[UpdatedBy]
+FROM [Airport].[MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+2022-05-15 13:03:47.072 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[Application.Security.Http.Dto.AuthenticateDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-05-15 13:03:47.091 -05:00 [INF] Executed action Api.Controllers.UserController.Authenticate (Api) in 196.1887ms
+2022-05-15 13:03:47.093 -05:00 [INF] Executed endpoint 'Api.Controllers.UserController.Authenticate (Api)'
+2022-05-15 13:03:47.094 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:03:46 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:03:47.095 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/User/Authenticate application/json 39 - 200 - application/json;+charset=utf-8 215.9482ms
+2022-05-15 13:03:55.507 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/City/GetAll - -
+2022-05-15 13:03:55.509 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:03:55.510 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/City/GetAll - - - 204 - - 3.4068ms
+2022-05-15 13:03:55.516 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/City/GetAll - -
+2022-05-15 13:03:55.522 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:03:55.530 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:03:55.537 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:03:55.547 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:03:55.552 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:03:55.553 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/City/GetAll
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:03:55.560 -05:00 [INF] Executing endpoint 'Api.Controllers.CityController.GetAll (Api)'
+2022-05-15 13:03:55.561 -05:00 [INF] Route matched with {action = "GetAll", controller = "City"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Airport.Http.Dto.CityDto]]] GetAll() on controller Api.Controllers.CityController (Api).
+2022-05-15 13:03:55.565 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedBy], [c].[CreatedOn], [c].[LastModifiedOn], [c].[Name], [c].[Status], [c].[UpdatedBy]
+FROM [Airport].[City] AS [c]
+2022-05-15 13:03:55.568 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Airport.Http.Dto.CityDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-15 13:03:55.570 -05:00 [INF] Executed action Api.Controllers.CityController.GetAll (Api) in 7.7043ms
+2022-05-15 13:03:55.572 -05:00 [INF] Executed endpoint 'Api.Controllers.CityController.GetAll (Api)'
+2022-05-15 13:03:55.573 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:03:55 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:03:55.574 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/City/GetAll - - - 200 - application/json;+charset=utf-8 58.0449ms
+2022-05-15 13:04:09.988 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/City/Create - -
+2022-05-15 13:04:09.990 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:04:09.991 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/City/Create - - - 204 - - 2.5100ms
+2022-05-15 13:04:09.993 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/City/Create application/json 79
+2022-05-15 13:04:09.997 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:04:10.005 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:04:10.010 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:04:10.019 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:04:10.024 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:04:10.025 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/City/Create
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 79
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:04:10.028 -05:00 [INF] Executing endpoint 'Api.Controllers.CityController.Save (Api)'
+2022-05-15 13:04:10.030 -05:00 [INF] Route matched with {action = "Save", controller = "City"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Airport.Http.Dto.CityDto]] Save(Application.Airport.Http.Request.CityRequest) on controller Api.Controllers.CityController (Api).
+2022-05-15 13:04:10.034 -05:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2022-05-15 13:04:10.036 -05:00 [INF] Executed action Api.Controllers.CityController.Save (Api) in 4.2319ms
+2022-05-15 13:04:10.037 -05:00 [INF] Executed endpoint 'Api.Controllers.CityController.Save (Api)'
+2022-05-15 13:04:10.039 -05:00 [INF] Response:
+StatusCode: 400
+Content-Type: application/problem+json; charset=utf-8
+Date: Sun, 15 May 2022 18:04:09 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:04:10.040 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/City/Create application/json 79 - 400 - application/problem+json;+charset=utf-8 46.7143ms
+2022-05-15 13:04:10.807 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/City/GetAll - -
+2022-05-15 13:04:10.808 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:04:10.810 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/City/GetAll - - - 204 - - 2.9641ms
+2022-05-15 13:04:10.813 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/City/GetAll - -
+2022-05-15 13:04:10.819 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:04:10.822 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:04:10.826 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:04:10.831 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:04:10.835 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:04:10.836 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/City/GetAll
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:04:10.837 -05:00 [INF] Executing endpoint 'Api.Controllers.CityController.GetAll (Api)'
+2022-05-15 13:04:10.838 -05:00 [INF] Route matched with {action = "GetAll", controller = "City"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Airport.Http.Dto.CityDto]]] GetAll() on controller Api.Controllers.CityController (Api).
+2022-05-15 13:04:10.840 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedBy], [c].[CreatedOn], [c].[LastModifiedOn], [c].[Name], [c].[Status], [c].[UpdatedBy]
+FROM [Airport].[City] AS [c]
+2022-05-15 13:04:10.843 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Airport.Http.Dto.CityDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-15 13:04:10.844 -05:00 [INF] Executed action Api.Controllers.CityController.GetAll (Api) in 4.5848ms
+2022-05-15 13:04:10.845 -05:00 [INF] Executed endpoint 'Api.Controllers.CityController.GetAll (Api)'
+2022-05-15 13:04:10.847 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:04:10 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:04:10.848 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/City/GetAll - - - 200 - application/json;+charset=utf-8 35.0347ms
+2022-05-15 13:05:04.025 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/City/GetAll - -
+2022-05-15 13:05:04.026 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:04.027 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/City/GetAll - - - 204 - - 2.0928ms
+2022-05-15 13:05:04.030 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/City/GetAll - -
+2022-05-15 13:05:04.033 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:05:04.040 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:05:04.049 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:05:04.060 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:05:04.064 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:04.065 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/City/GetAll
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:05:04.067 -05:00 [INF] Executing endpoint 'Api.Controllers.CityController.GetAll (Api)'
+2022-05-15 13:05:04.068 -05:00 [INF] Route matched with {action = "GetAll", controller = "City"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Airport.Http.Dto.CityDto]]] GetAll() on controller Api.Controllers.CityController (Api).
+2022-05-15 13:05:04.073 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedBy], [c].[CreatedOn], [c].[LastModifiedOn], [c].[Name], [c].[Status], [c].[UpdatedBy]
+FROM [Airport].[City] AS [c]
+2022-05-15 13:05:04.075 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Airport.Http.Dto.CityDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-15 13:05:04.077 -05:00 [INF] Executed action Api.Controllers.CityController.GetAll (Api) in 7.1343ms
+2022-05-15 13:05:04.081 -05:00 [INF] Executed endpoint 'Api.Controllers.CityController.GetAll (Api)'
+2022-05-15 13:05:04.083 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:05:03 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:05:04.085 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/City/GetAll - - - 200 - application/json;+charset=utf-8 55.0092ms
+2022-05-15 13:05:12.634 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/City/Create - -
+2022-05-15 13:05:12.641 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:12.643 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/City/Create - - - 204 - - 8.8254ms
+2022-05-15 13:05:12.645 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/City/Create application/json 84
+2022-05-15 13:05:12.649 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:05:12.663 -05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:05:12.674 -05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:05:12.685 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:05:12.691 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:12.692 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/City/Create
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 84
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:05:12.694 -05:00 [INF] Executing endpoint 'Api.Controllers.CityController.Save (Api)'
+2022-05-15 13:05:12.695 -05:00 [INF] Route matched with {action = "Save", controller = "City"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Airport.Http.Dto.CityDto]] Save(Application.Airport.Http.Request.CityRequest) on controller Api.Controllers.CityController (Api).
+2022-05-15 13:05:13.072 -05:00 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 35), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 35)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Airport].[City] ([Id], [CreatedBy], [CreatedOn], [Name], [Status], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [LastModifiedOn]
+FROM [Airport].[City]
+WHERE @@ROWCOUNT = 1 AND [Id] = @p0;
+2022-05-15 13:05:13.134 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[Application.Airport.Http.Dto.CityDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-05-15 13:05:13.143 -05:00 [INF] Executed action Api.Controllers.CityController.Save (Api) in 446.4355ms
+2022-05-15 13:05:13.146 -05:00 [INF] Executed endpoint 'Api.Controllers.CityController.Save (Api)'
+2022-05-15 13:05:13.147 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:05:12 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:05:13.148 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/City/Create application/json 84 - 200 - application/json;+charset=utf-8 502.9271ms
+2022-05-15 13:05:13.380 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/City/GetAll - -
+2022-05-15 13:05:13.382 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:13.384 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/City/GetAll - - - 204 - - 3.2438ms
+2022-05-15 13:05:13.387 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/City/GetAll - -
+2022-05-15 13:05:13.392 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:05:13.395 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:05:13.399 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:05:13.405 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:05:13.409 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:13.409 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/City/GetAll
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:05:13.411 -05:00 [INF] Executing endpoint 'Api.Controllers.CityController.GetAll (Api)'
+2022-05-15 13:05:13.412 -05:00 [INF] Route matched with {action = "GetAll", controller = "City"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Airport.Http.Dto.CityDto]]] GetAll() on controller Api.Controllers.CityController (Api).
+2022-05-15 13:05:13.415 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedBy], [c].[CreatedOn], [c].[LastModifiedOn], [c].[Name], [c].[Status], [c].[UpdatedBy]
+FROM [Airport].[City] AS [c]
+2022-05-15 13:05:13.419 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Airport.Http.Dto.CityDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-15 13:05:13.421 -05:00 [INF] Executed action Api.Controllers.CityController.GetAll (Api) in 7.7135ms
+2022-05-15 13:05:13.423 -05:00 [INF] Executed endpoint 'Api.Controllers.CityController.GetAll (Api)'
+2022-05-15 13:05:13.424 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:05:12 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:05:13.425 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/City/GetAll - - - 200 - application/json;+charset=utf-8 38.1417ms
+2022-05-15 13:05:23.806 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/City/Update - -
+2022-05-15 13:05:23.812 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:23.814 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/City/Update - - - 204 - - 7.8630ms
+2022-05-15 13:05:23.817 -05:00 [INF] Request starting HTTP/2 PUT https://localhost:7170/api/City/Update application/json 130
+2022-05-15 13:05:23.821 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:05:23.826 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:05:23.832 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:05:23.838 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:05:23.841 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:23.844 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: PUT
+Scheme: https
+PathBase: 
+Path: /api/City/Update
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 130
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:05:23.847 -05:00 [INF] Executing endpoint 'Api.Controllers.CityController.Update (Api)'
+2022-05-15 13:05:23.854 -05:00 [INF] Route matched with {action = "Update", controller = "City"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Boolean]] Update(Application.Airport.Http.Request.CityUpdateRequest) on controller Api.Controllers.CityController (Api).
+2022-05-15 13:05:23.895 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedBy], [c].[CreatedOn], [c].[LastModifiedOn], [c].[Name], [c].[Status], [c].[UpdatedBy]
+FROM [Airport].[City] AS [c]
+WHERE [c].[Id] = @__get_Item_0
+2022-05-15 13:05:23.919 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@p6='?' (DbType = Guid), @p0='?' (Size = 35), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 35)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Airport].[City] SET [CreatedBy] = @p0, [CreatedOn] = @p1, [LastModifiedOn] = @p2, [Name] = @p3, [Status] = @p4, [UpdatedBy] = @p5
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;
+2022-05-15 13:05:23.929 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-15 13:05:23.935 -05:00 [INF] Executed action Api.Controllers.CityController.Update (Api) in 78.0625ms
+2022-05-15 13:05:23.936 -05:00 [INF] Executed endpoint 'Api.Controllers.CityController.Update (Api)'
+2022-05-15 13:05:23.937 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:05:23 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:05:23.939 -05:00 [INF] Request finished HTTP/2 PUT https://localhost:7170/api/City/Update application/json 130 - 200 - application/json;+charset=utf-8 121.4623ms
+2022-05-15 13:05:24.935 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/City/GetAll - -
+2022-05-15 13:05:24.937 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:24.938 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/City/GetAll - - - 204 - - 3.0736ms
+2022-05-15 13:05:24.945 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/City/GetAll - -
+2022-05-15 13:05:24.950 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:05:24.953 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:05:24.958 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:05:24.963 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:05:24.966 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:24.967 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/City/GetAll
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:05:24.969 -05:00 [INF] Executing endpoint 'Api.Controllers.CityController.GetAll (Api)'
+2022-05-15 13:05:24.969 -05:00 [INF] Route matched with {action = "GetAll", controller = "City"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Airport.Http.Dto.CityDto]]] GetAll() on controller Api.Controllers.CityController (Api).
+2022-05-15 13:05:24.971 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedBy], [c].[CreatedOn], [c].[LastModifiedOn], [c].[Name], [c].[Status], [c].[UpdatedBy]
+FROM [Airport].[City] AS [c]
+2022-05-15 13:05:24.974 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Airport.Http.Dto.CityDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-15 13:05:24.980 -05:00 [INF] Executed action Api.Controllers.CityController.GetAll (Api) in 8.9061ms
+2022-05-15 13:05:24.981 -05:00 [INF] Executed endpoint 'Api.Controllers.CityController.GetAll (Api)'
+2022-05-15 13:05:24.983 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:05:24 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:05:24.984 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/City/GetAll - - - 200 - application/json;+charset=utf-8 38.7827ms
+2022-05-15 13:05:27.251 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/Airline/GetAll - -
+2022-05-15 13:05:27.253 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:27.254 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/Airline/GetAll - - - 204 - - 3.3989ms
+2022-05-15 13:05:27.256 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/Airline/GetAll - -
+2022-05-15 13:05:27.259 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:05:27.281 -05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:05:27.292 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:05:27.303 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:05:27.310 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:27.312 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/Airline/GetAll
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:05:27.314 -05:00 [INF] Executing endpoint 'Api.Controllers.AirlineController.GetAll (Api)'
+2022-05-15 13:05:27.315 -05:00 [INF] Route matched with {action = "GetAll", controller = "Airline"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Airport.Http.Dto.AirlineDto]]] GetAll() on controller Api.Controllers.AirlineController (Api).
+2022-05-15 13:05:27.318 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreatedBy], [a].[CreatedOn], [a].[LastModifiedOn], [a].[Name], [a].[Status], [a].[UpdatedBy]
+FROM [Airport].[Airline] AS [a]
+2022-05-15 13:05:27.321 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Airport.Http.Dto.AirlineDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-15 13:05:27.322 -05:00 [INF] Executed action Api.Controllers.AirlineController.GetAll (Api) in 5.9789ms
+2022-05-15 13:05:27.324 -05:00 [INF] Executed endpoint 'Api.Controllers.AirlineController.GetAll (Api)'
+2022-05-15 13:05:27.331 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:05:26 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:05:27.332 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/Airline/GetAll - - - 200 - application/json;+charset=utf-8 76.0247ms
+2022-05-15 13:05:30.974 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/Airline/Create - -
+2022-05-15 13:05:30.975 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:30.976 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/Airline/Create - - - 204 - - 2.2880ms
+2022-05-15 13:05:30.978 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Airline/Create application/json 44
+2022-05-15 13:05:30.980 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:05:30.990 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:05:30.997 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:05:31.005 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:05:31.008 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:31.009 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/Airline/Create
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 44
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:05:31.011 -05:00 [INF] Executing endpoint 'Api.Controllers.AirlineController.Save (Api)'
+2022-05-15 13:05:31.024 -05:00 [INF] Route matched with {action = "Save", controller = "Airline"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Airport.Http.Dto.AirlineDto]] Save(Application.Airport.Http.Request.AirlineRequest) on controller Api.Controllers.AirlineController (Api).
+2022-05-15 13:05:31.094 -05:00 [INF] Executed DbCommand (28ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 35), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 35)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Airport].[Airline] ([Id], [CreatedBy], [CreatedOn], [Name], [Status], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [LastModifiedOn]
+FROM [Airport].[Airline]
+WHERE @@ROWCOUNT = 1 AND [Id] = @p0;
+2022-05-15 13:05:31.104 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[Application.Airport.Http.Dto.AirlineDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-05-15 13:05:31.112 -05:00 [INF] Executed action Api.Controllers.AirlineController.Save (Api) in 85.8038ms
+2022-05-15 13:05:31.114 -05:00 [INF] Executed endpoint 'Api.Controllers.AirlineController.Save (Api)'
+2022-05-15 13:05:31.115 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:05:30 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:05:31.117 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Airline/Create application/json 44 - 200 - application/json;+charset=utf-8 138.4294ms
+2022-05-15 13:05:31.860 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/Airline/GetAll - -
+2022-05-15 13:05:31.862 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:05:31.872 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:05:31.879 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:05:31.889 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:05:31.897 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:31.898 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/Airline/GetAll
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:05:31.900 -05:00 [INF] Executing endpoint 'Api.Controllers.AirlineController.GetAll (Api)'
+2022-05-15 13:05:31.901 -05:00 [INF] Route matched with {action = "GetAll", controller = "Airline"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Airport.Http.Dto.AirlineDto]]] GetAll() on controller Api.Controllers.AirlineController (Api).
+2022-05-15 13:05:31.906 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreatedBy], [a].[CreatedOn], [a].[LastModifiedOn], [a].[Name], [a].[Status], [a].[UpdatedBy]
+FROM [Airport].[Airline] AS [a]
+2022-05-15 13:05:31.908 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Airport.Http.Dto.AirlineDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-15 13:05:31.911 -05:00 [INF] Executed action Api.Controllers.AirlineController.GetAll (Api) in 6.4103ms
+2022-05-15 13:05:31.912 -05:00 [INF] Executed endpoint 'Api.Controllers.AirlineController.GetAll (Api)'
+2022-05-15 13:05:31.913 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:05:31 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:05:31.914 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/Airline/GetAll - - - 200 - application/json;+charset=utf-8 54.5852ms
+2022-05-15 13:05:38.264 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/Airline/Update - -
+2022-05-15 13:05:38.265 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:38.266 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/Airline/Update - - - 204 - - 2.2363ms
+2022-05-15 13:05:38.268 -05:00 [INF] Request starting HTTP/2 PUT https://localhost:7170/api/Airline/Update application/json 79
+2022-05-15 13:05:38.270 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:05:38.277 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:05:38.287 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:05:38.296 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:05:38.299 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:38.300 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: PUT
+Scheme: https
+PathBase: 
+Path: /api/Airline/Update
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 79
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:05:38.302 -05:00 [INF] Executing endpoint 'Api.Controllers.AirlineController.Update (Api)'
+2022-05-15 13:05:38.306 -05:00 [INF] Route matched with {action = "Update", controller = "Airline"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Boolean]] Update(Application.Airport.Http.Request.AirlineUpdateRequest) on controller Api.Controllers.AirlineController (Api).
+2022-05-15 13:05:38.324 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[CreatedBy], [a].[CreatedOn], [a].[LastModifiedOn], [a].[Name], [a].[Status], [a].[UpdatedBy]
+FROM [Airport].[Airline] AS [a]
+WHERE [a].[Id] = @__get_Item_0
+2022-05-15 13:05:38.337 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@p6='?' (DbType = Guid), @p0='?' (Size = 35), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 35)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Airport].[Airline] SET [CreatedBy] = @p0, [CreatedOn] = @p1, [LastModifiedOn] = @p2, [Name] = @p3, [Status] = @p4, [UpdatedBy] = @p5
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;
+2022-05-15 13:05:38.344 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-15 13:05:38.346 -05:00 [INF] Executed action Api.Controllers.AirlineController.Update (Api) in 38.6665ms
+2022-05-15 13:05:38.348 -05:00 [INF] Executed endpoint 'Api.Controllers.AirlineController.Update (Api)'
+2022-05-15 13:05:38.349 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:05:37 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:05:38.350 -05:00 [INF] Request finished HTTP/2 PUT https://localhost:7170/api/Airline/Update application/json 79 - 200 - application/json;+charset=utf-8 82.2754ms
+2022-05-15 13:05:38.936 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/Airline/GetAll - -
+2022-05-15 13:05:38.939 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:38.943 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/Airline/GetAll - - - 204 - - 6.7439ms
+2022-05-15 13:05:38.945 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/Airline/GetAll - -
+2022-05-15 13:05:38.949 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:05:38.953 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:05:38.957 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:05:38.962 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:05:38.965 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:38.971 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/Airline/GetAll
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:05:38.972 -05:00 [INF] Executing endpoint 'Api.Controllers.AirlineController.GetAll (Api)'
+2022-05-15 13:05:38.973 -05:00 [INF] Route matched with {action = "GetAll", controller = "Airline"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Airport.Http.Dto.AirlineDto]]] GetAll() on controller Api.Controllers.AirlineController (Api).
+2022-05-15 13:05:38.976 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreatedBy], [a].[CreatedOn], [a].[LastModifiedOn], [a].[Name], [a].[Status], [a].[UpdatedBy]
+FROM [Airport].[Airline] AS [a]
+2022-05-15 13:05:38.979 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Airport.Http.Dto.AirlineDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-15 13:05:38.981 -05:00 [INF] Executed action Api.Controllers.AirlineController.GetAll (Api) in 6.0138ms
+2022-05-15 13:05:38.982 -05:00 [INF] Executed endpoint 'Api.Controllers.AirlineController.GetAll (Api)'
+2022-05-15 13:05:38.984 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:05:38 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:05:38.985 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/Airline/GetAll - - - 200 - application/json;+charset=utf-8 39.8820ms
+2022-05-15 13:05:40.033 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/Flight/GetAll - -
+2022-05-15 13:05:40.035 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:40.036 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/Flight/GetAll - - - 204 - - 2.3600ms
+2022-05-15 13:05:40.038 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/Flight/GetAll - -
+2022-05-15 13:05:40.041 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:05:40.061 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:05:40.069 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:05:40.075 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:05:40.080 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:40.081 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/Flight/GetAll
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:05:40.082 -05:00 [INF] Executing endpoint 'Api.Controllers.FlightController.GetAll (Api)'
+2022-05-15 13:05:40.084 -05:00 [INF] Route matched with {action = "GetAll", controller = "Flight"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Airport.Http.Dto.FlightDto]]] GetAll() on controller Api.Controllers.FlightController (Api).
+2022-05-15 13:05:40.091 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[AirlineId], [f].[CheckInTime], [f].[CheckOutDate], [f].[CheckOutTime], [f].[CreatedBy], [f].[CreatedOn], [f].[DepartureCityId], [f].[DestinyCityId], [f].[FlightStatus], [f].[LastModifiedOn], [f].[Status], [f].[UpdatedBy], [c].[Id], [c].[CreatedBy], [c].[CreatedOn], [c].[LastModifiedOn], [c].[Name], [c].[Status], [c].[UpdatedBy], [c0].[Id], [c0].[CreatedBy], [c0].[CreatedOn], [c0].[LastModifiedOn], [c0].[Name], [c0].[Status], [c0].[UpdatedBy], [a].[Id], [a].[CreatedBy], [a].[CreatedOn], [a].[LastModifiedOn], [a].[Name], [a].[Status], [a].[UpdatedBy]
+FROM [Airport].[Flight] AS [f]
+INNER JOIN [Airport].[City] AS [c] ON [f].[DepartureCityId] = [c].[Id]
+INNER JOIN [Airport].[City] AS [c0] ON [f].[DestinyCityId] = [c0].[Id]
+INNER JOIN [Airport].[Airline] AS [a] ON [f].[AirlineId] = [a].[Id]
+2022-05-15 13:05:40.100 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Airport.Http.Dto.FlightDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-15 13:05:40.101 -05:00 [INF] Executed action Api.Controllers.FlightController.GetAll (Api) in 15.4951ms
+2022-05-15 13:05:40.103 -05:00 [INF] Executed endpoint 'Api.Controllers.FlightController.GetAll (Api)'
+2022-05-15 13:05:40.104 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:05:39 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:05:40.105 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/Flight/GetAll - - - 200 - application/json;+charset=utf-8 66.9248ms
+2022-05-15 13:05:42.125 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/Airline/GetAll - -
+2022-05-15 13:05:42.128 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/City/GetAll - -
+2022-05-15 13:05:42.130 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:05:42.133 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:42.138 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:05:42.138 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/City/GetAll - - - 204 - - 10.0964ms
+2022-05-15 13:05:42.141 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/api/City/GetAll - -
+2022-05-15 13:05:42.144 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:05:42.148 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:05:42.153 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:05:42.162 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:05:42.164 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:42.167 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/Airline/GetAll
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:05:42.167 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:05:42.170 -05:00 [INF] Executing endpoint 'Api.Controllers.AirlineController.GetAll (Api)'
+2022-05-15 13:05:42.173 -05:00 [INF] Route matched with {action = "GetAll", controller = "Airline"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Airport.Http.Dto.AirlineDto]]] GetAll() on controller Api.Controllers.AirlineController (Api).
+2022-05-15 13:05:42.173 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:05:42.177 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreatedBy], [a].[CreatedOn], [a].[LastModifiedOn], [a].[Name], [a].[Status], [a].[UpdatedBy]
+FROM [Airport].[Airline] AS [a]
+2022-05-15 13:05:42.179 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:42.181 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Airport.Http.Dto.AirlineDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-15 13:05:42.182 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/City/GetAll
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:05:42.183 -05:00 [INF] Executed action Api.Controllers.AirlineController.GetAll (Api) in 6.9595ms
+2022-05-15 13:05:42.186 -05:00 [INF] Executing endpoint 'Api.Controllers.CityController.GetAll (Api)'
+2022-05-15 13:05:42.193 -05:00 [INF] Executed endpoint 'Api.Controllers.AirlineController.GetAll (Api)'
+2022-05-15 13:05:42.194 -05:00 [INF] Route matched with {action = "GetAll", controller = "City"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[System.Collections.Generic.IEnumerable`1[Application.Airport.Http.Dto.CityDto]]] GetAll() on controller Api.Controllers.CityController (Api).
+2022-05-15 13:05:42.196 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:05:41 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:05:42.199 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/Airline/GetAll - - - 200 - application/json;+charset=utf-8 73.5904ms
+2022-05-15 13:05:42.200 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedBy], [c].[CreatedOn], [c].[LastModifiedOn], [c].[Name], [c].[Status], [c].[UpdatedBy]
+FROM [Airport].[City] AS [c]
+2022-05-15 13:05:42.203 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Airport.Http.Dto.CityDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-05-15 13:05:42.205 -05:00 [INF] Executed action Api.Controllers.CityController.GetAll (Api) in 7.2999ms
+2022-05-15 13:05:42.206 -05:00 [INF] Executed endpoint 'Api.Controllers.CityController.GetAll (Api)'
+2022-05-15 13:05:42.208 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:05:41 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:05:42.209 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/api/City/GetAll - - - 200 - application/json;+charset=utf-8 68.4860ms
+2022-05-15 13:05:56.522 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7170/api/Flight/Create - -
+2022-05-15 13:05:56.529 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:56.530 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7170/api/Flight/Create - - - 204 - - 8.1895ms
+2022-05-15 13:05:56.532 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7170/api/Flight/Create application/json 319
+2022-05-15 13:05:56.537 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2022-05-15 13:05:56.540 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM [Airport].[User] AS [u]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [u].[Id] = [u0].[UserId]
+WHERE [u].[Id] = @__id_0
+ORDER BY [u].[Id], [u0].[RoleId]
+2022-05-15 13:05:56.545 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[LastModifiedOn], [t].[Name], [t].[pazzword], [t].[Status], [t].[UpdatedBy], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedOn], [u0].[Status], [u0].[UpdatedBy]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[LastModifiedOn], [u].[Name], [u].[pazzword], [u].[Status], [u].[UpdatedBy], [u].[Username]
+    FROM [Airport].[User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Airport].[UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2022-05-15 13:05:56.551 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedOn], [u].[Status], [u].[UpdatedBy], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedOn], [r].[RoleName], [r].[Status], [r].[UpdatedBy]
+FROM [Airport].[UserRole] AS [u]
+INNER JOIN [Airport].[Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2022-05-15 13:05:56.555 -05:00 [INF] CORS policy execution successful.
+2022-05-15 13:05:56.556 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/Flight/Create
+Accept: application/json, text/plain, */*
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.47
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 319
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2022-05-15 13:05:56.558 -05:00 [INF] Executing endpoint 'Api.Controllers.FlightController.Save (Api)'
+2022-05-15 13:05:56.564 -05:00 [INF] Route matched with {action = "Save", controller = "Flight"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Common.Response.Response`1[Application.Airport.Http.Dto.FlightDto]] Save(Application.Airport.Http.Request.FlightRequest) on controller Api.Controllers.FlightController (Api).
+2022-05-15 13:05:56.675 -05:00 [ERR] Failed executing DbCommand (17ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 35), @p6='?' (DbType = DateTime2), @p7='?' (DbType = Guid), @p8='?' (DbType = Guid), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 35)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Airport].[Flight] ([Id], [AirlineId], [CheckInTime], [CheckOutDate], [CheckOutTime], [CreatedBy], [CreatedOn], [DepartureCityId], [DestinyCityId], [FlightStatus], [Status], [UpdatedBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+SELECT [LastModifiedOn]
+FROM [Airport].[Flight]
+WHERE @@ROWCOUNT = 1 AND [Id] = @p0;
+2022-05-15 13:05:57.585 -05:00 [ERR] An exception occurred in the database while saving changes for context type 'Infrastructure.Repository.PersistenceContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Flight_Airline_AirlineId". The conflict occurred in database "FlightManagement", table "Airport.Airline", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:e3812f09-8c56-4fe5-9ada-e2f68d2dd1ac
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Flight_Airline_AirlineId". The conflict occurred in database "FlightManagement", table "Airport.Airline", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:e3812f09-8c56-4fe5-9ada-e2f68d2dd1ac
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2022-05-15 13:05:57.606 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Response.Response`1[[Application.Airport.Http.Dto.FlightDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-05-15 13:05:57.612 -05:00 [INF] Executed action Api.Controllers.FlightController.Save (Api) in 1045.9454ms
+2022-05-15 13:05:57.613 -05:00 [INF] Executed endpoint 'Api.Controllers.FlightController.Save (Api)'
+2022-05-15 13:05:57.614 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 15 May 2022 18:05:57 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2022-05-15 13:05:57.615 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7170/api/Flight/Create application/json 319 - 200 - application/json;+charset=utf-8 1082.4468ms
+2022-05-15 13:06:44.468 -05:00 [INF] Application is shutting down...

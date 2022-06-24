@@ -2,8 +2,8 @@ using System.Reflection;
 using System.Text;
 using Api.Filters;
 using Application.Airport.Http.Profiles;
+using Application.Security.Http.Dto;
 using Application.Security.Http.Profiles;
-using Application.Security.Jwt;
 using AutoMapper;
 using Infrastructure.Extensions;
 using Infrastructure.Helpers;
@@ -71,12 +71,12 @@ builder.Services.AddHealthChecks().AddSqlServer(config["ConnectionStrings:local"
 builder.Services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
 
 builder.Services.AddPersistence(config).AddServices().AddScopedServices();
+builder.Services.AddScoped(typeof(IJwtUtils<>), typeof(JwtUtils<>));
 builder.Services.AddAuthorization();
 
 var appSettingsSection = config.GetSection("AppSettings");
 builder.Services.Configure<AppSettings>(appSettingsSection);
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
 
 var appSettings = appSettingsSection.Get<AppSettings>();
 var key = Encoding.ASCII.GetBytes(appSettings.Secret);
@@ -98,6 +98,7 @@ builder.Services.AddAuthentication(x =>
         };
     });
 builder.Services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new() { Title = "Airport Api", Version = "v1" }); });
+builder.Services.Configure<AppSettings>(builder.Configuration);
 
 Log.Logger = new LoggerConfiguration().Enrich.FromLogContext()
     .WriteTo.Console()
@@ -112,7 +113,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Airport Api"));
 }
 
-app.UseMiddleware<JwtMiddleware>();
+app.UseMiddleware<JwtMiddleware<UserDto>>();
 app.UseCors(myAllowSpecificOrigins);
 app.UseRouting();
 app.UseHttpLogging();

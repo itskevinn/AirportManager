@@ -1,6 +1,8 @@
 ﻿using Domain.Constants.Enum;
 using Domain.Entities;
 using Domain.Entities.Base;
+using Infrastructure.Extensions;
+using Infrastructure.Helpers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -8,11 +10,12 @@ namespace Infrastructure.Repository;
 
 public class PersistenceContext : DbContext
 {
-	private readonly IConfiguration _config;
+	private readonly RepoSettings _settings;
 
-	public PersistenceContext(DbContextOptions<PersistenceContext> options, IConfiguration config) : base(options)
+	public PersistenceContext(DbContextOptions<PersistenceContext> options,
+		RepoSettings repoSettings) : base(options)
 	{
-		_config = config;
+		_settings = repoSettings;
 	}
 
 	public async Task CommitAsync()
@@ -22,7 +25,7 @@ public class PersistenceContext : DbContext
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{
-		modelBuilder.HasDefaultSchema(_config.GetValue<string>("SchemaName"));
+		modelBuilder.HasDefaultSchema(_settings.SchemaName);
 		EntitiesConfig(modelBuilder);
 		SetDefaultValues(modelBuilder);
 		base.OnModelCreating(modelBuilder);

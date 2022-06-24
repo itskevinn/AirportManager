@@ -1,7 +1,9 @@
-﻿namespace Application.Airport.Http.Request;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Application.Airport.Http.Request;
 
 public class CityRequest
 {
-    public string Name { get; set; } = default!;
-    public string CreatedBy { get; set; } = default!;
+	[Required] public string Name { get; set; } = default!;
+	[Required] public string CreatedBy { get; set; } = default!;
 }

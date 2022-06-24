@@ -5,7 +5,7 @@ namespace Application.Airport.Http.Dto;
 
 public class FlightDto : FlightRequest
 {
-    public AirlineDto AirlineDto { get; set; } = default!;
-    public CityDto DepartureCityDto { get; set; } = default!;
-    public CityDto DestinyCityDto { get; set; } = default!;
+    public AirlineDto Airline { get; set; } = default!;
+    public CityDto DepartureCity { get; set; } = default!;
+    public CityDto DestinyCity { get; set; } = default!;
 }

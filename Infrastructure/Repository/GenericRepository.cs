@@ -1,132 +1,132 @@
 ﻿using System.Linq.Expressions;
-using Domain.Entities;
 using Domain.Entities.Base;
 using Domain.Repository;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repository
 {
-    public sealed class GenericRepository<T> : IGenericRepository<T> where T : DomainEntity
-    {
-        private readonly PersistenceContext _context;
+	public sealed class GenericRepository<T> : IGenericRepository<T> where T : DomainEntity
+	{
+		private readonly PersistenceContext _context;
 
-        public GenericRepository(PersistenceContext context)
-        {
-            _context = context ?? throw new ArgumentNullException(nameof(context), $"{nameof(context)} is unavailable");
-        }
+		public GenericRepository(PersistenceContext context)
+		{
+			_context = context ?? throw new ArgumentNullException(nameof(context), $"{nameof(context)} is unavailable");
+		}
 
-        public T Find(Expression<Func<T, bool>>? filter = null, bool isTracking = false,
-            string includeStringProperties = "")
-        {
-            IQueryable<T> query = _context.Set<T>();
+		public T Find(Expression<Func<T, bool>>? filter = null, bool isTracking = false,
+			string includeStringProperties = "")
+		{
+			IQueryable<T> query = _context.Set<T>();
 
-            if (filter != null)
-            {
-                query = query.Where(filter);
-            }
+			if (filter != null)
+			{
+				query = query.Where(filter);
+			}
 
-            if (!string.IsNullOrEmpty(includeStringProperties))
-            {
-                query = includeStringProperties.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-                    .Aggregate(query, (current, includeProperty) => current.Include(includeProperty));
-            }
+			if (!string.IsNullOrEmpty(includeStringProperties))
+			{
+				query = includeStringProperties.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+					.Aggregate(query, (current, includeProperty) => current.Include(includeProperty));
+			}
 
-            if (query.ToList().Count == 0) return null!;
-            return (!isTracking) ? query.AsNoTracking().First() : query.First();
-        }
+			if (query.ToList().Count == 0) return null!;
+			return (!isTracking) ? query.AsNoTracking().First() : query.First();
+		}
 
-        public async Task<IEnumerable<T>> GetAsync(Expression<Func<T, bool>>? filter = null,
-            Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null, bool isTracking = false,
-            string includeStringProperties = "")
-        {
-            IQueryable<T> query = _context.Set<T>();
+		public async Task<IEnumerable<T>> GetAsync(Expression<Func<T, bool>>? filter = null,
+			Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null, bool isTracking = false,
+			string includeStringProperties = "")
+		{
+			IQueryable<T> query = _context.Set<T>();
 
-            if (filter != null)
-            {
-                query = query.Where(filter);
-            }
+			if (filter != null)
+			{
+				query = query.Where(filter);
+			}
 
-            if (!string.IsNullOrEmpty(includeStringProperties))
-            {
-                query = includeStringProperties.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-                    .Aggregate(query, (current, includeProperty) => current.Include(includeProperty));
-            }
+			if (!string.IsNullOrEmpty(includeStringProperties))
+			{
+				query = includeStringProperties.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+					.Aggregate(query, (current, includeProperty) => current.Include(includeProperty));
+			}
 
-            if (orderBy != null)
-            {
-                return await orderBy(query).ToListAsync().ConfigureAwait(false);
-            }
+			if (orderBy != null)
+			{
+				return await orderBy(query).ToListAsync().ConfigureAwait(false);
+			}
 
-            return (!isTracking) ? await query.AsNoTracking().ToListAsync() : await query.ToListAsync();
-        }
+			return (!isTracking) ? query.AsNoTracking().AsQueryable() : query.AsQueryable();
+		}
 
-        public async Task<T?> FindAsync(object? id)
-        {
-            return await _context.Set<T>().FindAsync(id);
-        }
+		public async Task<T?> FindAsync(object? id)
+		{
+			return await _context.Set<T>().FindAsync(id);
+		}
 
-        public async Task<bool> ExistsAsync(object id)
-        {
-            return await _context.Set<T>().FindAsync(id) != null;
-        }
+		public async Task<bool> ExistsAsync(object id)
+		{
+			return await _context.Set<T>().FindAsync(id) != null;
+		}
 
-        public async Task<T> CreateAsync(T entity)
-        {
-            _ = entity ?? throw new ArgumentNullException(nameof(entity), $"{nameof(entity)} can not be null");
-            _context.Set<T>().Add(entity);
-            await CommitAsync();
-            return entity;
-        }
+		public async Task<T> CreateAsync(T entity)
+		{
+			_ = entity ?? throw new ArgumentNullException(nameof(entity), $"{nameof(entity)} can not be null");
+			_context.Set<T>().Add(entity);
+			await CommitAsync();
+			return entity;
+		}
 
-        public async Task CreateAllAsync(IEnumerable<T> entities)
-        {
-            _ = entities ?? throw new ArgumentNullException(nameof(entities), $"{nameof(entities)} can not be null");
-            _context.Set<T>().AddRange(entities);
-            await CommitAsync();
-        }
+		public async Task CreateAllAsync(IEnumerable<T> entities)
+		{
+			_ = entities ?? throw new ArgumentNullException(nameof(entities), $"{nameof(entities)} can not be null");
+			_context.Set<T>().AddRange(entities);
+			await CommitAsync();
+		}
 
 
-        public async Task UpdateAsync(T entity)
-        {
-            _context.Set<T>().Update(entity);
-            await CommitAsync();
-        }
+		public async Task<T> UpdateAsync(T entity)
+		{
+			_ = entity ?? throw new ArgumentNullException(nameof(entity), $"{nameof(entity)} can not be null");
+			_context.Set<T>().Update(entity);
+			await CommitAsync();
+			return entity;
+		}
 
-        public async Task DeleteAsync(T entity)
-        {
-            _context.Set<T>().Remove(entity);
-            await CommitAsync().ConfigureAwait(false);
-        }
+		public async Task DeleteAsync(T entity)
+		{
+			_context.Set<T>().Remove(entity);
+			await CommitAsync().ConfigureAwait(false);
+		}
 
-        public void ClearTracking()
-        {
-            _context.ChangeTracker.Clear();
-        }
+		public void ClearTracking()
+		{
+			_context.ChangeTracker.Clear();
+		}
 
-        private async Task CommitAsync()
-        {
-            _context.ChangeTracker.DetectChanges();
+		private async Task CommitAsync()
+		{
+			_context.ChangeTracker.DetectChanges();
 
-            foreach (var entry in _context.ChangeTracker.Entries())
-            {
-                switch (entry.State)
-                {
-                    case EntityState.Added:
-                        entry.Property("CreatedOn").CurrentValue = DateTime.UtcNow;
-                        entry.Property("Status").CurrentValue = true;
-                        break;
-                    case EntityState.Modified:
-                        entry.Property("LastModifiedOn").CurrentValue = DateTime.UtcNow;
-                        entry.Property("Status").CurrentValue = true;
-                        break;
-                    case EntityState.Deleted:
-                        entry.Property("Status").CurrentValue = false;
-                        break;
-                }
-            }
+			foreach (var entry in _context.ChangeTracker.Entries())
+			{
+				switch (entry.State)
+				{
+					case EntityState.Added:
+						entry.Property("CreatedOn").CurrentValue = DateTime.UtcNow;
+						entry.Property("Status").CurrentValue = true;
+						break;
+					case EntityState.Modified:
+						entry.Property("LastModifiedOn").CurrentValue = DateTime.UtcNow;
+						entry.Property("Status").CurrentValue = true;
+						break;
+					case EntityState.Deleted:
+						entry.Property("Status").CurrentValue = false;
+						break;
+				}
+			}
 
-            await _context.CommitAsync().ConfigureAwait(false);
-        }
-    }
+			await _context.CommitAsync().ConfigureAwait(false);
+		}
+	}
 }

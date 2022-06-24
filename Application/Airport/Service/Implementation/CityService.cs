@@ -2,10 +2,10 @@
 using Application.Airport.Http.Dto;
 using Application.Airport.Http.Request;
 using Application.Airport.Service.Base;
-using Application.Common.Response;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Repository;
+using Infrastructure.Common.Response;
 
 namespace Application.Airport.Service.Implementation;
 
@@ -86,10 +86,13 @@ public class CityService : BaseService, ICityService
     {
         try
         {
-            var city = await _cityRepository.FindAsync(cityUpdateRequest.Id);
-            if (city == null)
+            var oldCity = await _cityRepository.FindAsync(cityUpdateRequest.Id);
+            _cityRepository.ClearTracking();
+            if (oldCity == null)
                 return new Response<bool>(HttpStatusCode.InternalServerError, AnErrorHappenedMessage, false);
-            city = _mapper.Map<City>(cityUpdateRequest);
+            var city = _mapper.Map<City>(cityUpdateRequest);
+            city.CreatedBy = oldCity.CreatedBy;
+            city.CreatedOn = oldCity.CreatedOn;
             await _cityRepository.UpdateAsync(city);
             return new Response<Boolean>(HttpStatusCode.OK, "Ciudad actualizada", true, true);
         }

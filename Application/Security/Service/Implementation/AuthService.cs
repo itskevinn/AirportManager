@@ -1,5 +1,6 @@
 ﻿using Application.Security.Http.Dto;
 using Application.Security.Http.Request;
+using Infrastructure.Common.Response;
 using Infrastructure.Security.Encrypt;
 using Infrastructure.Security.Jwt;
 
@@ -11,15 +12,17 @@ public class AuthService : BaseService, IAuthService
     private readonly IGenericRepository<UserRole> _userRoleRepository;
 
     private readonly IMapper _mapper;
-    private readonly IJwtUtils _jwtUtils;
+    private readonly IJwtUtils<UserDto> _jwtUtils;
+    private readonly IUserService _userService;
 
     public AuthService(IGenericRepository<User> userRepository,
         IGenericRepository<UserRole> userRoleRepository,
-        IGenericRepository<Role> roleRepository, IMapper mapper,
-        IJwtUtils jwtUtils)
+        IUserService userService, IMapper mapper,
+        IJwtUtils<UserDto> jwtUtils)
     {
         _userRepository = userRepository;
         _userRoleRepository = userRoleRepository;
+        _userService = userService;
         _mapper = mapper;
         _jwtUtils = jwtUtils;
     }
@@ -33,9 +36,8 @@ public class AuthService : BaseService, IAuthService
         if (user == null)
             return new Response<AuthenticateDto>(HttpStatusCode.Unauthorized, "Usuario o contraseña incorrectos",
                 false);
-        var userDto = _mapper.Map<UserDto>(user);
+        var userDto = _userService.GetById(user.Id).Result.Data;
         var token = _jwtUtils.GenerateJwtToken(userDto);
-
         return new Response<AuthenticateDto>(HttpStatusCode.OK, "Bienvenido", true,
             new AuthenticateDto(userDto, token));
     }

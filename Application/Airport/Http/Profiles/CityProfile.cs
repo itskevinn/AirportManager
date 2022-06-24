@@ -9,6 +9,7 @@ public class CityProfile : Profile
 {
     public CityProfile()
     {
+        CreateMap<CityUpdateRequest, City>().ReverseMap();
         CreateMap<CityRequest, City>().ReverseMap();
         CreateMap<City, CityDto>().ReverseMap();
     }
