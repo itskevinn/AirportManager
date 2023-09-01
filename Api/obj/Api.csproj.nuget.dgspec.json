@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\AirportManagementApi\\Api\\Api.csproj": {}
+    "E:\\Development\\GitHub\\AirportManager\\Api\\Api.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\AirportManagementApi\\Api\\Api.csproj": {
+    "E:\\Development\\GitHub\\AirportManager\\Api\\Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\AirportManagementApi\\Api\\Api.csproj",
+        "projectUniqueName": "E:\\Development\\GitHub\\AirportManager\\Api\\Api.csproj",
         "projectName": "Api",
-        "projectPath": "D:\\GitHub\\AirportManagementApi\\Api\\Api.csproj",
+        "projectPath": "E:\\Development\\GitHub\\AirportManager\\Api\\Api.csproj",
         "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\AirportManagementApi\\Api\\obj\\",
+        "outputPath": "E:\\Development\\GitHub\\AirportManager\\Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kevin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,11 +26,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\GitHub\\AirportManagementApi\\Application\\Application.csproj": {
-                "projectPath": "D:\\GitHub\\AirportManagementApi\\Application\\Application.csproj"
+              "E:\\Development\\GitHub\\AirportManager\\Application\\Application.csproj": {
+                "projectPath": "E:\\Development\\GitHub\\AirportManager\\Application\\Application.csproj"
               },
-              "D:\\GitHub\\AirportManagementApi\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "D:\\GitHub\\AirportManagementApi\\Infrastructure\\Infrastructure.csproj"
+              "E:\\Development\\GitHub\\AirportManager\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "E:\\Development\\GitHub\\AirportManager\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -128,7 +128,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -140,18 +141,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\GitHub\\AirportManagementApi\\Application\\Application.csproj": {
+    "E:\\Development\\GitHub\\AirportManager\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\AirportManagementApi\\Application\\Application.csproj",
+        "projectUniqueName": "E:\\Development\\GitHub\\AirportManager\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "D:\\GitHub\\AirportManagementApi\\Application\\Application.csproj",
+        "projectPath": "E:\\Development\\GitHub\\AirportManager\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\AirportManagementApi\\Application\\obj\\",
+        "outputPath": "E:\\Development\\GitHub\\AirportManager\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kevin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -166,11 +167,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\GitHub\\AirportManagementApi\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\GitHub\\AirportManagementApi\\Domain\\Domain.csproj"
+              "E:\\Development\\GitHub\\AirportManager\\Domain\\Domain.csproj": {
+                "projectPath": "E:\\Development\\GitHub\\AirportManager\\Domain\\Domain.csproj"
               },
-              "D:\\GitHub\\AirportManagementApi\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "D:\\GitHub\\AirportManagementApi\\Infrastructure\\Infrastructure.csproj"
+              "E:\\Development\\GitHub\\AirportManager\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "E:\\Development\\GitHub\\AirportManager\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -196,7 +197,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -205,18 +207,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\GitHub\\AirportManagementApi\\Domain\\Domain.csproj": {
+    "E:\\Development\\GitHub\\AirportManager\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\AirportManagementApi\\Domain\\Domain.csproj",
+        "projectUniqueName": "E:\\Development\\GitHub\\AirportManager\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\GitHub\\AirportManagementApi\\Domain\\Domain.csproj",
+        "projectPath": "E:\\Development\\GitHub\\AirportManager\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\AirportManagementApi\\Domain\\obj\\",
+        "outputPath": "E:\\Development\\GitHub\\AirportManager\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kevin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -248,7 +250,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -257,18 +260,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\GitHub\\AirportManagementApi\\Infrastructure\\Infrastructure.csproj": {
+    "E:\\Development\\GitHub\\AirportManager\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\AirportManagementApi\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "E:\\Development\\GitHub\\AirportManager\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "D:\\GitHub\\AirportManagementApi\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "E:\\Development\\GitHub\\AirportManager\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\AirportManagementApi\\Infrastructure\\obj\\",
+        "outputPath": "E:\\Development\\GitHub\\AirportManager\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kevin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -283,8 +286,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\GitHub\\AirportManagementApi\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\GitHub\\AirportManagementApi\\Domain\\Domain.csproj"
+              "E:\\Development\\GitHub\\AirportManager\\Domain\\Domain.csproj": {
+                "projectPath": "E:\\Development\\GitHub\\AirportManager\\Domain\\Domain.csproj"
               }
             }
           }
@@ -306,6 +309,10 @@
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
               "version": "[6.0.0-preview.4.21253.5, )"
+            },
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -334,7 +341,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -343,7 +351,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

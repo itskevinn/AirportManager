@@ -76,6 +76,7 @@ builder.Services.AddAuthorization();
 
 var appSettingsSection = config.GetSection("AppSettings");
 builder.Services.Configure<AppSettings>(appSettingsSection);
+builder.Services.AddSingleton<AppSettings>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 var appSettings = appSettingsSection.Get<AppSettings>();

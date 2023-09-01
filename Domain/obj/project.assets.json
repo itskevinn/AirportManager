@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\AirportManagementApi\\Domain\\Domain.csproj",
+      "projectUniqueName": "E:\\Development\\GitHub\\AirportManager\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "D:\\GitHub\\AirportManagementApi\\Domain\\Domain.csproj",
+      "projectPath": "E:\\Development\\GitHub\\AirportManager\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\AirportManagementApi\\Domain\\obj\\",
+      "outputPath": "E:\\Development\\GitHub\\AirportManager\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kevin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -49,7 +49,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -58,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,6 +1,5 @@
 ﻿using Application.Airport.Http.Dto;
 using Application.Airport.Http.Request;
-using AutoMapper;
 
 namespace Application.Airport.Http.Profiles;
 

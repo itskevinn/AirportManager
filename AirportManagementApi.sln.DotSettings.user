@@ -3,55 +3,17 @@
   &lt;Assembly Path="C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\6.0.4\Microsoft.AspNetCore.Http.Abstractions.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\Program Files\dotnet\packs\Microsoft.AspNetCore.App.Ref\6.0.4\ref\net6.0\Microsoft.AspNetCore.Http.Abstractions.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String>
-	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\kevin\AppData\Local\JetBrains\Rider2022.1\resharper-host\temp\Rider\vAny\CoverageData\_AirportManagementApi.-884118467\Snapshot\snapshot.utdcvr</s:String>
+	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=372efceb_002Dee97_002D40ed_002D97df_002Df11d01963c8f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Session" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Or&gt;&#xD;
+  &lt;Not&gt;&#xD;
     &lt;And&gt;&#xD;
       &lt;TestAncestor&gt;&#xD;
-        &lt;TestId&gt;xUnit::78270F84-A4F8-46B1-A01A-8E930939C17B::net6.0::Tests.Application.Services.Airport.AirlineServiceTest.AirlineService_FindByEmptyId_ThrowsArgumentNullException&lt;/TestId&gt;&#xD;
+        &lt;TestId&gt;xUnit::78270F84-A4F8-46B1-A01A-8E930939C17B::net6.0::Tests.Api.Controllers.AirlineControllerTest&lt;/TestId&gt;&#xD;
       &lt;/TestAncestor&gt;&#xD;
-      &lt;Project Location="D:\GitHub\AirportManagementApi\Tests" Presentation="&amp;lt;Tests&amp;gt;" /&gt;&#xD;
-      &lt;Namespace&gt;Tests.Application.Services.Airport&lt;/Namespace&gt;&#xD;
+      &lt;Project Location="C:\Users\WINDOWS\Documents\GitHub\AirportManager\Tests" Presentation="&amp;lt;Tests&amp;gt;" /&gt;&#xD;
+      &lt;Namespace&gt;Tests.Api.Controllers&lt;/Namespace&gt;&#xD;
     &lt;/And&gt;&#xD;
-    &lt;And&gt;&#xD;
-      &lt;TestAncestor&gt;&#xD;
-        &lt;TestId&gt;xUnit::78270F84-A4F8-46B1-A01A-8E930939C17B::net6.0::Tests.Application.Services.Airport.AirlineServiceTest.AirlineService_FindById_ReturnsAirline&lt;/TestId&gt;&#xD;
-      &lt;/TestAncestor&gt;&#xD;
-      &lt;Project Location="D:\GitHub\AirportManagementApi\Tests" Presentation="&amp;lt;Tests&amp;gt;" /&gt;&#xD;
-      &lt;Namespace&gt;Tests.Application.Services.Airport&lt;/Namespace&gt;&#xD;
-    &lt;/And&gt;&#xD;
-    &lt;And&gt;&#xD;
-      &lt;TestAncestor&gt;&#xD;
-        &lt;TestId&gt;xUnit::78270F84-A4F8-46B1-A01A-8E930939C17B::net6.0::Tests.Application.Services.Airport.AirlineServiceTest.AirlineService_Update_ReturnsAirlineUpdated&lt;/TestId&gt;&#xD;
-      &lt;/TestAncestor&gt;&#xD;
-      &lt;Project Location="D:\GitHub\AirportManagementApi\Tests" Presentation="&amp;lt;Tests&amp;gt;" /&gt;&#xD;
-      &lt;Namespace&gt;Tests.Application.Services.Airport&lt;/Namespace&gt;&#xD;
-    &lt;/And&gt;&#xD;
-    &lt;And&gt;&#xD;
-      &lt;TestAncestor&gt;&#xD;
-        &lt;TestId&gt;xUnit::78270F84-A4F8-46B1-A01A-8E930939C17B::net6.0::Tests.Application.Services.Airport.AirlineServiceTest.AirlineService_Save_ReturnAirlineSaved&lt;/TestId&gt;&#xD;
-      &lt;/TestAncestor&gt;&#xD;
-      &lt;Project Location="D:\GitHub\AirportManagementApi\Tests" Presentation="&amp;lt;Tests&amp;gt;" /&gt;&#xD;
-      &lt;Namespace&gt;Tests.Application.Services.Airport&lt;/Namespace&gt;&#xD;
-    &lt;/And&gt;&#xD;
-    &lt;And&gt;&#xD;
-      &lt;TestAncestor&gt;&#xD;
-        &lt;TestId&gt;xUnit::78270F84-A4F8-46B1-A01A-8E930939C17B::net6.0::Tests.Application.Services.Airport.AirlineServiceTest.AirlineService_GetAll_ReturnsAirlines&lt;/TestId&gt;&#xD;
-      &lt;/TestAncestor&gt;&#xD;
-      &lt;Project Location="D:\GitHub\AirportManagementApi\Tests" Presentation="&amp;lt;Tests&amp;gt;" /&gt;&#xD;
-      &lt;Namespace&gt;Tests.Application.Services.Airport&lt;/Namespace&gt;&#xD;
-    &lt;/And&gt;&#xD;
-    &lt;And&gt;&#xD;
-      &lt;TestAncestor&gt;&#xD;
-        &lt;TestId&gt;xUnit::78270F84-A4F8-46B1-A01A-8E930939C17B::net6.0::Tests.Application.Services.Airport.AirlineServiceTest.AirlineService_Update_ThrowsKeyNotFoundException&lt;/TestId&gt;&#xD;
-      &lt;/TestAncestor&gt;&#xD;
-      &lt;Project Location="D:\GitHub\AirportManagementApi\Tests" Presentation="&amp;lt;Tests&amp;gt;" /&gt;&#xD;
-      &lt;Namespace&gt;Tests.Application.Services.Airport&lt;/Namespace&gt;&#xD;
-    &lt;/And&gt;&#xD;
-    &lt;TestAncestor&gt;&#xD;
-      &lt;TestId&gt;xUnit::78270F84-A4F8-46B1-A01A-8E930939C17B::net6.0::Tests.Application.Services.Airport.AirlineServiceTest.AirlineService_Save_ThrowsDbUpdateException&lt;/TestId&gt;&#xD;
-    &lt;/TestAncestor&gt;&#xD;
-  &lt;/Or&gt;&#xD;
+  &lt;/Not&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
 	

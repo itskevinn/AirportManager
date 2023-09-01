@@ -1,5 +1,6 @@
 ﻿using Application.Security.Http.Dto;
 using Application.Security.Http.Request;
+using Infrastructure.Common.Interface;
 using Infrastructure.Common.Response;
 
 namespace Application.Security.Service;

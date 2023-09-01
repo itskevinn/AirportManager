@@ -1,10 +1,5 @@
-﻿using System.Net;
-using Application.Airport.Http.Dto;
+﻿using Application.Airport.Http.Dto;
 using Application.Airport.Http.Request;
-using Application.Airport.Service.Base;
-using AutoMapper;
-using Domain.Entities;
-using Domain.Repository;
 using Infrastructure.Common.Response;
 
 namespace Application.Airport.Service.Implementation;

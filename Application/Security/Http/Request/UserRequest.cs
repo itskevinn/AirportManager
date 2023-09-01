@@ -1,6 +1,4 @@
-﻿using Domain.Constants.Enum;
-
-namespace Application.Security.Http.Request;
+﻿namespace Application.Security.Http.Request;
 
 public class UserRequest
 {

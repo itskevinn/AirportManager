@@ -1,6 +1,5 @@
 ﻿using Application.Security.Http.Dto;
 using Application.Security.Http.Request;
-using Domain.Entities;
 
 namespace Application.Security.Http.Profiles;
 

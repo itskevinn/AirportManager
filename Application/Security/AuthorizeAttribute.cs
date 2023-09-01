@@ -1,6 +1,8 @@
-﻿using Application.Security.Http.Dto;
+﻿using Application.Exceptions;
+using Application.Security.Http.Dto;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Extensions.Logging;
 
 namespace Application.Security;
 
@@ -8,6 +10,7 @@ namespace Application.Security;
 public class AuthorizeAttribute : Attribute, IAuthorizationFilter
 {
     private readonly string[] _validRoles;
+    private readonly LoggerFactory _loggerFactory = new();
 
     public AuthorizeAttribute(string[] validRoles)
     {
@@ -17,17 +20,17 @@ public class AuthorizeAttribute : Attribute, IAuthorizationFilter
     public void OnAuthorization(AuthorizationFilterContext context)
     {
         var user = (UserDto)context.HttpContext.Items["User"]!;
-        {
-            IEnumerable<RoleDto> userRoles = new List<RoleDto>();
-            foreach (var role in _validRoles)
-            {
-                userRoles = user.Roles.Where(r => r.RoleName == role);
-            }
 
-            if (!userRoles.Any())
-            {
-                context.Result = new UnauthorizedResult();
-            }
+        if (_validRoles is null) throw new MethodWithNotRolesAdmittedException();
+        IEnumerable<RoleDto> userRoles = new List<RoleDto>();
+        foreach (var role in _validRoles)
+        {
+            userRoles = user.Roles.Where(r => r.RoleName == role);
+        }
+
+        if (!userRoles.Any())
+        {
+            context.Result = new UnauthorizedResult();
         }
     }
 }

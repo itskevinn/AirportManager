@@ -1,5 +1,6 @@
 using Application.Airport.Http.Dto;
 using Application.Airport.Http.Request;
+using Infrastructure.Common.Interface;
 using Infrastructure.Common.Response;
 
 namespace Application.Airport.Service;

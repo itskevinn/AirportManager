@@ -17,7 +17,6 @@ namespace Infrastructure.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasDefaultSchema("Airport")
                 .HasAnnotation("ProductVersion", "6.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
@@ -57,7 +56,7 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Airline", "Airport");
+                    b.ToTable("Airline");
                 });
 
             modelBuilder.Entity("Domain.Entities.City", b =>
@@ -94,7 +93,7 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("City", "Airport");
+                    b.ToTable("City");
                 });
 
             modelBuilder.Entity("Domain.Entities.Flight", b =>
@@ -157,7 +156,7 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("DestinyCityId");
 
-                    b.ToTable("Flight", "Airport");
+                    b.ToTable("Flight");
                 });
 
             modelBuilder.Entity("Domain.Entities.MenuItem", b =>
@@ -205,7 +204,7 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MenuItem", "Airport");
+                    b.ToTable("MenuItem");
 
                     b.HasData(
                         new
@@ -298,7 +297,7 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("MenuItemId");
 
-                    b.ToTable("MenuItemRole", "Airport");
+                    b.ToTable("MenuItemRole");
 
                     b.HasData(
                         new
@@ -403,7 +402,7 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Role", "Airport");
+                    b.ToTable("Roles", (string)null);
 
                     b.HasData(
                         new
@@ -471,7 +470,7 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User", "Airport");
+                    b.ToTable("Users", (string)null);
 
                     b.HasData(
                         new
@@ -536,7 +535,7 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserRole", "Airport");
+                    b.ToTable("UserRole");
 
                     b.HasData(
                         new

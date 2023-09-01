@@ -1,6 +1,4 @@
-﻿using Application.Airport.Http.Request;
-
-namespace Application.Airport.Http.Dto;
+﻿namespace Application.Airport.Http.Dto;
 
 public class AirlineDto
 {

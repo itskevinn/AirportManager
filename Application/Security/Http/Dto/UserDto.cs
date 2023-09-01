@@ -1,6 +1,4 @@
-﻿using Domain.Constants.Enum;
-
-namespace Application.Security.Http.Dto;
+﻿namespace Application.Security.Http.Dto;
 
 public class UserDto
 {

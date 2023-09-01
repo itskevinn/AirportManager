@@ -1,5 +1,4 @@
 ﻿using Application.Airport.Http.Request;
-using Domain.Constants.Enum;
 
 namespace Application.Airport.Http.Dto;
 

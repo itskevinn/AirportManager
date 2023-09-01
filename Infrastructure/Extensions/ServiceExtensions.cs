@@ -1,6 +1,4 @@
-﻿using Application.Common.Interface;
-using Infrastructure.Common;
-using Infrastructure.Common.Interface;
+﻿using Infrastructure.Common.Interface;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Infrastructure.Extensions;

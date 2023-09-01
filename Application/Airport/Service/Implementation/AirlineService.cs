@@ -83,7 +83,7 @@ public class AirlineService : BaseService, IAirlineService
 	public async Task<Response<AirlineDto>> UpdateAsync(AirlineUpdateRequest airlineUpdateRequest)
 	{
 		try
-		{
+		{ 
 			var oldAirline = _airlineRepository.Find(a => a.Status && a.Id.Equals(airlineUpdateRequest.Id));
 			if (oldAirline == null)
 				throw new NoNullAllowedException("Aereolínea no encontrada");

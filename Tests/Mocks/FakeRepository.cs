@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Domain.Entities;
 using Domain.Entities.Base;
 using Domain.Repository;
-using Infrastructure.Extensions;
 using Infrastructure.Helpers;
 using Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -12,10 +11,16 @@ namespace Tests.Mocks;
 
 public class FakeRepository<T> where T : DomainEntity
 {
+	private readonly AppSettings? _appSettings;
+	
+	public FakeRepository(AppSettings? appSettings)
+	{
+		_appSettings = appSettings;
+	}
 	public async Task<IGenericRepository<T>> GetInMemoryRepositoryAsync()
 	{
 		var options = new DbContextOptionsBuilder<PersistenceContext>().UseInMemoryDatabase(databaseName: "MockDb").Options;
-		var context = new PersistenceContext(options, new RepoSettings());
+		var context = new PersistenceContext(options, _appSettings);
 		await context.Database.EnsureDeletedAsync();
 		await context.Database.EnsureCreatedAsync();
 		await Populate(context);
