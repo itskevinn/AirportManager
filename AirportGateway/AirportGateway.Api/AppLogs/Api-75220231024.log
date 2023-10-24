@@ -1,0 +1,9 @@
+2023-10-24 17:41:01.907 -05:00 [INF] User profile is available. Using 'C:\Users\AuxiliarN-PC\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-24 17:41:02.018 -05:00 [INF] Now listening on: http://localhost:5176
+2023-10-24 17:41:02.022 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-24 17:41:02.024 -05:00 [INF] Hosting environment: Development
+2023-10-24 17:41:02.026 -05:00 [INF] Content root path: C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\AirportGateway\AirportGateway.Api
+2023-10-24 17:41:02.398 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5176/swagger/index.html - -
+2023-10-24 17:41:02.491 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5176/swagger/index.html - - - 200 - text/html;charset=utf-8 94.7013ms
+2023-10-24 17:41:02.738 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5176/swagger/v1/swagger.json - -
+2023-10-24 17:41:02.858 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5176/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 120.6706ms

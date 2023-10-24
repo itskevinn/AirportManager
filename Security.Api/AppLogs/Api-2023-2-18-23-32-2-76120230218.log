@@ -1,0 +1,131 @@
+2023-02-18 23:32:02.965 -05:00 [INF] User profile is available. Using 'C:\Users\kevin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-02-18 23:32:04.539 -05:00 [INF] Entity Framework Core 6.0.14 initialized 'SecurityContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: MigrationsHistoryTable=_MigrationHistory 
+2023-02-18 23:32:04.645 -05:00 [INF] Now listening on: https://localhost:7193
+2023-02-18 23:32:04.646 -05:00 [INF] Now listening on: http://localhost:5276
+2023-02-18 23:32:04.652 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-18 23:32:04.654 -05:00 [INF] Hosting environment: Development
+2023-02-18 23:32:04.655 -05:00 [INF] Content root path: C:\Users\kevin\RiderProjects\TicketsAPI\Security.Api\
+2023-02-18 23:34:12.241 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7193/swagger/v1/swagger.json - -
+2023-02-18 23:34:12.415 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7193/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 178.7802ms
+2023-02-18 23:34:22.166 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7193/api/v1/User/Authenticate application/json 48
+2023-02-18 23:34:22.176 -05:00 [INF] CORS policy execution successful.
+2023-02-18 23:34:22.202 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/v1/User/Authenticate
+Accept: text/plain
+Host: localhost:7193
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36 Edg/110.0.1587.50
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Cookie: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 48
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-02-18 23:34:22.206 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.UserController.Authenticate (Security.Api)'
+2023-02-18 23:34:22.235 -05:00 [INF] Route matched with {action = "Authenticate", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[Security.Application.Http.Dto.AuthenticateDto]] Authenticate(Security.Application.Http.Request.AuthenticateRequest) on controller Security.Api.Controllers.UserController (Security.Api).
+2023-02-18 23:34:23.452 -05:00 [INF] Executed DbCommand (57ms) [Parameters=[@__ToLower_0='?' (Size = 15), @__GetSha256_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+FROM [User] AS [u]
+WHERE (LOWER([u].[Username]) = @__ToLower_0) AND ([u].[Password] = @__GetSha256_1)
+2023-02-18 23:34:23.634 -05:00 [INF] Executed DbCommand (28ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [t0].[RoleId], [t0].[UserId], [t0].[CreatedBy], [t0].[CreatedOn], [t0].[Id], [t0].[LastModifiedBy], [t0].[LastModifiedOn], [t0].[Status], [t0].[Id0], [t0].[CreatedBy0], [t0].[CreatedOn0], [t0].[LastModifiedBy0], [t0].[LastModifiedOn0], [t0].[RoleName], [t0].[Status0]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[RoleId], [t0].[UserId]
+2023-02-18 23:34:23.798 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Status], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-02-18 23:34:23.832 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status]
+FROM [MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2023-02-18 23:34:23.853 -05:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-02-18 23:34:23.885 -05:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Security.Infrastructure.Persistence.Context.SecurityContext'.
+System.InvalidOperationException: There is already an open DataReader associated with this Connection which must be closed first.
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.ValidateConnectionForExecute(SqlCommand command)
+   at Microsoft.Data.SqlClient.SqlConnection.ValidateConnectionForExecute(String method, SqlCommand command)
+   at Microsoft.Data.SqlClient.SqlCommand.ValidateCommand(Boolean isAsync, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__19_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+System.InvalidOperationException: There is already an open DataReader associated with this Connection which must be closed first.
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.ValidateConnectionForExecute(SqlCommand command)
+   at Microsoft.Data.SqlClient.SqlConnection.ValidateConnectionForExecute(String method, SqlCommand command)
+   at Microsoft.Data.SqlClient.SqlCommand.ValidateCommand(Boolean isAsync, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__19_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2023-02-18 23:34:24.225 -05:00 [ERR] Object reference not set to an instance of an object.. 
+ Full StackTrace:    at Security.Infrastructure.Security.Jwt.JwtUtils`1.GenerateJwtToken(T userDto) in C:\Users\kevin\RiderProjects\TicketsAPI\Security.Infrastructure\Security\Jwt\JwtUtils.cs:line 21
+   at Security.Application.Service.Implementation.AuthService.Authenticate(AuthenticateRequest authenticateRequest) in C:\Users\kevin\RiderProjects\TicketsAPI\Security.Application\Service\Implementation\AuthService.cs:line 41
+   at Security.Api.Controllers.UserController.Authenticate(AuthenticateRequest authenticateRequest) in C:\Users\kevin\RiderProjects\TicketsAPI\Security.Api\Controllers\UserController.cs:line 27
+   at lambda_method49(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Security.Infrastructure.Security.Jwt.JwtUtils`1.GenerateJwtToken(T userDto) in C:\Users\kevin\RiderProjects\TicketsAPI\Security.Infrastructure\Security\Jwt\JwtUtils.cs:line 21
+   at Security.Application.Service.Implementation.AuthService.Authenticate(AuthenticateRequest authenticateRequest) in C:\Users\kevin\RiderProjects\TicketsAPI\Security.Application\Service\Implementation\AuthService.cs:line 41
+   at Security.Api.Controllers.UserController.Authenticate(AuthenticateRequest authenticateRequest) in C:\Users\kevin\RiderProjects\TicketsAPI\Security.Api\Controllers\UserController.cs:line 27
+   at lambda_method49(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2023-02-18 23:34:24.237 -05:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-02-18 23:34:24.253 -05:00 [INF] Executed action Security.Api.Controllers.UserController.Authenticate (Security.Api) in 2008.9806ms
+2023-02-18 23:34:24.255 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.UserController.Authenticate (Security.Api)'
+2023-02-18 23:34:24.257 -05:00 [INF] Response:
+StatusCode: 500
+Content-Type: application/json; charset=utf-8
+Date: Sun, 19 Feb 2023 04:34:23 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2023-02-18 23:34:24.261 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7193/api/v1/User/Authenticate application/json 48 - 500 - application/json;+charset=utf-8 2095.8164ms
+2023-02-18 23:34:34.762 -05:00 [INF] Application is shutting down...

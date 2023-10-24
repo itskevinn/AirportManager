@@ -1,9 +1,12 @@
-using Infrastructure.Common.Response;
+using Application.Base;
+using Application.Http.Dto;
+using Application.Http.Request;
+using Application.Service;
 using Microsoft.AspNetCore.Authorization;
 
 namespace Api.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/v1/[controller]")]
 [ApiController]
 public class FlightController : Controller
 {
@@ -42,8 +45,8 @@ public class FlightController : Controller
     }
 
     [Application.Security.Authorize(new[] { "Admin" })]
-    [HttpDelete("Remove/{id:guid}")]
-    public async Task<Response<Boolean>> Delete(Guid id)
+    [HttpDelete("Delete/{id:guid}")]
+    public async Task<Response<bool>> Delete(Guid id)
     {
         return await _flightService.DeleteAsync(id);
     }

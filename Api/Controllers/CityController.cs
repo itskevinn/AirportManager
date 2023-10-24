@@ -1,11 +1,14 @@
-﻿using Application.Security;
-using Infrastructure.Common.Response;
+﻿using Application.Base;
+using Application.Http.Dto;
+using Application.Http.Request;
+using Application.Security;
+using Application.Service;
 
 namespace Api.Controllers;
 
 [ApiController]
 [Authorize(new []{"Admin"})]
-[Route("api/[controller]")]
+[Route("api/v1/[controller]")]
 public class CityController : Controller
 {
     private readonly ICityService _cityService;

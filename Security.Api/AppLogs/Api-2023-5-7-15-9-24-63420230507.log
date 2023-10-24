@@ -1,0 +1,68 @@
+2023-05-07 15:09:28.865 -05:00 [INF] Entity Framework Core 6.0.14 initialized 'SecurityContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: MigrationsHistoryTable=_MigrationHistory 
+2023-05-07 15:09:30.804 -05:00 [INF] Executed DbCommand (69ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-05-07 15:09:30.946 -05:00 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[_MigrationHistory]');
+2023-05-07 15:09:31.251 -05:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [_MigrationHistory]
+ORDER BY [MigrationId];
+2023-05-07 15:09:31.723 -05:00 [INF] User profile is available. Using 'C:\Users\kevin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-07 15:09:32.549 -05:00 [INF] Now listening on: https://localhost:7193
+2023-05-07 15:09:32.565 -05:00 [INF] Now listening on: http://localhost:5276
+2023-05-07 15:09:32.592 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-07 15:09:32.603 -05:00 [INF] Hosting environment: Development
+2023-05-07 15:09:32.623 -05:00 [INF] Content root path: E:\Development\GitHub\TicketsAPI\Security.Api\
+2023-05-07 15:10:11.057 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7193/api/v1/Auth/Authenticate application/json 48
+2023-05-07 15:10:12.563 -05:00 [INF] Executed DbCommand (85ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [t]
+LEFT JOIN [UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2023-05-07 15:10:12.915 -05:00 [INF] Executed DbCommand (13ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-05-07 15:10:12.929 -05:00 [INF] CORS policy execution successful.
+2023-05-07 15:10:13.022 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/v1/Auth/Authenticate
+Accept: text/plain
+Host: localhost:7193
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.68
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Content-Type: application/json
+Cookie: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 48
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-05-07 15:10:13.030 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.AuthController.Authenticate (Security.Api)'
+2023-05-07 15:10:13.089 -05:00 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[Security.Application.Http.Dto.AuthenticateDto]] Authenticate(Security.Application.Http.Request.AuthenticateRequest) on controller Security.Api.Controllers.AuthController (Security.Api).
+2023-05-07 15:10:28.928 -05:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-05-07 15:10:28.972 -05:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username], [t].[RoleId], [t].[UserId], [t].[CreatedBy], [t].[CreatedOn], [t].[Id], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Status], [t].[Id0], [t].[CreatedBy0], [t].[CreatedOn0], [t].[LastModifiedBy0], [t].[LastModifiedOn0], [t].[RoleName], [t].[Status0], [t].[RoleId0], [t].[MenuItemId], [t].[CreatedBy1], [t].[CreatedOn1], [t].[Id1], [t].[LastModifiedBy1], [t].[LastModifiedOn1], [t].[Status1]
+FROM [User] AS [u]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0], [m].[RoleId] AS [RoleId0], [m].[MenuItemId], [m].[CreatedBy] AS [CreatedBy1], [m].[CreatedOn] AS [CreatedOn1], [m].[Id] AS [Id1], [m].[LastModifiedBy] AS [LastModifiedBy1], [m].[LastModifiedOn] AS [LastModifiedOn1], [m].[Status] AS [Status1]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+    LEFT JOIN [MenuItemRole] AS [m] ON [r].[Id] = [m].[RoleId]
+) AS [t] ON [u].[Id] = [t].[UserId]
+ORDER BY [u].[Id], [t].[RoleId], [t].[UserId], [t].[Id0], [t].[RoleId0]

@@ -3,8 +3,9 @@ using System.Threading.Tasks;
 using Domain.Entities;
 using Domain.Entities.Base;
 using Domain.Repository;
-using Infrastructure.Helpers;
-using Infrastructure.Repository;
+using Infrastructure.Core.Helpers;
+using Infrastructure.Persistence.Context;
+using Infrastructure.Persistence.Repository.Base;
 using Microsoft.EntityFrameworkCore;
 
 namespace Tests.Mocks;

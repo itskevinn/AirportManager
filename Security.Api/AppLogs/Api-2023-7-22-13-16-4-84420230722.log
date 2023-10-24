@@ -1,0 +1,107 @@
+2023-07-22 13:16:05.791 -05:00 [INF] Entity Framework Core 6.0.14 initialized 'SecurityContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: MigrationsHistoryTable=_MigrationHistory 
+2023-07-22 13:16:06.169 -05:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-07-22 13:16:06.208 -05:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[_MigrationHistory]');
+2023-07-22 13:16:06.238 -05:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [_MigrationHistory]
+ORDER BY [MigrationId];
+2023-07-22 13:16:06.293 -05:00 [INF] User profile is available. Using 'C:\Users\AuxiliarN-PC\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-07-22 13:16:06.369 -05:00 [INF] Now listening on: https://localhost:7193
+2023-07-22 13:16:06.370 -05:00 [INF] Now listening on: http://localhost:5276
+2023-07-22 13:16:06.374 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-22 13:16:06.374 -05:00 [INF] Hosting environment: Development
+2023-07-22 13:16:06.375 -05:00 [INF] Content root path: C:\Users\AuxiliarN-PC\RiderProjects\TicketsAPI\Security.Api\
+2023-07-22 13:16:06.560 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7193/swagger/index.html - -
+2023-07-22 13:16:06.650 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7193/swagger/index.html - - - 200 - text/html;charset=utf-8 92.6890ms
+2023-07-22 13:16:06.834 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7193/swagger/v1/swagger.json - -
+2023-07-22 13:16:06.951 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7193/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 117.3101ms
+2023-07-22 13:16:13.594 -05:00 [INF] Request starting HTTP/1.1 POST https://localhost:7193/api/v1/Auth/Authenticate application/json;+charset=utf-8 39
+2023-07-22 13:16:13.620 -05:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/v1/Auth/Authenticate
+Host: localhost:7193
+Content-Type: application/json; charset=utf-8
+traceparent: [Redacted]
+Content-Length: 39
+2023-07-22 13:16:13.623 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.AuthController.Authenticate (Security.Api)'
+2023-07-22 13:16:13.646 -05:00 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[Security.Application.Http.Dto.AuthenticateDto]] Authenticate(Security.Application.Http.Request.AuthenticateRequest) on controller Security.Api.Controllers.AuthController (Security.Api).
+2023-07-22 13:16:14.073 -05:00 [INF] Executed DbCommand (25ms) [Parameters=[@__ToLower_0='?' (Size = 15), @__GetSha256_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+FROM [User] AS [u]
+WHERE (LOWER([u].[Username]) = @__ToLower_0) AND ([u].[Password] = @__GetSha256_1)
+2023-07-22 13:16:14.213 -05:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-07-22 13:16:14.273 -05:00 [INF] Executed DbCommand (29ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [t0].[RoleId], [t0].[UserId], [t0].[CreatedBy], [t0].[CreatedOn], [t0].[Id], [t0].[LastModifiedBy], [t0].[LastModifiedOn], [t0].[Status], [t0].[Id0], [t0].[CreatedBy0], [t0].[CreatedOn0], [t0].[LastModifiedBy0], [t0].[LastModifiedOn0], [t0].[RoleName], [t0].[Status0], [t0].[RoleId0], [t0].[MenuItemId], [t0].[CreatedBy1], [t0].[CreatedOn1], [t0].[Id1], [t0].[LastModifiedBy1], [t0].[LastModifiedOn1], [t0].[Status1], [t0].[Id00], [t0].[CreatedBy00], [t0].[CreatedOn00], [t0].[Icon], [t0].[Label], [t0].[LastModifiedBy00], [t0].[LastModifiedOn00], [t0].[Order], [t0].[RouterLink], [t0].[Status00]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0], [t1].[RoleId] AS [RoleId0], [t1].[MenuItemId], [t1].[CreatedBy] AS [CreatedBy1], [t1].[CreatedOn] AS [CreatedOn1], [t1].[Id] AS [Id1], [t1].[LastModifiedBy] AS [LastModifiedBy1], [t1].[LastModifiedOn] AS [LastModifiedOn1], [t1].[Status] AS [Status1], [t1].[Id0] AS [Id00], [t1].[CreatedBy0] AS [CreatedBy00], [t1].[CreatedOn0] AS [CreatedOn00], [t1].[Icon], [t1].[Label], [t1].[LastModifiedBy0] AS [LastModifiedBy00], [t1].[LastModifiedOn0] AS [LastModifiedOn00], [t1].[Order], [t1].[RouterLink], [t1].[Status0] AS [Status00]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+    LEFT JOIN (
+        SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status], [m0].[Id] AS [Id0], [m0].[CreatedBy] AS [CreatedBy0], [m0].[CreatedOn] AS [CreatedOn0], [m0].[Icon], [m0].[Label], [m0].[LastModifiedBy] AS [LastModifiedBy0], [m0].[LastModifiedOn] AS [LastModifiedOn0], [m0].[Order], [m0].[RouterLink], [m0].[Status] AS [Status0]
+        FROM [MenuItemRole] AS [m]
+        INNER JOIN [MenuItem] AS [m0] ON [m].[MenuItemId] = [m0].[Id]
+    ) AS [t1] ON [r].[Id] = [t1].[RoleId]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[RoleId], [t0].[UserId], [t0].[Id0], [t0].[RoleId0], [t0].[MenuItemId]
+2023-07-22 13:16:14.443 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Status], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-07-22 13:16:14.470 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status]
+FROM [MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2023-07-22 13:16:14.483 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-07-22 13:16:14.489 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-07-22 13:16:14.624 -05:00 [INF] Executing ObjectResult, writing value of type 'Security.Application.Base.Response`1[[Security.Application.Http.Dto.AuthenticateDto, Security.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-22 13:16:14.651 -05:00 [INF] Executed action Security.Api.Controllers.AuthController.Authenticate (Security.Api) in 997.7397ms
+2023-07-22 13:16:14.653 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.AuthController.Authenticate (Security.Api)'
+2023-07-22 13:16:14.655 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sat, 22 Jul 2023 18:16:14 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+2023-07-22 13:16:14.657 -05:00 [INF] Request finished HTTP/1.1 POST https://localhost:7193/api/v1/Auth/Authenticate application/json;+charset=utf-8 39 - 200 - application/json;+charset=utf-8 1062.9991ms
+2023-07-22 13:17:35.376 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - -
+2023-07-22 13:17:35.378 -05:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120
+Host: localhost:7193
+traceparent: [Redacted]
+2023-07-22 13:17:35.379 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-07-22 13:17:35.385 -05:00 [INF] Route matched with {action = "GetById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[Security.Application.Http.Dto.UserDto]] GetById(System.Guid) on controller Security.Api.Controllers.UserController (Security.Api).
+2023-07-22 13:17:35.388 -05:00 [INF] Authorization failed for the request at filter 'Security.Application.AuthorizeAttribute'.
+2023-07-22 13:17:35.390 -05:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-07-22 13:17:35.391 -05:00 [INF] Executed action Security.Api.Controllers.UserController.GetById (Security.Api) in 5.1308ms
+2023-07-22 13:17:35.392 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-07-22 13:17:35.393 -05:00 [INF] Response:
+StatusCode: 401
+Content-Type: application/problem+json; charset=utf-8
+Date: Sat, 22 Jul 2023 18:17:35 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+2023-07-22 13:17:35.394 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - - - 401 - application/problem+json;+charset=utf-8 18.0959ms
+2023-07-22 13:25:00.812 -05:00 [INF] Application is shutting down...

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Application.Airport.Http.Profiles;
-using Application.Airport.Http.Request;
-using Application.Airport.Service.Implementation;
+using Application.Http.Profiles;
+using Application.Http.Request;
+using Application.Service.Implementation;
 using AutoMapper;
 using Domain.Entities;
-using Infrastructure.Helpers;
+using Infrastructure.Core.Helpers;
 using Tests.Mocks;
 using Xunit;
 

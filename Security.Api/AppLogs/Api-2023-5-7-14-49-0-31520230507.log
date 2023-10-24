@@ -1,0 +1,548 @@
+2023-05-07 14:49:02.111 -05:00 [INF] Entity Framework Core 6.0.14 initialized 'SecurityContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: MigrationsHistoryTable=_MigrationHistory 
+2023-05-07 14:49:04.563 -05:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-05-07 14:49:04.649 -05:00 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[_MigrationHistory]');
+2023-05-07 14:49:04.789 -05:00 [INF] Executed DbCommand (98ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [_MigrationHistory]
+ORDER BY [MigrationId];
+2023-05-07 14:49:04.986 -05:00 [INF] User profile is available. Using 'C:\Users\kevin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-07 14:49:05.573 -05:00 [INF] Now listening on: https://localhost:7193
+2023-05-07 14:49:05.581 -05:00 [INF] Now listening on: http://localhost:5276
+2023-05-07 14:49:05.591 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-07 14:49:05.608 -05:00 [INF] Hosting environment: Development
+2023-05-07 14:49:05.617 -05:00 [INF] Content root path: E:\Development\GitHub\TicketsAPI\Security.Api\
+2023-05-07 14:49:06.281 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7193/swagger/index.html - -
+2023-05-07 14:49:06.532 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7193/swagger/index.html - - - 200 - text/html;charset=utf-8 253.3701ms
+2023-05-07 14:49:06.846 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7193/swagger/v1/swagger.json - -
+2023-05-07 14:49:07.064 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7193/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 217.5645ms
+2023-05-07 14:51:25.011 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7193/api/v1/Auth/Authenticate application/json 48
+2023-05-07 14:51:25.025 -05:00 [INF] CORS policy execution successful.
+2023-05-07 14:51:25.059 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/v1/Auth/Authenticate
+Accept: text/plain
+Host: localhost:7193
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.68
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Cookie: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 48
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-05-07 14:51:25.064 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.AuthController.Authenticate (Security.Api)'
+2023-05-07 14:51:25.084 -05:00 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[Security.Application.Http.Dto.AuthenticateDto]] Authenticate(Security.Application.Http.Request.AuthenticateRequest) on controller Security.Api.Controllers.AuthController (Security.Api).
+2023-05-07 14:51:25.479 -05:00 [INF] Executed DbCommand (19ms) [Parameters=[@__ToLower_0='?' (Size = 15), @__GetSha256_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+FROM [User] AS [u]
+WHERE (LOWER([u].[Username]) = @__ToLower_0) AND ([u].[Password] = @__GetSha256_1)
+2023-05-07 14:51:25.633 -05:00 [INF] Executed DbCommand (30ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [t0].[RoleId], [t0].[UserId], [t0].[CreatedBy], [t0].[CreatedOn], [t0].[Id], [t0].[LastModifiedBy], [t0].[LastModifiedOn], [t0].[Status], [t0].[Id0], [t0].[CreatedBy0], [t0].[CreatedOn0], [t0].[LastModifiedBy0], [t0].[LastModifiedOn0], [t0].[RoleName], [t0].[Status0]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[RoleId], [t0].[UserId]
+2023-05-07 14:51:25.748 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Status], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-05-07 14:51:25.784 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status]
+FROM [MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2023-05-07 14:51:25.808 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-05-07 14:51:25.816 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-05-07 14:51:26.247 -05:00 [INF] Executing ObjectResult, writing value of type 'Security.Application.Base.Response`1[[Security.Application.Http.Dto.AuthenticateDto, Security.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-05-07 14:51:26.288 -05:00 [INF] Executed action Security.Api.Controllers.AuthController.Authenticate (Security.Api) in 1177.6251ms
+2023-05-07 14:51:26.291 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.AuthController.Authenticate (Security.Api)'
+2023-05-07 14:51:26.294 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 07 May 2023 19:51:25 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2023-05-07 14:51:26.297 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7193/api/v1/Auth/Authenticate application/json 48 - 200 - application/json;+charset=utf-8 1286.3960ms
+2023-05-07 14:51:36.950 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7193/api/v1/Auth/GetUserIdFromToken?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjRhNzdjZWU0LTVjZmEtNGM5MC1iNDFhLTA4ZGEzNjE1OTEyMCIsIm5iZiI6MTY4MzQ4OTA4NiwiZXhwIjoxNjg0MDkzODg1LCJpYXQiOjE2ODM0ODkwODZ9.2yQbZbVHwVxWgyHimXUv6jMCKnCMnwL1OVmOUEXeZvQ - -
+2023-05-07 14:51:36.955 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/Auth/GetUserIdFromToken
+Accept: text/plain
+Host: localhost:7193
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.68
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br, zsdch
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-05-07 14:51:36.957 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.AuthController.GetUserIdFromToken (Security.Api)'
+2023-05-07 14:51:36.961 -05:00 [INF] Route matched with {action = "GetUserIdFromToken", controller = "Auth"}. Executing controller action with signature System.Guid GetUserIdFromToken(System.String) on controller Security.Api.Controllers.AuthController (Security.Api).
+2023-05-07 14:51:37.260 -05:00 [INF] Executing ObjectResult, writing value of type 'System.Guid'.
+2023-05-07 14:51:37.263 -05:00 [INF] Executed action Security.Api.Controllers.AuthController.GetUserIdFromToken (Security.Api) in 298.962ms
+2023-05-07 14:51:37.265 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.AuthController.GetUserIdFromToken (Security.Api)'
+2023-05-07 14:51:37.268 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 07 May 2023 19:51:36 GMT
+Server: Kestrel
+2023-05-07 14:51:37.271 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7193/api/v1/Auth/GetUserIdFromToken?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjRhNzdjZWU0LTVjZmEtNGM5MC1iNDFhLTA4ZGEzNjE1OTEyMCIsIm5iZiI6MTY4MzQ4OTA4NiwiZXhwIjoxNjg0MDkzODg1LCJpYXQiOjE2ODM0ODkwODZ9.2yQbZbVHwVxWgyHimXUv6jMCKnCMnwL1OVmOUEXeZvQ - - - 200 - application/json;+charset=utf-8 320.3480ms
+2023-05-07 14:51:54.127 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7193/api/v1/User/FindAll - -
+2023-05-07 14:51:54.156 -05:00 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [t]
+LEFT JOIN [UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2023-05-07 14:51:54.180 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-05-07 14:51:54.187 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/User/FindAll
+Accept: text/plain
+Host: localhost:7193
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.68
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br, zsdch
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-05-07 14:51:54.189 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.UserController.GetAll (Security.Api)'
+2023-05-07 14:51:54.192 -05:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[System.Collections.Generic.IEnumerable`1[Security.Application.Http.Dto.UserDto]]] GetAll() on controller Security.Api.Controllers.UserController (Security.Api).
+2023-05-07 14:51:54.220 -05:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username], [t].[RoleId], [t].[UserId], [t].[CreatedBy], [t].[CreatedOn], [t].[Id], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Status], [t].[Id0], [t].[CreatedBy0], [t].[CreatedOn0], [t].[LastModifiedBy0], [t].[LastModifiedOn0], [t].[RoleName], [t].[Status0]
+FROM [User] AS [u]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [t] ON [u].[Id] = [t].[UserId]
+ORDER BY [u].[Id], [t].[RoleId], [t].[UserId]
+2023-05-07 14:51:54.225 -05:00 [INF] Executing ObjectResult, writing value of type 'Security.Application.Base.Response`1[[System.Collections.Generic.IEnumerable`1[[Security.Application.Http.Dto.UserDto, Security.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-05-07 14:51:54.230 -05:00 [INF] Executed action Security.Api.Controllers.UserController.GetAll (Security.Api) in 35.483ms
+2023-05-07 14:51:54.234 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.UserController.GetAll (Security.Api)'
+2023-05-07 14:51:54.236 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 07 May 2023 19:51:53 GMT
+Server: Kestrel
+2023-05-07 14:51:54.237 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7193/api/v1/User/FindAll - - - 200 - application/json;+charset=utf-8 110.3481ms
+2023-05-07 14:52:31.794 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7193/api/v1/User/FindAll - -
+2023-05-07 14:52:31.808 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [t]
+LEFT JOIN [UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2023-05-07 14:52:31.822 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-05-07 14:52:31.826 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/User/FindAll
+Accept: text/plain
+Host: localhost:7193
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.68
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br, zsdch
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-05-07 14:52:31.829 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.UserController.GetAll (Security.Api)'
+2023-05-07 14:52:31.831 -05:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[System.Collections.Generic.IEnumerable`1[Security.Application.Http.Dto.UserDto]]] GetAll() on controller Security.Api.Controllers.UserController (Security.Api).
+2023-05-07 14:52:31.838 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username], [t].[RoleId], [t].[UserId], [t].[CreatedBy], [t].[CreatedOn], [t].[Id], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Status], [t].[Id0], [t].[CreatedBy0], [t].[CreatedOn0], [t].[LastModifiedBy0], [t].[LastModifiedOn0], [t].[RoleName], [t].[Status0]
+FROM [User] AS [u]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [t] ON [u].[Id] = [t].[UserId]
+ORDER BY [u].[Id], [t].[RoleId], [t].[UserId]
+2023-05-07 14:52:31.842 -05:00 [INF] Executing ObjectResult, writing value of type 'Security.Application.Base.Response`1[[System.Collections.Generic.IEnumerable`1[[Security.Application.Http.Dto.UserDto, Security.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-05-07 14:52:31.844 -05:00 [INF] Executed action Security.Api.Controllers.UserController.GetAll (Security.Api) in 10.3617ms
+2023-05-07 14:52:31.849 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.UserController.GetAll (Security.Api)'
+2023-05-07 14:52:31.853 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 07 May 2023 19:52:31 GMT
+Server: Kestrel
+2023-05-07 14:52:31.855 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7193/api/v1/User/FindAll - - - 200 - application/json;+charset=utf-8 60.7298ms
+2023-05-07 14:52:44.328 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7193/api/v1/User/FindAll - -
+2023-05-07 14:52:44.339 -05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [t]
+LEFT JOIN [UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2023-05-07 14:52:44.351 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-05-07 14:52:44.356 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/User/FindAll
+Accept: text/plain
+Host: localhost:7193
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.68
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br, zsdch
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-05-07 14:52:44.358 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.UserController.GetAll (Security.Api)'
+2023-05-07 14:52:44.360 -05:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[System.Collections.Generic.IEnumerable`1[Security.Application.Http.Dto.UserDto]]] GetAll() on controller Security.Api.Controllers.UserController (Security.Api).
+2023-05-07 14:52:44.374 -05:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username], [t].[RoleId], [t].[UserId], [t].[CreatedBy], [t].[CreatedOn], [t].[Id], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Status], [t].[Id0], [t].[CreatedBy0], [t].[CreatedOn0], [t].[LastModifiedBy0], [t].[LastModifiedOn0], [t].[RoleName], [t].[Status0]
+FROM [User] AS [u]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [t] ON [u].[Id] = [t].[UserId]
+ORDER BY [u].[Id], [t].[RoleId], [t].[UserId]
+2023-05-07 14:52:44.381 -05:00 [INF] Executing ObjectResult, writing value of type 'Security.Application.Base.Response`1[[System.Collections.Generic.IEnumerable`1[[Security.Application.Http.Dto.UserDto, Security.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-05-07 14:52:44.384 -05:00 [INF] Executed action Security.Api.Controllers.UserController.GetAll (Security.Api) in 20.5885ms
+2023-05-07 14:52:44.386 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.UserController.GetAll (Security.Api)'
+2023-05-07 14:52:44.387 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 07 May 2023 19:52:43 GMT
+Server: Kestrel
+2023-05-07 14:52:44.389 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7193/api/v1/User/FindAll - - - 200 - application/json;+charset=utf-8 61.1971ms
+2023-05-07 14:52:49.001 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7193/api/v1/User/FindAll - -
+2023-05-07 14:52:49.007 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [t]
+LEFT JOIN [UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2023-05-07 14:52:49.019 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-05-07 14:52:49.022 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/User/FindAll
+Accept: text/plain
+Host: localhost:7193
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.68
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br, zsdch
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-05-07 14:52:49.024 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.UserController.GetAll (Security.Api)'
+2023-05-07 14:52:49.026 -05:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[System.Collections.Generic.IEnumerable`1[Security.Application.Http.Dto.UserDto]]] GetAll() on controller Security.Api.Controllers.UserController (Security.Api).
+2023-05-07 14:52:49.033 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username], [t].[RoleId], [t].[UserId], [t].[CreatedBy], [t].[CreatedOn], [t].[Id], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Status], [t].[Id0], [t].[CreatedBy0], [t].[CreatedOn0], [t].[LastModifiedBy0], [t].[LastModifiedOn0], [t].[RoleName], [t].[Status0]
+FROM [User] AS [u]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [t] ON [u].[Id] = [t].[UserId]
+ORDER BY [u].[Id], [t].[RoleId], [t].[UserId]
+2023-05-07 14:52:49.038 -05:00 [INF] Executing ObjectResult, writing value of type 'Security.Application.Base.Response`1[[System.Collections.Generic.IEnumerable`1[[Security.Application.Http.Dto.UserDto, Security.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-05-07 14:52:49.040 -05:00 [INF] Executed action Security.Api.Controllers.UserController.GetAll (Security.Api) in 9.5199ms
+2023-05-07 14:52:49.042 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.UserController.GetAll (Security.Api)'
+2023-05-07 14:52:49.047 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 07 May 2023 19:52:48 GMT
+Server: Kestrel
+2023-05-07 14:52:49.049 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7193/api/v1/User/FindAll - - - 200 - application/json;+charset=utf-8 48.0376ms
+2023-05-07 14:52:56.027 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7193/api/v1/User/FindAll - -
+2023-05-07 14:52:56.038 -05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [t]
+LEFT JOIN [UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2023-05-07 14:52:56.053 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-05-07 14:52:56.061 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/User/FindAll
+Accept: text/plain
+Host: localhost:7193
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.68
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br, zsdch
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-05-07 14:52:56.064 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.UserController.GetAll (Security.Api)'
+2023-05-07 14:52:56.066 -05:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[System.Collections.Generic.IEnumerable`1[Security.Application.Http.Dto.UserDto]]] GetAll() on controller Security.Api.Controllers.UserController (Security.Api).
+2023-05-07 14:52:56.081 -05:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username], [t].[RoleId], [t].[UserId], [t].[CreatedBy], [t].[CreatedOn], [t].[Id], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Status], [t].[Id0], [t].[CreatedBy0], [t].[CreatedOn0], [t].[LastModifiedBy0], [t].[LastModifiedOn0], [t].[RoleName], [t].[Status0]
+FROM [User] AS [u]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [t] ON [u].[Id] = [t].[UserId]
+ORDER BY [u].[Id], [t].[RoleId], [t].[UserId]
+2023-05-07 14:52:56.087 -05:00 [INF] Executing ObjectResult, writing value of type 'Security.Application.Base.Response`1[[System.Collections.Generic.IEnumerable`1[[Security.Application.Http.Dto.UserDto, Security.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-05-07 14:52:56.091 -05:00 [INF] Executed action Security.Api.Controllers.UserController.GetAll (Security.Api) in 22.2461ms
+2023-05-07 14:52:56.094 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.UserController.GetAll (Security.Api)'
+2023-05-07 14:52:56.095 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 07 May 2023 19:52:56 GMT
+Server: Kestrel
+2023-05-07 14:52:56.098 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7193/api/v1/User/FindAll - - - 200 - application/json;+charset=utf-8 70.7254ms
+2023-05-07 14:52:58.736 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7193/api/v1/User/FindAll - -
+2023-05-07 14:52:58.747 -05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [t]
+LEFT JOIN [UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2023-05-07 14:52:58.759 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-05-07 14:52:58.766 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/User/FindAll
+Accept: text/plain
+Host: localhost:7193
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.68
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br, zsdch
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-05-07 14:52:58.768 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.UserController.GetAll (Security.Api)'
+2023-05-07 14:52:58.770 -05:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[System.Collections.Generic.IEnumerable`1[Security.Application.Http.Dto.UserDto]]] GetAll() on controller Security.Api.Controllers.UserController (Security.Api).
+2023-05-07 14:52:58.782 -05:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username], [t].[RoleId], [t].[UserId], [t].[CreatedBy], [t].[CreatedOn], [t].[Id], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Status], [t].[Id0], [t].[CreatedBy0], [t].[CreatedOn0], [t].[LastModifiedBy0], [t].[LastModifiedOn0], [t].[RoleName], [t].[Status0]
+FROM [User] AS [u]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [t] ON [u].[Id] = [t].[UserId]
+ORDER BY [u].[Id], [t].[RoleId], [t].[UserId]
+2023-05-07 14:52:58.787 -05:00 [INF] Executing ObjectResult, writing value of type 'Security.Application.Base.Response`1[[System.Collections.Generic.IEnumerable`1[[Security.Application.Http.Dto.UserDto, Security.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-05-07 14:52:58.789 -05:00 [INF] Executed action Security.Api.Controllers.UserController.GetAll (Security.Api) in 16.8613ms
+2023-05-07 14:52:58.791 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.UserController.GetAll (Security.Api)'
+2023-05-07 14:52:58.793 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 07 May 2023 19:52:58 GMT
+Server: Kestrel
+2023-05-07 14:52:58.798 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7193/api/v1/User/FindAll - - - 200 - application/json;+charset=utf-8 61.8672ms
+2023-05-07 14:54:10.485 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7193/api/v1/Auth/Authenticate application/json 48
+2023-05-07 14:54:10.508 -05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [t]
+LEFT JOIN [UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2023-05-07 14:54:10.520 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-05-07 14:54:10.525 -05:00 [INF] CORS policy execution successful.
+2023-05-07 14:54:10.527 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/v1/Auth/Authenticate
+Accept: text/plain
+Host: localhost:7193
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.68
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Content-Type: application/json
+Cookie: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 48
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-05-07 14:54:10.528 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.AuthController.Authenticate (Security.Api)'
+2023-05-07 14:54:10.530 -05:00 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[Security.Application.Http.Dto.AuthenticateDto]] Authenticate(Security.Application.Http.Request.AuthenticateRequest) on controller Security.Api.Controllers.AuthController (Security.Api).
+2023-05-07 14:54:24.043 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__ToLower_0='?' (Size = 15), @__GetSha256_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+FROM [User] AS [u]
+WHERE (LOWER([u].[Username]) = @__ToLower_0) AND ([u].[Password] = @__GetSha256_1)
+2023-05-07 14:54:35.970 -05:00 [INF] Executed DbCommand (13ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [t0].[RoleId], [t0].[UserId], [t0].[CreatedBy], [t0].[CreatedOn], [t0].[Id], [t0].[LastModifiedBy], [t0].[LastModifiedOn], [t0].[Status], [t0].[Id0], [t0].[CreatedBy0], [t0].[CreatedOn0], [t0].[LastModifiedBy0], [t0].[LastModifiedOn0], [t0].[RoleName], [t0].[Status0]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[RoleId], [t0].[UserId]
+2023-05-07 14:54:35.986 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Status], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-05-07 14:54:35.996 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status]
+FROM [MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2023-05-07 14:54:36.005 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-05-07 14:54:36.011 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-05-07 14:54:36.015 -05:00 [INF] Executing ObjectResult, writing value of type 'Security.Application.Base.Response`1[[Security.Application.Http.Dto.AuthenticateDto, Security.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-05-07 14:54:36.017 -05:00 [INF] Executed action Security.Api.Controllers.AuthController.Authenticate (Security.Api) in 25484.6273ms
+2023-05-07 14:54:36.019 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.AuthController.Authenticate (Security.Api)'
+2023-05-07 14:54:36.024 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Sun, 07 May 2023 19:54:35 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2023-05-07 14:54:36.026 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7193/api/v1/Auth/Authenticate application/json 48 - 200 - application/json;+charset=utf-8 25540.6576ms

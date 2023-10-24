@@ -1,14 +1,12 @@
 using System.Reflection;
 using System.Text;
+using Api.Extensions;
 using Api.Filters;
-using Application.Airport.Http.Profiles;
-using Application.Security.Http.Dto;
-using Application.Security.Http.Profiles;
+using Api.Middleware;
+using Application.Http.Profiles;
 using AutoMapper;
-using Infrastructure.Extensions;
-using Infrastructure.Helpers;
-using Infrastructure.Repository;
-using Infrastructure.Security.Jwt;
+using Infrastructure.Core.Helpers;
+using Infrastructure.Persistence.Context;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -24,8 +22,9 @@ var mapperConfig = new MapperConfiguration(m =>
 {
     var profiles = new List<Profile>
     {
-        new AirlineProfile(), new CityProfile(), new FlightProfile(), new UserProfile(), new RoleProfile(),
-        new MenuItemProfile()
+        new AirlineProfile(),
+        new CityProfile(),
+        new FlightProfile()
     };
     m.AddProfiles(profiles);
 });
@@ -71,7 +70,6 @@ builder.Services.AddHealthChecks().AddSqlServer(config["ConnectionStrings:local"
 builder.Services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
 
 builder.Services.AddPersistence(config).AddServices().AddScopedServices();
-builder.Services.AddScoped(typeof(IJwtUtils<>), typeof(JwtUtils<>));
 builder.Services.AddAuthorization();
 
 var appSettingsSection = config.GetSection("AppSettings");
@@ -114,7 +112,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Airport Api"));
 }
 
-app.UseMiddleware<JwtMiddleware<UserDto>>();
+app.UseMiddleware<JwtMiddleware>();
 app.UseCors(myAllowSpecificOrigins);
 app.UseRouting();
 app.UseHttpLogging();

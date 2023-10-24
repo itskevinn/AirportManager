@@ -1,0 +1,141 @@
+2023-02-18 23:31:09.329 -05:00 [INF] Entity Framework Core 6.0.14 initialized 'SecurityContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: MigrationsHistoryTable=_MigrationHistory 
+2023-02-18 23:31:10.024 -05:00 [INF] Executed DbCommand (137ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [ticket];
+2023-02-18 23:31:10.085 -05:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [ticket] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2023-02-18 23:31:10.107 -05:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-02-18 23:31:10.216 -05:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [_MigrationHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK__MigrationHistory] PRIMARY KEY ([MigrationId])
+);
+2023-02-18 23:31:10.220 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-02-18 23:31:10.248 -05:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[_MigrationHistory]');
+2023-02-18 23:31:10.265 -05:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [_MigrationHistory]
+ORDER BY [MigrationId];
+2023-02-18 23:31:10.290 -05:00 [INF] Applying migration '20230219042840_first migration'.
+2023-02-18 23:31:10.357 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [MenuItem] (
+    [Id] uniqueidentifier NOT NULL,
+    [Icon] nvarchar(30) NOT NULL,
+    [RouterLink] nvarchar(255) NOT NULL,
+    [Label] nvarchar(30) NOT NULL,
+    [Order] int NOT NULL,
+    [CreatedBy] nvarchar(max) NOT NULL,
+    [CreatedOn] datetime2 NOT NULL DEFAULT '2023-02-18T23:28:40.4382785-05:00',
+    [LastModifiedBy] nvarchar(max) NULL,
+    [LastModifiedOn] datetime2 NOT NULL DEFAULT '2023-02-18T23:28:40.4383119-05:00',
+    [Status] bit NOT NULL,
+    CONSTRAINT [PK_MenuItem] PRIMARY KEY ([Id])
+);
+2023-02-18 23:31:10.363 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Role] (
+    [Id] uniqueidentifier NOT NULL,
+    [RoleName] nvarchar(20) NOT NULL,
+    [CreatedBy] nvarchar(max) NOT NULL,
+    [CreatedOn] datetime2 NOT NULL DEFAULT '2023-02-18T23:28:40.4383876-05:00',
+    [LastModifiedBy] nvarchar(max) NULL,
+    [LastModifiedOn] datetime2 NOT NULL DEFAULT '2023-02-18T23:28:40.4384055-05:00',
+    [Status] bit NOT NULL,
+    CONSTRAINT [PK_Role] PRIMARY KEY ([Id])
+);
+2023-02-18 23:31:10.368 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [User] (
+    [Id] uniqueidentifier NOT NULL,
+    [Name] nvarchar(30) NOT NULL,
+    [Email] nvarchar(50) NULL,
+    [Username] nvarchar(15) NOT NULL,
+    [Password] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NOT NULL,
+    [CreatedOn] datetime2 NOT NULL DEFAULT '2023-02-18T23:28:40.4384255-05:00',
+    [LastModifiedBy] nvarchar(max) NULL,
+    [LastModifiedOn] datetime2 NOT NULL DEFAULT '2023-02-18T23:28:40.4384496-05:00',
+    [Status] bit NOT NULL,
+    CONSTRAINT [PK_User] PRIMARY KEY ([Id])
+);
+2023-02-18 23:31:10.374 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [MenuItemRole] (
+    [MenuItemId] uniqueidentifier NOT NULL,
+    [RoleId] uniqueidentifier NOT NULL,
+    [Id] uniqueidentifier NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [CreatedOn] datetime2 NOT NULL DEFAULT '2023-02-18T23:28:40.4383398-05:00',
+    [LastModifiedBy] nvarchar(max) NULL,
+    [LastModifiedOn] datetime2 NOT NULL DEFAULT '2023-02-18T23:28:40.4383601-05:00',
+    [Status] bit NOT NULL,
+    CONSTRAINT [PK_MenuItemRole] PRIMARY KEY ([RoleId], [MenuItemId]),
+    CONSTRAINT [FK_MenuItemRole_MenuItem_MenuItemId] FOREIGN KEY ([MenuItemId]) REFERENCES [MenuItem] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_MenuItemRole_Role_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [Role] ([Id]) ON DELETE CASCADE
+);
+2023-02-18 23:31:10.380 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserRole] (
+    [UserId] uniqueidentifier NOT NULL,
+    [RoleId] uniqueidentifier NOT NULL,
+    [Id] uniqueidentifier NOT NULL,
+    [CreatedBy] nvarchar(max) NOT NULL,
+    [CreatedOn] datetime2 NOT NULL DEFAULT '2023-02-18T23:28:40.4384697-05:00',
+    [LastModifiedBy] nvarchar(max) NULL,
+    [LastModifiedOn] datetime2 NOT NULL DEFAULT '2023-02-18T23:28:40.4384928-05:00',
+    [Status] bit NOT NULL,
+    CONSTRAINT [PK_UserRole] PRIMARY KEY ([RoleId], [UserId]),
+    CONSTRAINT [FK_UserRole_Role_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [Role] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_UserRole_User_UserId] FOREIGN KEY ([UserId]) REFERENCES [User] ([Id]) ON DELETE CASCADE
+);
+2023-02-18 23:31:10.421 -05:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'CreatedBy', N'CreatedOn', N'Icon', N'Label', N'LastModifiedBy', N'Order', N'RouterLink', N'Status') AND [object_id] = OBJECT_ID(N'[MenuItem]'))
+    SET IDENTITY_INSERT [MenuItem] ON;
+INSERT INTO [MenuItem] ([Id], [CreatedBy], [CreatedOn], [Icon], [Label], [LastModifiedBy], [Order], [RouterLink], [Status])
+VALUES ('504731d4-0a34-41d5-9b0b-0611b3f76096', N'AutoGenerated', '2023-02-18T23:28:40.4382378-05:00', N'fa-solid fa-plane-departure', N'Tickets', N'AutoGenerated', 1, N'tickets', CAST(1 AS bit)),
+('504731d4-0a34-41d5-9b0b-0611b3f76098', N'AutoGenerated', '2023-02-18T23:28:40.4382402-05:00', N'fa-solid fa-plane-departure', N'Usuarios', N'AutoGenerated', 2, N'users', CAST(1 AS bit));
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'CreatedBy', N'CreatedOn', N'Icon', N'Label', N'LastModifiedBy', N'Order', N'RouterLink', N'Status') AND [object_id] = OBJECT_ID(N'[MenuItem]'))
+    SET IDENTITY_INSERT [MenuItem] OFF;
+2023-02-18 23:31:10.439 -05:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'CreatedBy', N'LastModifiedBy', N'RoleName', N'Status') AND [object_id] = OBJECT_ID(N'[Role]'))
+    SET IDENTITY_INSERT [Role] ON;
+INSERT INTO [Role] ([Id], [CreatedBy], [LastModifiedBy], [RoleName], [Status])
+VALUES ('4a77cee4-5cfa-4c90-b41a-08da36159111', N'AutoGenerated', N'AutoGenerated', N'User', CAST(1 AS bit)),
+('bf1de1aa-fc78-4b92-6942-08da36131198', N'AutoGenerated', N'AutoGenerated', N'Admin', CAST(1 AS bit));
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'CreatedBy', N'LastModifiedBy', N'RoleName', N'Status') AND [object_id] = OBJECT_ID(N'[Role]'))
+    SET IDENTITY_INSERT [Role] OFF;
+2023-02-18 23:31:10.462 -05:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'CreatedBy', N'Email', N'LastModifiedBy', N'Name', N'Password', N'Status', N'Username') AND [object_id] = OBJECT_ID(N'[User]'))
+    SET IDENTITY_INSERT [User] ON;
+INSERT INTO [User] ([Id], [CreatedBy], [Email], [LastModifiedBy], [Name], [Password], [Status], [Username])
+VALUES ('4a77cee4-5cfa-4c90-b41a-08da36159120', N'AutoGenerated', N'kvnpntn@gmail.com', N'AutoGenerated', N'Kevin Pontón', N'8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', CAST(1 AS bit), N'Admin'),
+('c82a18c6-e473-4976-5f2e-08da35e4eb6f', N'AutoGenerated', N'keviinpn2@gmail.com', N'AutoGenerated', N'Usuario', N'03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', CAST(1 AS bit), N'User');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'CreatedBy', N'Email', N'LastModifiedBy', N'Name', N'Password', N'Status', N'Username') AND [object_id] = OBJECT_ID(N'[User]'))
+    SET IDENTITY_INSERT [User] OFF;
+2023-02-18 23:31:10.485 -05:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'MenuItemId', N'RoleId', N'CreatedBy', N'Id', N'LastModifiedBy', N'Status') AND [object_id] = OBJECT_ID(N'[MenuItemRole]'))
+    SET IDENTITY_INSERT [MenuItemRole] ON;
+INSERT INTO [MenuItemRole] ([MenuItemId], [RoleId], [CreatedBy], [Id], [LastModifiedBy], [Status])
+VALUES ('504731d4-0a34-41d5-9b0b-0611b3f76096', '4a77cee4-5cfa-4c90-b41a-08da36159111', N'AutoGenerated', 'c82a18c6-e473-4976-5f2e-08da35e4eb8a', N'AutoGenerated', CAST(1 AS bit)),
+('504731d4-0a34-41d5-9b0b-0611b3f76098', '4a77cee4-5cfa-4c90-b41a-08da36159111', N'AutoGenerated', 'c82a18c6-e473-4976-5f2e-08da35e4eb8b', N'AutoGenerated', CAST(1 AS bit)),
+('504731d4-0a34-41d5-9b0b-0611b3f76096', 'bf1de1aa-fc78-4b92-6942-08da36131198', N'AutoGenerated', 'c82a18c6-e473-4976-5f2e-08da35e4ebfe', N'AutoGenerated', CAST(1 AS bit)),
+('504731d4-0a34-41d5-9b0b-0611b3f76098', 'bf1de1aa-fc78-4b92-6942-08da36131198', N'AutoGenerated', 'c82a18c6-e473-4976-5f2e-08da35e4eb8e', N'AutoGenerated', CAST(1 AS bit));
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'MenuItemId', N'RoleId', N'CreatedBy', N'Id', N'LastModifiedBy', N'Status') AND [object_id] = OBJECT_ID(N'[MenuItemRole]'))
+    SET IDENTITY_INSERT [MenuItemRole] OFF;
+2023-02-18 23:31:10.509 -05:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'RoleId', N'UserId', N'CreatedBy', N'Id', N'LastModifiedBy', N'Status') AND [object_id] = OBJECT_ID(N'[UserRole]'))
+    SET IDENTITY_INSERT [UserRole] ON;
+INSERT INTO [UserRole] ([RoleId], [UserId], [CreatedBy], [Id], [LastModifiedBy], [Status])
+VALUES ('4a77cee4-5cfa-4c90-b41a-08da36159111', 'c82a18c6-e473-4976-5f2e-08da35e4eb6f', N'AutoGenerated', 'bf1de1aa-fc78-4b92-6942-09da3e131298', N'AutoGenerated', CAST(1 AS bit)),
+('bf1de1aa-fc78-4b92-6942-08da36131198', '4a77cee4-5cfa-4c90-b41a-08da36159120', N'AutoGenerated', 'bf1de1aa-fc78-4b92-6942-09da36131298', N'AutoGenerated', CAST(1 AS bit));
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'RoleId', N'UserId', N'CreatedBy', N'Id', N'LastModifiedBy', N'Status') AND [object_id] = OBJECT_ID(N'[UserRole]'))
+    SET IDENTITY_INSERT [UserRole] OFF;
+2023-02-18 23:31:10.518 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_MenuItemRole_MenuItemId] ON [MenuItemRole] ([MenuItemId]);
+2023-02-18 23:31:10.524 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserRole_UserId] ON [UserRole] ([UserId]);
+2023-02-18 23:31:10.528 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [_MigrationHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20230219042840_first migration', N'6.0.14');

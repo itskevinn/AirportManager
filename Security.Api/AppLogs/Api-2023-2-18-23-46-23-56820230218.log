@@ -1,0 +1,11 @@
+2023-02-18 23:46:23.780 -05:00 [INF] User profile is available. Using 'C:\Users\kevin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-02-18 23:46:25.483 -05:00 [INF] Entity Framework Core 6.0.14 initialized 'SecurityContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: MigrationsHistoryTable=_MigrationHistory 
+2023-02-18 23:46:25.615 -05:00 [INF] Now listening on: https://localhost:7193
+2023-02-18 23:46:25.619 -05:00 [INF] Now listening on: http://localhost:5276
+2023-02-18 23:46:25.635 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-18 23:46:25.640 -05:00 [INF] Hosting environment: Development
+2023-02-18 23:46:25.642 -05:00 [INF] Content root path: C:\Users\kevin\RiderProjects\TicketsAPI\Security.Api\
+2023-02-18 23:46:26.384 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7193/swagger/index.html - -
+2023-02-18 23:46:26.670 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7193/swagger/index.html - - - 200 - text/html;charset=utf-8 294.0999ms
+2023-02-18 23:46:27.005 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7193/swagger/v1/swagger.json - -
+2023-02-18 23:46:27.347 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7193/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 342.0045ms

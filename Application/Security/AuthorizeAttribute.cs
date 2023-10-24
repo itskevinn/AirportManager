@@ -1,5 +1,5 @@
 ﻿using Application.Exceptions;
-using Application.Security.Http.Dto;
+using Application.Http.Dto;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Logging;
@@ -22,7 +22,7 @@ public class AuthorizeAttribute : Attribute, IAuthorizationFilter
         var user = (UserDto)context.HttpContext.Items["User"]!;
 
         if (_validRoles is null) throw new MethodWithNotRolesAdmittedException();
-        IEnumerable<RoleDto> userRoles = new List<RoleDto>();
+        var userRoles = Enumerable.Empty<RoleDto>();
         foreach (var role in _validRoles)
         {
             userRoles = user.Roles.Where(r => r.RoleName == role);

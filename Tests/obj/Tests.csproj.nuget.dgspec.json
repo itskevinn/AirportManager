@@ -1,36 +1,37 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Development\\GitHub\\AirportManager\\Tests\\Tests.csproj": {}
+    "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Tests\\Tests.csproj": {}
   },
   "projects": {
-    "E:\\Development\\GitHub\\AirportManager\\Api\\Api.csproj": {
+    "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Api\\Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Development\\GitHub\\AirportManager\\Api\\Api.csproj",
+        "projectUniqueName": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Api\\Api.csproj",
         "projectName": "Api",
-        "projectPath": "E:\\Development\\GitHub\\AirportManager\\Api\\Api.csproj",
-        "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
-        "outputPath": "E:\\Development\\GitHub\\AirportManager\\Api\\obj\\",
+        "projectPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Api\\Api.csproj",
+        "packagesPath": "C:\\Users\\AuxiliarN-PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kevin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\AuxiliarN-PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Development\\GitHub\\AirportManager\\Application\\Application.csproj": {
-                "projectPath": "E:\\Development\\GitHub\\AirportManager\\Application\\Application.csproj"
+              "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Application\\Application.csproj"
               },
-              "E:\\Development\\GitHub\\AirportManager\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "E:\\Development\\GitHub\\AirportManager\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -141,21 +142,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Development\\GitHub\\AirportManager\\Application\\Application.csproj": {
+    "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Development\\GitHub\\AirportManager\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "E:\\Development\\GitHub\\AirportManager\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
-        "outputPath": "E:\\Development\\GitHub\\AirportManager\\Application\\obj\\",
+        "projectPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\AuxiliarN-PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kevin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\AuxiliarN-PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -167,11 +168,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Development\\GitHub\\AirportManager\\Domain\\Domain.csproj": {
-                "projectPath": "E:\\Development\\GitHub\\AirportManager\\Domain\\Domain.csproj"
+              "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Domain\\Domain.csproj"
               },
-              "E:\\Development\\GitHub\\AirportManager\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "E:\\Development\\GitHub\\AirportManager\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -207,21 +208,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Development\\GitHub\\AirportManager\\Domain\\Domain.csproj": {
+    "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Development\\GitHub\\AirportManager\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "E:\\Development\\GitHub\\AirportManager\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
-        "outputPath": "E:\\Development\\GitHub\\AirportManager\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\AuxiliarN-PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kevin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\AuxiliarN-PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -260,21 +261,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Development\\GitHub\\AirportManager\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Development\\GitHub\\AirportManager\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "E:\\Development\\GitHub\\AirportManager\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
-        "outputPath": "E:\\Development\\GitHub\\AirportManager\\Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\AuxiliarN-PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kevin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\AuxiliarN-PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -286,8 +287,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Development\\GitHub\\AirportManager\\Domain\\Domain.csproj": {
-                "projectPath": "E:\\Development\\GitHub\\AirportManager\\Domain\\Domain.csproj"
+              "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Domain\\Domain.csproj"
               }
             }
           }
@@ -351,21 +352,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Development\\GitHub\\AirportManager\\Tests\\Tests.csproj": {
+    "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Tests\\Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Development\\GitHub\\AirportManager\\Tests\\Tests.csproj",
+        "projectUniqueName": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Tests\\Tests.csproj",
         "projectName": "Tests",
-        "projectPath": "E:\\Development\\GitHub\\AirportManager\\Tests\\Tests.csproj",
-        "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
-        "outputPath": "E:\\Development\\GitHub\\AirportManager\\Tests\\obj\\",
+        "projectPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Tests\\Tests.csproj",
+        "packagesPath": "C:\\Users\\AuxiliarN-PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kevin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\AuxiliarN-PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -377,14 +378,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Development\\GitHub\\AirportManager\\Api\\Api.csproj": {
-                "projectPath": "E:\\Development\\GitHub\\AirportManager\\Api\\Api.csproj"
+              "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Api\\Api.csproj": {
+                "projectPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Api\\Api.csproj"
               },
-              "E:\\Development\\GitHub\\AirportManager\\Application\\Application.csproj": {
-                "projectPath": "E:\\Development\\GitHub\\AirportManager\\Application\\Application.csproj"
+              "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Application\\Application.csproj"
               },
-              "E:\\Development\\GitHub\\AirportManager\\Domain\\Domain.csproj": {
-                "projectPath": "E:\\Development\\GitHub\\AirportManager\\Domain\\Domain.csproj"
+              "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Domain\\Domain.csproj"
               }
             }
           }
@@ -452,7 +453,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }

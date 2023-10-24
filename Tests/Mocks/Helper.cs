@@ -1,5 +1,5 @@
 ﻿using System;
-using Infrastructure.Helpers;
+using Infrastructure.Core.Helpers;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Tests.Mocks;

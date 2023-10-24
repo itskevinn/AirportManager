@@ -1,0 +1,11 @@
+2023-02-18 18:04:04.330 -05:00 [INF] Entity Framework Core 6.0.14 initialized 'SecurityContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20221224' with options: MigrationsHistoryTable=_MigrationHistory 
+2023-02-18 18:04:19.945 -05:00 [ERR] 2023-02-18 18:04:19.935209 ThreadID:1   (ERROR)   OracleDatabaseCreator.Exists() :  OracleException.Number: -1000
+2023-02-18 18:04:19.955 -05:00 [ERR] 2023-02-18 18:04:19.954686 ThreadID:1   (ERROR)   OracleDatabaseCreator.Exists() :  Oracle.ManagedDataAccess.Client.OracleException (0x80004005): Timeout de solicitud de conexión
+   at OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   at OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, OracleConnection connRefForCriteria, String affinityInstanceName, Boolean bForceMatch)
+   at OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword, OracleConnection connRefForCriteria)
+   at Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleDatabaseCreator.Exists()

@@ -1,0 +1,1 @@
+2023-07-20 16:42:06.169 -05:00 [INF] Entity Framework Core 6.0.14 initialized 'SecurityContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: MigrationsHistoryTable=_MigrationHistory 

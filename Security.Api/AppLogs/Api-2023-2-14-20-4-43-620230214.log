@@ -1,0 +1,32 @@
+2023-02-14 20:04:45.103 -05:00 [INF] Executed DbCommand (251ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT t.table_name FROM user_tables t WHERE t.table_name = N'_MigrationHistory'
+2023-02-14 20:04:45.253 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT t.table_name FROM user_tables t WHERE t.table_name = N'_MigrationHistory'
+2023-02-14 20:04:45.352 -05:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "MigrationId", "ProductVersion"
+FROM "_MigrationHistory"
+ORDER BY "MigrationId"
+2023-02-14 20:04:45.381 -05:00 [INF] Applying migration '20230215010244_first migration after detached'.
+2023-02-14 20:04:45.734 -05:00 [ERR] 2023-02-14 20:04:45.718814 ThreadID:1   (ERROR)   OracleRelationalCommand.ExecuteNonQuery() :  Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-00955: este nombre ya lo está utilizando otro objeto existente
+ORA-06512: en línea 3
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at Oracle.EntityFrameworkCore.Storage.Internal.OracleRelationalCommandBuilderFactory.OracleRelationalCommandBuilder.OracleRelationalCommand.ExecuteNonQuery(RelationalCommandParameterObject parameterObject)
+2023-02-14 20:04:45.743 -05:00 [ERR] Failed executing DbCommand (198ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+BEGIN 
+
+execute immediate 'CREATE TABLE "MenuItem" (
+    "Id" RAW(16) NOT NULL,
+    "Icon" NVARCHAR2(30) NOT NULL,
+    "RouterLink" NVARCHAR2(255) NOT NULL,
+    "Label" NVARCHAR2(30) NOT NULL,
+    "Order" NUMBER(10) NOT NULL,
+    "CreatedBy" NVARCHAR2(2000) NOT NULL,
+    "CreatedOn" TIMESTAMP(7) DEFAULT TO_TIMESTAMP(''2023-02-14 20:02:43.988'', ''YYYY-MM-DD HH24:MI:SS.FF'') NOT NULL,
+    "LastModifiedBy" NVARCHAR2(2000),
+    "LastModifiedOn" TIMESTAMP(7) DEFAULT TO_TIMESTAMP(''2023-02-14 20:02:43.988'', ''YYYY-MM-DD HH24:MI:SS.FF'') NOT NULL,
+    "Status" NUMBER(1) NOT NULL,
+    CONSTRAINT "PK_MenuItem" PRIMARY KEY ("Id")
+)';
+END;

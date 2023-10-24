@@ -1,0 +1,46 @@
+2023-10-24 17:24:47.899 -05:00 [INF] User profile is available. Using 'C:\Users\AuxiliarN-PC\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-24 17:24:48.185 -05:00 [INF] Now listening on: https://localhost:7170
+2023-10-24 17:24:48.187 -05:00 [INF] Now listening on: http://localhost:5094
+2023-10-24 17:24:48.192 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-24 17:24:48.194 -05:00 [INF] Hosting environment: Development
+2023-10-24 17:24:48.196 -05:00 [INF] Content root path: C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\Api\
+2023-10-24 17:24:48.738 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/ - -
+2023-10-24 17:24:48.778 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-10-24 17:24:48.822 -05:00 [INF] Response:
+StatusCode: 404
+2023-10-24 17:24:48.827 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/ - - - 404 0 - 90.2457ms
+2023-10-24 17:24:55.446 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/index.html - -
+2023-10-24 17:24:55.490 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/index.html - - - 200 - text/html;charset=utf-8 43.5651ms
+2023-10-24 17:24:55.521 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/swagger-ui.css - -
+2023-10-24 17:24:55.522 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/swagger-ui-standalone-preset.js - -
+2023-10-24 17:24:55.522 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/swagger-ui-bundle.js - -
+2023-10-24 17:24:55.534 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-10-24 17:24:55.546 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/swagger-ui.css - - - 200 143943 text/css 25.4091ms
+2023-10-24 17:24:55.551 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-10-24 17:24:55.553 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-10-24 17:24:55.554 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/swagger-ui-bundle.js - - - 200 1095087 application/javascript 32.2820ms
+2023-10-24 17:24:55.554 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/swagger-ui-standalone-preset.js - - - 200 339486 application/javascript 32.1873ms
+2023-10-24 17:24:55.945 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - -
+2023-10-24 17:24:55.956 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/swagger/favicon-32x32.png - -
+2023-10-24 17:24:55.958 -05:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-10-24 17:24:55.958 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/favicon-32x32.png - - - 200 628 image/png 1.8509ms
+2023-10-24 17:24:56.032 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 86.5238ms

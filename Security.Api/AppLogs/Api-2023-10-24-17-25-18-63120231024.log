@@ -1,0 +1,19 @@
+2023-10-24 17:25:19.476 -05:00 [INF] Entity Framework Core 6.0.14 initialized 'SecurityContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: MigrationsHistoryTable=_MigrationHistory 
+2023-10-24 17:25:19.941 -05:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-24 17:25:19.968 -05:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[_MigrationHistory]');
+2023-10-24 17:25:19.991 -05:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [_MigrationHistory]
+ORDER BY [MigrationId];
+2023-10-24 17:25:20.064 -05:00 [INF] User profile is available. Using 'C:\Users\AuxiliarN-PC\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-24 17:25:20.194 -05:00 [INF] Now listening on: https://localhost:7193
+2023-10-24 17:25:20.196 -05:00 [INF] Now listening on: http://localhost:5276
+2023-10-24 17:25:20.200 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-24 17:25:20.202 -05:00 [INF] Hosting environment: Development
+2023-10-24 17:25:20.204 -05:00 [INF] Content root path: C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\Security.Api\
+2023-10-24 17:25:20.422 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7193/swagger/index.html - -
+2023-10-24 17:25:20.485 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7193/swagger/index.html - - - 200 - text/html;charset=utf-8 64.6318ms
+2023-10-24 17:25:20.717 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7193/swagger/v1/swagger.json - -
+2023-10-24 17:25:20.793 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7193/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 76.1477ms

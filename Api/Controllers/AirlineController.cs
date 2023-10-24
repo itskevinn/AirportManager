@@ -1,11 +1,14 @@
-﻿using Application.Security;
-using Infrastructure.Common.Response;
+﻿using Application.Base;
+using Application.Http.Dto;
+using Application.Http.Request;
+using Application.Security;
+using Application.Service;
 
 namespace Api.Controllers;
 
 [Authorize(new []{"Admin"})]
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/v1/[controller]")]
 public class AirlineController : Controller
 {
     private readonly IAirlineService _airlineService;
@@ -40,7 +43,7 @@ public class AirlineController : Controller
     }
 
     [HttpDelete("Delete/{id:guid}")]
-    public async Task<Response<Boolean>> Update(Guid id)
+    public async Task<Response<bool>> Update(Guid id)
     {
         return await _airlineService.DeleteAsync(id);
     }
