@@ -21,7 +21,7 @@ public interface IFlightRestEaseClient
     /// <param name="token">Auth token</param>
     /// <returns cref="FlightDto">dto of the flight found in database <see cref="Response{T}"/> <see cref="FlightDto"/></returns>
     [Get("api/v1/Flight/GetById/{id}")]
-    Task<Base.Response<FlightDto>> GetByIdAsync([Path] Guid id,
+    Task<Base.Response<FlightDto>> GetByIdAsync([Path("id")] Guid id,
         [Header("Authorization")] string token);
 
     /// <summary>
@@ -56,7 +56,7 @@ public interface IFlightRestEaseClient
     /// <returns> Saved flight <see cref="Response{T}"/> <see cref="FlightDto"/></returns>
     /// <exception cref="UserNotFoundException"></exception>
     [Patch("api/v1/Flight/UpdateStatus?id={id}&newState={newState}")]
-    Task<Base.Response<bool>> UpdateStatusAsync([Path] string newState, [Path] int id,
+    Task<Base.Response<bool>> UpdateStatusAsync([Path("newState")] string newState, [Path("id")] int id,
         [Header("Authorization")] string token);
 
 }

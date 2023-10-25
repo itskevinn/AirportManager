@@ -7,7 +7,7 @@ using AirportGateway.App.Security.Services;
 namespace AirportGateway.Api.Controllers;
 
 [ApiController]
-[Route("api/v1/[controller]")]
+[Route("api/[controller]")]
 public class UserController : Controller
 {
     private readonly IUserService _userService;
@@ -26,7 +26,7 @@ public class UserController : Controller
 
     [Authorize(new[] { "Admin" })]
     [HttpGet("FindById/{id:guid}")]
-    public async Task<Response<UserDto>> GetById(Guid id)
+    public async Task<Response<UserDto>> GetById([FromBody] Guid id)
     {
         return await _userService.GetById(id, HttpContext.Request.Headers["Authorization"]!);
     }

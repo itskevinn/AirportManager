@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace AirportGateway.Api.Controllers;
 
 [ApiController]
-[Route("/api/v1/[controller]")]
+[Route("api/[controller]")]
 public class AuthController : Controller
 {
     private readonly IAuthenticationService _authenticationService;

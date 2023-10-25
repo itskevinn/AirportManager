@@ -10,7 +10,7 @@ public interface IAirlineRestEaseClient
     Task<Base.Response<IEnumerable<AirlineDto>>> GetAllAsync([Header("Authorization")] string token);
 
     [Get("api/v1/Airline/GetById/{id}")]
-    Task<Base.Response<AirlineDto>> GetById([Path] Guid id, [Header("Authorization")] string token);
+    Task<Base.Response<AirlineDto>> GetById([Path("id")] Guid id, [Header("Authorization")] string token);
 
     [Post("api/v1/Airline/Create")]
     Task<Base.Response<AirlineDto>> CreateAsync([Body] AirlineRequest airlineRequest,
@@ -21,5 +21,5 @@ public interface IAirlineRestEaseClient
         [Header("Authorization")] string token);
 
     [Delete("api/v1/Airline/Delete/{id}")]
-    Task<Base.Response<bool>> Delete([Path] Guid id, [Header("Authorization")] string token);
+    Task<Base.Response<bool>> Delete([Path("id")] Guid id, [Header("Authorization")] string token);
 }

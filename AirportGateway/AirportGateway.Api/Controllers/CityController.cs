@@ -1,4 +1,5 @@
-﻿using AirportGateway.App.AirportManagement.Http.Dto;
+﻿using System.ComponentModel.DataAnnotations;
+using AirportGateway.App.AirportManagement.Http.Dto;
 using AirportGateway.App.AirportManagement.Http.Request;
 using AirportGateway.App.AirportManagement.Service;
 using AirportGateway.App.Base;
@@ -8,7 +9,7 @@ namespace AirportGateway.Api.Controllers;
 
 [ApiController]
 [Authorize(new[] { "Admin" })]
-[Route("api/v1/[controller]")]
+[Route("api/[controller]")]
 public class CityController : Controller
 {
     private readonly ICityService _cityService;
@@ -19,7 +20,7 @@ public class CityController : Controller
     }
 
     [HttpPost("Create")]
-    public async Task<Response<CityDto>> Save(CityRequest cityRequest)
+    public async Task<Response<CityDto>> Save([FromBody] CityRequest cityRequest)
     {
         return await _cityService.CreateAsync(cityRequest, HttpContext.Request.Headers.Authorization!);
     }
@@ -31,19 +32,19 @@ public class CityController : Controller
     }
 
     [HttpGet("GetById/{id:guid}")]
-    public async Task<Response<CityDto>> GetById(Guid id)
+    public async Task<Response<CityDto>> GetById([Required] Guid id)
     {
         return await _cityService.GetByIdAsync(id, HttpContext.Request.Headers.Authorization!);
     }
 
     [HttpPut("Update")]
-    public async Task<Response<CityDto>> Update(CityUpdateRequest cityUpdateRequest)
+    public async Task<Response<CityDto>> Update([FromBody] CityUpdateRequest cityUpdateRequest)
     {
         return await _cityService.UpdateAsync(cityUpdateRequest, HttpContext.Request.Headers.Authorization!);
     }
 
     [HttpDelete("Delete/{id:guid}")]
-    public async Task<Response<bool>> Delete(Guid id)
+    public async Task<Response<bool>> Delete([Required] Guid id)
     {
         return await _cityService.Delete(id, HttpContext.Request.Headers.Authorization!);
     }

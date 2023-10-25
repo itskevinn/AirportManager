@@ -1,15 +1,17 @@
 ﻿using Application.Base;
 using Application.Http.Dto;
 using Application.Http.Request;
+using Microsoft.AspNetCore.Http;
 
 namespace Application.Service.Implementation;
 
-public class CityService : BaseService, ICityService
+public class CityService : BaseService<City>, ICityService
 {
     private readonly IGenericRepository<City> _cityRepository;
     private readonly IMapper _mapper;
 
-    public CityService(IGenericRepository<City> cityRepository, IMapper mapper)
+    public CityService(IGenericRepository<City> cityRepository, IMapper mapper, IHttpContextAccessor httpAccessor) :
+        base(httpAccessor)
     {
         _cityRepository = cityRepository ??
                           throw new ArgumentNullException(nameof(cityRepository), $"Repositorio no dispoonible");
@@ -21,6 +23,7 @@ public class CityService : BaseService, ICityService
         try
         {
             var city = _mapper.Map<City>(cityRequest);
+            SetAuditValuesToEntity(city);
             city = await _cityRepository.CreateAsync(city);
             var cityDto = _mapper.Map<CityDto>(city);
             return new Response<CityDto>(HttpStatusCode.OK, "Ciudad registrada", true, cityDto);
@@ -86,8 +89,7 @@ public class CityService : BaseService, ICityService
             if (oldCity == null)
                 return new Response<bool>(HttpStatusCode.InternalServerError, AnErrorHappenedMessage, false);
             var city = _mapper.Map<City>(cityUpdateRequest);
-            city.CreatedBy = oldCity.CreatedBy;
-            city.CreatedOn = oldCity.CreatedOn;
+            SetAuditValuesToEntity(city, true);
             await _cityRepository.UpdateAsync(city);
             return new Response<Boolean>(HttpStatusCode.OK, "Ciudad actualizada", true, true);
         }

@@ -10,7 +10,7 @@ public interface ICityRestEaseClient
     Task<Base.Response<IEnumerable<CityDto>>> GetAll([Header("Authorization")] string token);
 
     [Get("api/v1/City/GetById/{id}")]
-    Task<Base.Response<CityDto>> GetById([Path] Guid cityId, [Header("Authorization")] string token);
+    Task<Base.Response<CityDto>> GetById([Path("id")] Guid cityId, [Header("Authorization")] string token);
 
     [Post("api/v1/City/Create")]
     Task<Base.Response<CityDto>> CreateAsync([Body] CityRequest request, [Header("Authorization")] string token);
@@ -19,5 +19,5 @@ public interface ICityRestEaseClient
     Task<Base.Response<CityDto>> UpdateAsync([Body] CityUpdateRequest request, [Header("Authorization")] string token);
 
     [Delete("api/v1/City/Delete/{id}")]
-    Task<Base.Response<bool>> Delete([Path] Guid id, [Header("Authorization")] string token);
+    Task<Base.Response<bool>> Delete([Path("id")] Guid id, [Header("Authorization")] string token);
 }

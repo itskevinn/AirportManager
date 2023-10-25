@@ -24,7 +24,7 @@ public class FlightController : Controller
         return await _flightService.SaveAsync(flightRequest);
     }
     [AllowAnonymous]
-    [HttpGet("GetAll")]
+    [HttpGet("All")]
     public async Task<Response<IEnumerable<FlightDto>>> GetAll()
     {
         return await _flightService.GetAllAsync();
