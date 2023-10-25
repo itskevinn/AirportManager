@@ -1,6 +1,8 @@
-﻿namespace Security.Infrastructure.Security.Jwt;
+﻿using Security.Infrastructure.Security.Models;
 
-public interface IJwtUtils<in T>
+namespace Security.Infrastructure.Security.Jwt;
+
+public interface IJwtUtils
 {
     /// <summary>
     /// Method to generate the JWT token for the signed user.
@@ -8,7 +10,7 @@ public interface IJwtUtils<in T>
     /// </summary>
     /// <param name="userDto"></param>
     /// <returns></returns>
-    string GenerateJwtToken(T userDto);
+    string GenerateJwtToken(UserDto userDto);
 
     /// <summary>
     /// Method that validates the given JWT token and returns the id of the user 

@@ -23,7 +23,7 @@ public class FlightService : BaseService, IFlightService
 
     {
         _flightRestEaseClient =
-            RestEase.RestClient.For<IFlightRestEaseClient>(appSettings.Value.MicroservicesUrls.FlightsManagementUrl);
+            RestEase.RestClient.For<IFlightRestEaseClient>(appSettings.Value.MicroservicesUrls.AirportManagementUrl);
         _logger = logger;
     }
 

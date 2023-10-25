@@ -9,5 +9,6 @@ public class MenuItemProfile : Profile
     public MenuItemProfile()
     {
         CreateMap<MenuItem, MenuItemDto>().ReverseMap();
+        CreateMap<MenuItemDto, Security.Infrastructure.Security.Models.MenuItemDto>().ReverseMap();
     }
 }

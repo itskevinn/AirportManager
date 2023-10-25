@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Collections;
+using System.Net;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
@@ -45,7 +46,7 @@ public class UserService : BaseService<User>, IUserService
             user.Password = Hash.GetSha256(user.Password);
             SetCurrentUserToEntity(user);
             user = await _userRepository.CreateAsync(user);
-            await _userRoleRepository.CreateAsync(new UserRole(user.Id, userRequest.RoleId));
+            await _userRoleRepository.CreateAllAsync(BuildUserRoles(userRequest, user));
             var userDto = _mapper.Map<UserDto>(user);
             return new Response<UserDto>(HttpStatusCode.OK, "Usuario registrado", true, userDto);
         }
@@ -53,6 +54,13 @@ public class UserService : BaseService<User>, IUserService
         {
             return new Response<UserDto>(HttpStatusCode.InternalServerError, AnErrorHappenedMessage, false, null!, e);
         }
+    }
+
+    private IEnumerable<UserRole> BuildUserRoles(UserRequest userRequest, User user)
+    {
+        var userRoles = new List<UserRole>();
+        userRoles.AddRange(userRequest.RolesId.Select(roleId => new UserRole(user.Id, roleId)));
+        return userRoles;
     }
 
     public async Task<Response<IEnumerable<UserDto>>> GetAll()

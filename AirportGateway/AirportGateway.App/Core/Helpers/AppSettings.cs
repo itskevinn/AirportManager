@@ -14,5 +14,5 @@ public class AppSettings
 public class MicroservicesUrls
 {
     public string SecurityUrl { get; set; } = default!;
-    public string FlightsManagementUrl { get; set; } = default!;
+    public string AirportManagementUrl { get; set; } = default!;
 }

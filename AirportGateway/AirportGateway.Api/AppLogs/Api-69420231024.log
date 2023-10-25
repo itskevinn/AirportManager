@@ -1,0 +1,27 @@
+2023-10-24 20:07:18.896 -05:00 [INF] User profile is available. Using 'C:\Users\AuxiliarN-PC\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-24 20:07:19.042 -05:00 [INF] Now listening on: https://localhost:7144
+2023-10-24 20:07:19.043 -05:00 [INF] Now listening on: http://localhost:5176
+2023-10-24 20:07:19.046 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-24 20:07:19.046 -05:00 [INF] Hosting environment: Development
+2023-10-24 20:07:19.047 -05:00 [INF] Content root path: C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\AirportGateway\AirportGateway.Api
+2023-10-24 20:07:19.498 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/swagger - -
+2023-10-24 20:07:19.525 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/swagger - - - 301 0 - 30.2835ms
+2023-10-24 20:07:19.612 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/swagger/index.html - -
+2023-10-24 20:07:19.711 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/swagger/index.html - - - 200 - text/html;charset=utf-8 98.9465ms
+2023-10-24 20:07:19.738 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/swagger/swagger-ui.css - -
+2023-10-24 20:07:19.741 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/swagger/swagger-ui-bundle.js - -
+2023-10-24 20:07:19.741 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/swagger/swagger-ui-standalone-preset.js - -
+2023-10-24 20:07:19.757 -05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-10-24 20:07:19.757 -05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-10-24 20:07:19.758 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/swagger/swagger-ui.css - - - 200 144929 text/css 19.7361ms
+2023-10-24 20:07:19.759 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/swagger/swagger-ui-standalone-preset.js - - - 200 312163 text/javascript 17.9474ms
+2023-10-24 20:07:19.778 -05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-10-24 20:07:19.780 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/swagger/swagger-ui-bundle.js - - - 200 1061536 text/javascript 38.7543ms
+2023-10-24 20:07:19.972 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - -
+2023-10-24 20:07:19.985 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/swagger/favicon-32x32.png - -
+2023-10-24 20:07:19.990 -05:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-10-24 20:07:19.991 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/swagger/favicon-32x32.png - - - 200 628 image/png 6.0974ms
+2023-10-24 20:07:20.109 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 137.4480ms
+2023-10-24 20:07:29.270 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - -
+2023-10-24 20:07:29.282 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 11.5652ms
+2023-10-24 20:07:46.701 -05:00 [INF] Application is shutting down...

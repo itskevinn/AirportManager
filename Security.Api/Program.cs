@@ -93,7 +93,7 @@ builder.Services.AddDbContext<SecurityContext>(opt =>
 }, ServiceLifetime.Singleton);
 
 
-builder.Services.AddScoped(typeof(IJwtUtils<>), typeof(JwtUtils<>));
+builder.Services.AddScoped(typeof(IJwtUtils), typeof(JwtUtils));
 
 builder.Services.AddDefaultAWSOptions(config.GetAWSOptions());
 builder.Services.AddAWSService<IAmazonDynamoDB>();

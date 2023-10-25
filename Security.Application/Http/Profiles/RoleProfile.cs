@@ -11,5 +11,8 @@ public class RoleProfile : Profile
         CreateMap<Role, RoleDto>().ReverseMap()
             .ForMember(r => r.Authorities, a
                 => a.MapFrom(ar => ar.Authorities));
+        CreateMap<RoleDto, Security.Infrastructure.Security.Models.RoleDto>().ReverseMap()
+            .ForMember(r => r.Authorities, a
+                => a.MapFrom(ar => ar.Authorities));
     }
 }

@@ -1,0 +1,57 @@
+2023-10-25 00:06:49.296 -05:00 [INF] User profile is available. Using 'C:\Users\AuxiliarN-PC\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-25 00:06:49.498 -05:00 [INF] Now listening on: https://localhost:7170
+2023-10-25 00:06:49.500 -05:00 [INF] Now listening on: http://localhost:5094
+2023-10-25 00:06:49.505 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-25 00:06:49.508 -05:00 [INF] Hosting environment: Development
+2023-10-25 00:06:49.511 -05:00 [INF] Content root path: C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\Api\
+2023-10-25 00:06:50.118 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/ - -
+2023-10-25 00:06:50.160 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-10-25 00:06:50.211 -05:00 [INF] Response:
+StatusCode: 404
+2023-10-25 00:06:50.215 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/ - - - 404 0 - 98.4458ms
+2023-10-25 00:09:20.275 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/v1/Airline/GetAll - -
+2023-10-25 00:10:21.080 -05:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/Airline/GetAll
+Host: localhost:7170
+Authorization: [Redacted]
+traceparent: [Redacted]
+2023-10-25 00:10:21.094 -05:00 [INF] Executing endpoint 'Api.Controllers.AirlineController.GetAll (Api)'
+2023-10-25 00:10:21.105 -05:00 [INF] Route matched with {action = "GetAll", controller = "Airline"}. Executing controller action with signature System.Threading.Tasks.Task`1[Application.Base.Response`1[System.Collections.Generic.IEnumerable`1[Application.Http.Dto.AirlineDto]]] GetAll() on controller Api.Controllers.AirlineController (Api).
+2023-10-25 00:10:24.245 -05:00 [INF] Entity Framework Core 6.0.5 initialized 'PersistenceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: MigrationsHistoryTable=Airport._MigrationHistory 
+2023-10-25 00:10:24.780 -05:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreatedBy], [a].[CreatedOn], [a].[LastModifiedOn], [a].[Name], [a].[Status], [a].[UpdatedBy]
+FROM [Airline] AS [a]
+WHERE [a].[Status] = CAST(1 AS bit)
+2023-10-25 00:10:24.809 -05:00 [INF] Executing ObjectResult, writing value of type 'Application.Base.Response`1[[System.Collections.Generic.IEnumerable`1[[Application.Http.Dto.AirlineDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-10-25 00:10:24.839 -05:00 [INF] Executed action Api.Controllers.AirlineController.GetAll (Api) in 3730.3096ms
+2023-10-25 00:10:24.841 -05:00 [INF] Executed endpoint 'Api.Controllers.AirlineController.GetAll (Api)'
+2023-10-25 00:10:24.842 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 05:10:24 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+2023-10-25 00:10:24.848 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/api/v1/Airline/GetAll - - - 200 - application/json;+charset=utf-8 64573.1164ms

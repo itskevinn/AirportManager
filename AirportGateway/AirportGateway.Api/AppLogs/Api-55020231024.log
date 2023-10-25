@@ -1,0 +1,42 @@
+2023-10-24 22:52:55.749 -05:00 [INF] User profile is available. Using 'C:\Users\AuxiliarN-PC\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-24 22:52:55.919 -05:00 [INF] Now listening on: https://localhost:7144
+2023-10-24 22:52:55.921 -05:00 [INF] Now listening on: http://localhost:5176
+2023-10-24 22:52:55.927 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-24 22:52:55.930 -05:00 [INF] Hosting environment: Development
+2023-10-24 22:52:55.933 -05:00 [INF] Content root path: C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\AirportGateway\AirportGateway.Api
+2023-10-24 22:52:56.604 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/swagger/index.html - -
+2023-10-24 22:52:56.733 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/swagger/index.html - - - 200 - text/html;charset=utf-8 131.6540ms
+2023-10-24 22:52:56.972 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - -
+2023-10-24 22:52:57.221 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 249.1169ms
+2023-10-24 22:52:59.373 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/api/v1/Airline/GetAll - -
+2023-10-24 22:52:59.990 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/Airline/GetAll
+Accept: text/plain
+Host: localhost:7144
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-10-24 22:53:00.012 -05:00 [INF] Executing endpoint 'AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api)'
+2023-10-24 22:53:00.029 -05:00 [INF] Route matched with {action = "GetAll", controller = "Airline"}. Executing controller action with signature System.Threading.Tasks.Task`1[AirportGateway.App.Base.Response`1[System.Collections.Generic.IEnumerable`1[AirportGateway.App.AirportManagement.Http.Dto.AirlineDto]]] GetAll() on controller AirportGateway.Api.Controllers.AirlineController (AirportGateway.Api).
+2023-10-24 22:53:02.860 -05:00 [ERR] Ocurrió un error Host desconocido. (api:80)
+2023-10-24 22:53:02.872 -05:00 [INF] Executing ObjectResult, writing value of type 'AirportGateway.App.Base.Response`1[[System.Collections.Generic.IEnumerable`1[[AirportGateway.App.AirportManagement.Http.Dto.AirlineDto, AirportGateway.App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-10-24 22:53:02.888 -05:00 [INF] Executed action AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api) in 2854.1251ms
+2023-10-24 22:53:02.892 -05:00 [INF] Executed endpoint 'AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api)'
+2023-10-24 22:53:02.894 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 03:53:01 GMT
+Server: Kestrel
+2023-10-24 22:53:02.896 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/api/v1/Airline/GetAll - - - 200 - application/json;+charset=utf-8 3523.2350ms

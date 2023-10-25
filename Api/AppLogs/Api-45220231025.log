@@ -1,0 +1,31 @@
+2023-10-25 00:03:29.584 -05:00 [INF] User profile is available. Using 'C:\Users\AuxiliarN-PC\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-25 00:03:29.722 -05:00 [INF] Now listening on: https://localhost:7170
+2023-10-25 00:03:29.723 -05:00 [INF] Now listening on: http://localhost:5094
+2023-10-25 00:03:29.730 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-25 00:03:29.732 -05:00 [INF] Hosting environment: Development
+2023-10-25 00:03:29.733 -05:00 [INF] Content root path: C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\Api\
+2023-10-25 00:03:30.136 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/ - -
+2023-10-25 00:03:30.255 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-10-25 00:03:30.311 -05:00 [INF] Response:
+StatusCode: 404
+2023-10-25 00:03:30.318 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/ - - - 404 0 - 187.7317ms
+2023-10-25 00:03:45.237 -05:00 [INF] Application is shutting down...

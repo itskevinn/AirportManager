@@ -1,0 +1,46 @@
+2023-10-24 20:15:46.135 -05:00 [INF] User profile is available. Using 'C:\Users\AuxiliarN-PC\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-24 20:15:46.249 -05:00 [INF] Now listening on: https://localhost:7144
+2023-10-24 20:15:46.249 -05:00 [INF] Now listening on: http://localhost:5176
+2023-10-24 20:15:46.252 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-24 20:15:46.253 -05:00 [INF] Hosting environment: Development
+2023-10-24 20:15:46.253 -05:00 [INF] Content root path: C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\AirportGateway\AirportGateway.Api
+2023-10-24 20:15:46.459 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/swagger/index.html - -
+2023-10-24 20:15:46.567 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/swagger/index.html - - - 200 - text/html;charset=utf-8 110.4087ms
+2023-10-24 20:15:46.772 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - -
+2023-10-24 20:15:46.924 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 152.3800ms
+2023-10-24 20:16:54.227 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7144/api/v1/Auth/Authenticate application/json 48
+2023-10-24 20:16:54.231 -05:00 [INF] CORS policy execution successful.
+2023-10-24 20:16:54.251 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/v1/Auth/Authenticate
+Accept: text/plain
+Host: localhost:7144
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 48
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-10-24 20:16:54.279 -05:00 [INF] Executing endpoint 'AirportGateway.Api.Controllers.AuthController.Authenticate (AirportGateway.Api)'
+2023-10-24 20:16:54.299 -05:00 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[AirportGateway.App.Base.Response`1[AirportGateway.App.Security.Http.Dto.AuthenticateDto]] Authenticate(AirportGateway.App.Security.Http.Request.AuthenticateRequest) on controller AirportGateway.Api.Controllers.AuthController (AirportGateway.Api).
+2023-10-24 20:16:55.576 -05:00 [INF] Executing ObjectResult, writing value of type 'AirportGateway.App.Base.Response`1[[AirportGateway.App.Security.Http.Dto.AuthenticateDto, AirportGateway.App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-24 20:16:55.615 -05:00 [INF] Executed action AirportGateway.Api.Controllers.AuthController.Authenticate (AirportGateway.Api) in 1307.9039ms
+2023-10-24 20:16:55.620 -05:00 [INF] Executed endpoint 'AirportGateway.Api.Controllers.AuthController.Authenticate (AirportGateway.Api)'
+2023-10-24 20:16:55.624 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 01:16:55 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2023-10-24 20:16:55.625 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7144/api/v1/Auth/Authenticate application/json 48 - 200 - application/json;+charset=utf-8 1397.7663ms
+2023-10-24 20:19:42.887 -05:00 [INF] Application is shutting down...

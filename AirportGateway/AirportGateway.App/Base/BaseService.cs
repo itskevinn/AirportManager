@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace AirportGateway.App.Base;
 
-public class BaseService : IBaseService
+public class BaseService
 {
     private readonly IHttpContextAccessor? _contextAccessor;
 

@@ -3,13 +3,8 @@ using AirportGateway.App.Security.Http.Dto;
 using AirportGateway.App.Security.Http.Request;
 using AirportGateway.App.Security.Services;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using TicketsGateway.Application.Base;
-using TicketsGateway.Application.Security.Http.Dto;
-using TicketsGateway.Application.Security.Http.Request;
-using TicketsGateway.Application.Security.Services;
 
-namespace TicketsGateway.Api.Controllers;
+namespace AirportGateway.Api.Controllers;
 
 [ApiController]
 [Route("/api/v1/[controller]")]

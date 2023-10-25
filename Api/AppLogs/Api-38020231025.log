@@ -1,0 +1,39 @@
+2023-10-25 00:03:54.555 -05:00 [INF] User profile is available. Using 'C:\Users\AuxiliarN-PC\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-25 00:03:54.760 -05:00 [INF] Now listening on: https://localhost:7170
+2023-10-25 00:03:54.763 -05:00 [INF] Now listening on: http://localhost:5094
+2023-10-25 00:03:54.768 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-25 00:03:54.771 -05:00 [INF] Hosting environment: Development
+2023-10-25 00:03:54.774 -05:00 [INF] Content root path: C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\Api\
+2023-10-25 00:03:55.068 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/ - -
+2023-10-25 00:03:55.119 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-10-25 00:03:55.176 -05:00 [INF] Response:
+StatusCode: 404
+2023-10-25 00:03:55.181 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/ - - - 404 0 - 114.9683ms
+2023-10-25 00:04:13.564 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/v1/Airline/GetAll - -
+2023-10-25 00:04:19.925 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+Domain.Exceptions.AppException: Unable to cast object of type 'Microsoft.IdentityModel.Json.Linq.JArray' to type 'System.Collections.Generic.IEnumerable`1[Application.Http.Dto.RoleDto]'.
+   at Api.Middleware.JwtMiddleware.AttachUserToContext(HttpContext context, String token) in C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\Api\Middleware\JwtMiddleware.cs:line 45
+   at Api.Middleware.JwtMiddleware.Invoke(HttpContext context) in C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\Api\Middleware\JwtMiddleware.cs:line 30
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-10-25 00:04:19.929 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/api/v1/Airline/GetAll - - - 500 - text/plain;+charset=utf-8 6365.4561ms

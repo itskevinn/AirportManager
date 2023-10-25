@@ -1,0 +1,912 @@
+2023-10-24 22:50:40.135 -05:00 [INF] Entity Framework Core 6.0.14 initialized 'SecurityContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.10' with options: MigrationsHistoryTable=_MigrationHistory 
+2023-10-24 22:50:40.698 -05:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-10-24 22:50:40.734 -05:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[_MigrationHistory]');
+2023-10-24 22:50:40.770 -05:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [_MigrationHistory]
+ORDER BY [MigrationId];
+2023-10-24 22:50:40.866 -05:00 [INF] User profile is available. Using 'C:\Users\AuxiliarN-PC\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-24 22:50:41.045 -05:00 [INF] Now listening on: https://localhost:7193
+2023-10-24 22:50:41.047 -05:00 [INF] Now listening on: http://localhost:5276
+2023-10-24 22:50:41.051 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-24 22:50:41.052 -05:00 [INF] Hosting environment: Development
+2023-10-24 22:50:41.052 -05:00 [INF] Content root path: C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\Security.Api\
+2023-10-24 22:50:41.614 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7193/swagger/index.html - -
+2023-10-24 22:50:41.750 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7193/swagger/index.html - - - 200 - text/html;charset=utf-8 143.4929ms
+2023-10-24 22:50:41.932 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7193/swagger/v1/swagger.json - -
+2023-10-24 22:50:42.058 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7193/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 126.2930ms
+2023-10-24 22:51:35.551 -05:00 [INF] Request starting HTTP/1.1 POST https://localhost:7193/api/v1/Auth/Authenticate application/json;+charset=utf-8 39
+2023-10-24 22:51:35.587 -05:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/v1/Auth/Authenticate
+Host: localhost:7193
+Content-Type: application/json; charset=utf-8
+traceparent: [Redacted]
+Content-Length: 39
+2023-10-24 22:51:35.591 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.AuthController.Authenticate (Security.Api)'
+2023-10-24 22:51:35.622 -05:00 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[Security.Application.Http.Dto.AuthenticateDto]] Authenticate(Security.Application.Http.Request.AuthenticateRequest) on controller Security.Api.Controllers.AuthController (Security.Api).
+2023-10-24 22:51:35.672 -05:00 [INF] Executing action method Security.Api.Controllers.AuthController.Authenticate (Security.Api) - Validation state: "Valid"
+2023-10-24 22:51:36.179 -05:00 [INF] Executed DbCommand (29ms) [Parameters=[@__ToLower_0='?' (Size = 15), @__GetSha256_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+FROM [User] AS [u]
+WHERE (LOWER([u].[Username]) = @__ToLower_0) AND ([u].[Password] = @__GetSha256_1)
+2023-10-24 22:51:36.352 -05:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-10-24 22:51:36.412 -05:00 [INF] Executed DbCommand (32ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [t0].[RoleId], [t0].[UserId], [t0].[CreatedBy], [t0].[CreatedOn], [t0].[Id], [t0].[LastModifiedBy], [t0].[LastModifiedOn], [t0].[Status], [t0].[Id0], [t0].[CreatedBy0], [t0].[CreatedOn0], [t0].[LastModifiedBy0], [t0].[LastModifiedOn0], [t0].[RoleName], [t0].[Status0], [t0].[RoleId0], [t0].[MenuItemId], [t0].[CreatedBy1], [t0].[CreatedOn1], [t0].[Id1], [t0].[LastModifiedBy1], [t0].[LastModifiedOn1], [t0].[Status1], [t0].[Id00], [t0].[CreatedBy00], [t0].[CreatedOn00], [t0].[Icon], [t0].[Label], [t0].[LastModifiedBy00], [t0].[LastModifiedOn00], [t0].[Order], [t0].[RouterLink], [t0].[Status00]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0], [t1].[RoleId] AS [RoleId0], [t1].[MenuItemId], [t1].[CreatedBy] AS [CreatedBy1], [t1].[CreatedOn] AS [CreatedOn1], [t1].[Id] AS [Id1], [t1].[LastModifiedBy] AS [LastModifiedBy1], [t1].[LastModifiedOn] AS [LastModifiedOn1], [t1].[Status] AS [Status1], [t1].[Id0] AS [Id00], [t1].[CreatedBy0] AS [CreatedBy00], [t1].[CreatedOn0] AS [CreatedOn00], [t1].[Icon], [t1].[Label], [t1].[LastModifiedBy0] AS [LastModifiedBy00], [t1].[LastModifiedOn0] AS [LastModifiedOn00], [t1].[Order], [t1].[RouterLink], [t1].[Status0] AS [Status00]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+    LEFT JOIN (
+        SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status], [m0].[Id] AS [Id0], [m0].[CreatedBy] AS [CreatedBy0], [m0].[CreatedOn] AS [CreatedOn0], [m0].[Icon], [m0].[Label], [m0].[LastModifiedBy] AS [LastModifiedBy0], [m0].[LastModifiedOn] AS [LastModifiedOn0], [m0].[Order], [m0].[RouterLink], [m0].[Status] AS [Status0]
+        FROM [MenuItemRole] AS [m]
+        INNER JOIN [MenuItem] AS [m0] ON [m].[MenuItemId] = [m0].[Id]
+    ) AS [t1] ON [r].[Id] = [t1].[RoleId]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[RoleId], [t0].[UserId], [t0].[Id0], [t0].[RoleId0], [t0].[MenuItemId]
+2023-10-24 22:51:36.599 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Status], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 22:51:36.631 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status]
+FROM [MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2023-10-24 22:51:36.644 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 22:51:36.651 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 22:51:36.993 -05:00 [INF] Executed action method Security.Api.Controllers.AuthController.Authenticate (Security.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1314.9862ms.
+2023-10-24 22:51:37.006 -05:00 [INF] Executing ObjectResult, writing value of type 'Security.Application.Base.Response`1[[Security.Application.Http.Dto.AuthenticateDto, Security.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-24 22:51:37.031 -05:00 [INF] Executed action Security.Api.Controllers.AuthController.Authenticate (Security.Api) in 1401.7445ms
+2023-10-24 22:51:37.033 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.AuthController.Authenticate (Security.Api)'
+2023-10-24 22:51:37.035 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 03:51:36 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+2023-10-24 22:51:37.037 -05:00 [INF] Request finished HTTP/1.1 POST https://localhost:7193/api/v1/Auth/Authenticate application/json;+charset=utf-8 39 - 200 - application/json;+charset=utf-8 1487.0869ms
+2023-10-24 22:51:57.510 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - -
+2023-10-24 22:51:57.593 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [t]
+LEFT JOIN [UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2023-10-24 22:51:57.611 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 22:51:57.615 -05:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120
+Host: localhost:7193
+Authorization: [Redacted]
+traceparent: [Redacted]
+2023-10-24 22:51:57.618 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 22:51:57.624 -05:00 [INF] Route matched with {action = "GetById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[Security.Application.Http.Dto.UserDto]] GetById(System.Guid) on controller Security.Api.Controllers.UserController (Security.Api).
+2023-10-24 22:51:57.628 -05:00 [INF] Executing action method Security.Api.Controllers.UserController.GetById (Security.Api) - Validation state: "Valid"
+2023-10-24 22:51:57.633 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [t0].[RoleId], [t0].[UserId], [t0].[CreatedBy], [t0].[CreatedOn], [t0].[Id], [t0].[LastModifiedBy], [t0].[LastModifiedOn], [t0].[Status], [t0].[Id0], [t0].[CreatedBy0], [t0].[CreatedOn0], [t0].[LastModifiedBy0], [t0].[LastModifiedOn0], [t0].[RoleName], [t0].[Status0], [t0].[RoleId0], [t0].[MenuItemId], [t0].[CreatedBy1], [t0].[CreatedOn1], [t0].[Id1], [t0].[LastModifiedBy1], [t0].[LastModifiedOn1], [t0].[Status1], [t0].[Id00], [t0].[CreatedBy00], [t0].[CreatedOn00], [t0].[Icon], [t0].[Label], [t0].[LastModifiedBy00], [t0].[LastModifiedOn00], [t0].[Order], [t0].[RouterLink], [t0].[Status00]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0], [t1].[RoleId] AS [RoleId0], [t1].[MenuItemId], [t1].[CreatedBy] AS [CreatedBy1], [t1].[CreatedOn] AS [CreatedOn1], [t1].[Id] AS [Id1], [t1].[LastModifiedBy] AS [LastModifiedBy1], [t1].[LastModifiedOn] AS [LastModifiedOn1], [t1].[Status] AS [Status1], [t1].[Id0] AS [Id00], [t1].[CreatedBy0] AS [CreatedBy00], [t1].[CreatedOn0] AS [CreatedOn00], [t1].[Icon], [t1].[Label], [t1].[LastModifiedBy0] AS [LastModifiedBy00], [t1].[LastModifiedOn0] AS [LastModifiedOn00], [t1].[Order], [t1].[RouterLink], [t1].[Status0] AS [Status00]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+    LEFT JOIN (
+        SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status], [m0].[Id] AS [Id0], [m0].[CreatedBy] AS [CreatedBy0], [m0].[CreatedOn] AS [CreatedOn0], [m0].[Icon], [m0].[Label], [m0].[LastModifiedBy] AS [LastModifiedBy0], [m0].[LastModifiedOn] AS [LastModifiedOn0], [m0].[Order], [m0].[RouterLink], [m0].[Status] AS [Status0]
+        FROM [MenuItemRole] AS [m]
+        INNER JOIN [MenuItem] AS [m0] ON [m].[MenuItemId] = [m0].[Id]
+    ) AS [t1] ON [r].[Id] = [t1].[RoleId]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[RoleId], [t0].[UserId], [t0].[Id0], [t0].[RoleId0], [t0].[MenuItemId]
+2023-10-24 22:51:57.641 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Status], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 22:51:57.644 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status]
+FROM [MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2023-10-24 22:51:57.652 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 22:51:57.655 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 22:51:57.658 -05:00 [INF] Executed action method Security.Api.Controllers.UserController.GetById (Security.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 28.5597ms.
+2023-10-24 22:51:57.660 -05:00 [INF] Executing ObjectResult, writing value of type 'Security.Application.Base.Response`1[[Security.Application.Http.Dto.UserDto, Security.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-24 22:51:57.665 -05:00 [INF] Executed action Security.Api.Controllers.UserController.GetById (Security.Api) in 38.8443ms
+2023-10-24 22:51:57.666 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 22:51:57.667 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 03:51:56 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+2023-10-24 22:51:57.668 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - - - 200 - application/json;+charset=utf-8 158.4115ms
+2023-10-24 22:52:59.799 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - -
+2023-10-24 22:52:59.802 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [t]
+LEFT JOIN [UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2023-10-24 22:52:59.808 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 22:52:59.813 -05:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120
+Host: localhost:7193
+Authorization: [Redacted]
+traceparent: [Redacted]
+2023-10-24 22:52:59.814 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 22:52:59.815 -05:00 [INF] Route matched with {action = "GetById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[Security.Application.Http.Dto.UserDto]] GetById(System.Guid) on controller Security.Api.Controllers.UserController (Security.Api).
+2023-10-24 22:52:59.817 -05:00 [INF] Executing action method Security.Api.Controllers.UserController.GetById (Security.Api) - Validation state: "Valid"
+2023-10-24 22:52:59.820 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [t0].[RoleId], [t0].[UserId], [t0].[CreatedBy], [t0].[CreatedOn], [t0].[Id], [t0].[LastModifiedBy], [t0].[LastModifiedOn], [t0].[Status], [t0].[Id0], [t0].[CreatedBy0], [t0].[CreatedOn0], [t0].[LastModifiedBy0], [t0].[LastModifiedOn0], [t0].[RoleName], [t0].[Status0], [t0].[RoleId0], [t0].[MenuItemId], [t0].[CreatedBy1], [t0].[CreatedOn1], [t0].[Id1], [t0].[LastModifiedBy1], [t0].[LastModifiedOn1], [t0].[Status1], [t0].[Id00], [t0].[CreatedBy00], [t0].[CreatedOn00], [t0].[Icon], [t0].[Label], [t0].[LastModifiedBy00], [t0].[LastModifiedOn00], [t0].[Order], [t0].[RouterLink], [t0].[Status00]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0], [t1].[RoleId] AS [RoleId0], [t1].[MenuItemId], [t1].[CreatedBy] AS [CreatedBy1], [t1].[CreatedOn] AS [CreatedOn1], [t1].[Id] AS [Id1], [t1].[LastModifiedBy] AS [LastModifiedBy1], [t1].[LastModifiedOn] AS [LastModifiedOn1], [t1].[Status] AS [Status1], [t1].[Id0] AS [Id00], [t1].[CreatedBy0] AS [CreatedBy00], [t1].[CreatedOn0] AS [CreatedOn00], [t1].[Icon], [t1].[Label], [t1].[LastModifiedBy0] AS [LastModifiedBy00], [t1].[LastModifiedOn0] AS [LastModifiedOn00], [t1].[Order], [t1].[RouterLink], [t1].[Status0] AS [Status00]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+    LEFT JOIN (
+        SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status], [m0].[Id] AS [Id0], [m0].[CreatedBy] AS [CreatedBy0], [m0].[CreatedOn] AS [CreatedOn0], [m0].[Icon], [m0].[Label], [m0].[LastModifiedBy] AS [LastModifiedBy0], [m0].[LastModifiedOn] AS [LastModifiedOn0], [m0].[Order], [m0].[RouterLink], [m0].[Status] AS [Status0]
+        FROM [MenuItemRole] AS [m]
+        INNER JOIN [MenuItem] AS [m0] ON [m].[MenuItemId] = [m0].[Id]
+    ) AS [t1] ON [r].[Id] = [t1].[RoleId]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[RoleId], [t0].[UserId], [t0].[Id0], [t0].[RoleId0], [t0].[MenuItemId]
+2023-10-24 22:52:59.830 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Status], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 22:52:59.835 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status]
+FROM [MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2023-10-24 22:52:59.840 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 22:52:59.844 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 22:52:59.848 -05:00 [INF] Executed action method Security.Api.Controllers.UserController.GetById (Security.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 30.0787ms.
+2023-10-24 22:52:59.849 -05:00 [INF] Executing ObjectResult, writing value of type 'Security.Application.Base.Response`1[[Security.Application.Http.Dto.UserDto, Security.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-24 22:52:59.850 -05:00 [INF] Executed action Security.Api.Controllers.UserController.GetById (Security.Api) in 33.723ms
+2023-10-24 22:52:59.851 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 22:52:59.853 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 03:52:59 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+2023-10-24 22:52:59.854 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - - - 200 - application/json;+charset=utf-8 55.3474ms
+2023-10-24 22:56:03.470 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - -
+2023-10-24 22:56:03.472 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [t]
+LEFT JOIN [UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2023-10-24 22:56:03.477 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 22:56:03.479 -05:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120
+Host: localhost:7193
+Authorization: [Redacted]
+traceparent: [Redacted]
+2023-10-24 22:56:03.480 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 22:56:03.480 -05:00 [INF] Route matched with {action = "GetById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[Security.Application.Http.Dto.UserDto]] GetById(System.Guid) on controller Security.Api.Controllers.UserController (Security.Api).
+2023-10-24 22:56:03.485 -05:00 [INF] Executing action method Security.Api.Controllers.UserController.GetById (Security.Api) - Validation state: "Valid"
+2023-10-24 22:56:03.487 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [t0].[RoleId], [t0].[UserId], [t0].[CreatedBy], [t0].[CreatedOn], [t0].[Id], [t0].[LastModifiedBy], [t0].[LastModifiedOn], [t0].[Status], [t0].[Id0], [t0].[CreatedBy0], [t0].[CreatedOn0], [t0].[LastModifiedBy0], [t0].[LastModifiedOn0], [t0].[RoleName], [t0].[Status0], [t0].[RoleId0], [t0].[MenuItemId], [t0].[CreatedBy1], [t0].[CreatedOn1], [t0].[Id1], [t0].[LastModifiedBy1], [t0].[LastModifiedOn1], [t0].[Status1], [t0].[Id00], [t0].[CreatedBy00], [t0].[CreatedOn00], [t0].[Icon], [t0].[Label], [t0].[LastModifiedBy00], [t0].[LastModifiedOn00], [t0].[Order], [t0].[RouterLink], [t0].[Status00]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0], [t1].[RoleId] AS [RoleId0], [t1].[MenuItemId], [t1].[CreatedBy] AS [CreatedBy1], [t1].[CreatedOn] AS [CreatedOn1], [t1].[Id] AS [Id1], [t1].[LastModifiedBy] AS [LastModifiedBy1], [t1].[LastModifiedOn] AS [LastModifiedOn1], [t1].[Status] AS [Status1], [t1].[Id0] AS [Id00], [t1].[CreatedBy0] AS [CreatedBy00], [t1].[CreatedOn0] AS [CreatedOn00], [t1].[Icon], [t1].[Label], [t1].[LastModifiedBy0] AS [LastModifiedBy00], [t1].[LastModifiedOn0] AS [LastModifiedOn00], [t1].[Order], [t1].[RouterLink], [t1].[Status0] AS [Status00]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+    LEFT JOIN (
+        SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status], [m0].[Id] AS [Id0], [m0].[CreatedBy] AS [CreatedBy0], [m0].[CreatedOn] AS [CreatedOn0], [m0].[Icon], [m0].[Label], [m0].[LastModifiedBy] AS [LastModifiedBy0], [m0].[LastModifiedOn] AS [LastModifiedOn0], [m0].[Order], [m0].[RouterLink], [m0].[Status] AS [Status0]
+        FROM [MenuItemRole] AS [m]
+        INNER JOIN [MenuItem] AS [m0] ON [m].[MenuItemId] = [m0].[Id]
+    ) AS [t1] ON [r].[Id] = [t1].[RoleId]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[RoleId], [t0].[UserId], [t0].[Id0], [t0].[RoleId0], [t0].[MenuItemId]
+2023-10-24 22:56:03.493 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Status], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 22:56:03.497 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status]
+FROM [MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2023-10-24 22:56:03.500 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 22:56:03.502 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 22:56:03.504 -05:00 [INF] Executed action method Security.Api.Controllers.UserController.GetById (Security.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 19.0414ms.
+2023-10-24 22:56:03.505 -05:00 [INF] Executing ObjectResult, writing value of type 'Security.Application.Base.Response`1[[Security.Application.Http.Dto.UserDto, Security.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-24 22:56:03.506 -05:00 [INF] Executed action Security.Api.Controllers.UserController.GetById (Security.Api) in 22.6083ms
+2023-10-24 22:56:03.507 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 22:56:03.508 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 03:56:03 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+2023-10-24 22:56:03.509 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - - - 200 - application/json;+charset=utf-8 38.5481ms
+2023-10-24 22:56:28.265 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - -
+2023-10-24 22:56:28.268 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [t]
+LEFT JOIN [UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2023-10-24 22:56:28.273 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 22:56:28.275 -05:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120
+Host: localhost:7193
+Authorization: [Redacted]
+traceparent: [Redacted]
+2023-10-24 22:56:28.275 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 22:56:28.277 -05:00 [INF] Route matched with {action = "GetById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[Security.Application.Http.Dto.UserDto]] GetById(System.Guid) on controller Security.Api.Controllers.UserController (Security.Api).
+2023-10-24 22:56:28.278 -05:00 [INF] Executing action method Security.Api.Controllers.UserController.GetById (Security.Api) - Validation state: "Valid"
+2023-10-24 22:56:28.281 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [t0].[RoleId], [t0].[UserId], [t0].[CreatedBy], [t0].[CreatedOn], [t0].[Id], [t0].[LastModifiedBy], [t0].[LastModifiedOn], [t0].[Status], [t0].[Id0], [t0].[CreatedBy0], [t0].[CreatedOn0], [t0].[LastModifiedBy0], [t0].[LastModifiedOn0], [t0].[RoleName], [t0].[Status0], [t0].[RoleId0], [t0].[MenuItemId], [t0].[CreatedBy1], [t0].[CreatedOn1], [t0].[Id1], [t0].[LastModifiedBy1], [t0].[LastModifiedOn1], [t0].[Status1], [t0].[Id00], [t0].[CreatedBy00], [t0].[CreatedOn00], [t0].[Icon], [t0].[Label], [t0].[LastModifiedBy00], [t0].[LastModifiedOn00], [t0].[Order], [t0].[RouterLink], [t0].[Status00]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0], [t1].[RoleId] AS [RoleId0], [t1].[MenuItemId], [t1].[CreatedBy] AS [CreatedBy1], [t1].[CreatedOn] AS [CreatedOn1], [t1].[Id] AS [Id1], [t1].[LastModifiedBy] AS [LastModifiedBy1], [t1].[LastModifiedOn] AS [LastModifiedOn1], [t1].[Status] AS [Status1], [t1].[Id0] AS [Id00], [t1].[CreatedBy0] AS [CreatedBy00], [t1].[CreatedOn0] AS [CreatedOn00], [t1].[Icon], [t1].[Label], [t1].[LastModifiedBy0] AS [LastModifiedBy00], [t1].[LastModifiedOn0] AS [LastModifiedOn00], [t1].[Order], [t1].[RouterLink], [t1].[Status0] AS [Status00]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+    LEFT JOIN (
+        SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status], [m0].[Id] AS [Id0], [m0].[CreatedBy] AS [CreatedBy0], [m0].[CreatedOn] AS [CreatedOn0], [m0].[Icon], [m0].[Label], [m0].[LastModifiedBy] AS [LastModifiedBy0], [m0].[LastModifiedOn] AS [LastModifiedOn0], [m0].[Order], [m0].[RouterLink], [m0].[Status] AS [Status0]
+        FROM [MenuItemRole] AS [m]
+        INNER JOIN [MenuItem] AS [m0] ON [m].[MenuItemId] = [m0].[Id]
+    ) AS [t1] ON [r].[Id] = [t1].[RoleId]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[RoleId], [t0].[UserId], [t0].[Id0], [t0].[RoleId0], [t0].[MenuItemId]
+2023-10-24 22:56:28.289 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Status], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 22:56:28.293 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status]
+FROM [MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2023-10-24 22:56:28.296 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 22:56:28.300 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 22:56:28.301 -05:00 [INF] Executed action method Security.Api.Controllers.UserController.GetById (Security.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 22.4214ms.
+2023-10-24 22:56:28.303 -05:00 [INF] Executing ObjectResult, writing value of type 'Security.Application.Base.Response`1[[Security.Application.Http.Dto.UserDto, Security.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-24 22:56:28.304 -05:00 [INF] Executed action Security.Api.Controllers.UserController.GetById (Security.Api) in 26.287ms
+2023-10-24 22:56:28.305 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 22:56:28.306 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 03:56:27 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+2023-10-24 22:56:28.307 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - - - 200 - application/json;+charset=utf-8 41.6182ms
+2023-10-24 23:01:00.098 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - -
+2023-10-24 23:01:00.146 -05:00 [INF] Executed DbCommand (9ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [t]
+LEFT JOIN [UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2023-10-24 23:01:00.154 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 23:01:00.156 -05:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120
+Host: localhost:7193
+Authorization: [Redacted]
+traceparent: [Redacted]
+2023-10-24 23:01:00.156 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 23:01:00.157 -05:00 [INF] Route matched with {action = "GetById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[Security.Application.Http.Dto.UserDto]] GetById(System.Guid) on controller Security.Api.Controllers.UserController (Security.Api).
+2023-10-24 23:01:00.159 -05:00 [INF] Executing action method Security.Api.Controllers.UserController.GetById (Security.Api) - Validation state: "Valid"
+2023-10-24 23:01:00.171 -05:00 [INF] Executed DbCommand (11ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [t0].[RoleId], [t0].[UserId], [t0].[CreatedBy], [t0].[CreatedOn], [t0].[Id], [t0].[LastModifiedBy], [t0].[LastModifiedOn], [t0].[Status], [t0].[Id0], [t0].[CreatedBy0], [t0].[CreatedOn0], [t0].[LastModifiedBy0], [t0].[LastModifiedOn0], [t0].[RoleName], [t0].[Status0], [t0].[RoleId0], [t0].[MenuItemId], [t0].[CreatedBy1], [t0].[CreatedOn1], [t0].[Id1], [t0].[LastModifiedBy1], [t0].[LastModifiedOn1], [t0].[Status1], [t0].[Id00], [t0].[CreatedBy00], [t0].[CreatedOn00], [t0].[Icon], [t0].[Label], [t0].[LastModifiedBy00], [t0].[LastModifiedOn00], [t0].[Order], [t0].[RouterLink], [t0].[Status00]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0], [t1].[RoleId] AS [RoleId0], [t1].[MenuItemId], [t1].[CreatedBy] AS [CreatedBy1], [t1].[CreatedOn] AS [CreatedOn1], [t1].[Id] AS [Id1], [t1].[LastModifiedBy] AS [LastModifiedBy1], [t1].[LastModifiedOn] AS [LastModifiedOn1], [t1].[Status] AS [Status1], [t1].[Id0] AS [Id00], [t1].[CreatedBy0] AS [CreatedBy00], [t1].[CreatedOn0] AS [CreatedOn00], [t1].[Icon], [t1].[Label], [t1].[LastModifiedBy0] AS [LastModifiedBy00], [t1].[LastModifiedOn0] AS [LastModifiedOn00], [t1].[Order], [t1].[RouterLink], [t1].[Status0] AS [Status00]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+    LEFT JOIN (
+        SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status], [m0].[Id] AS [Id0], [m0].[CreatedBy] AS [CreatedBy0], [m0].[CreatedOn] AS [CreatedOn0], [m0].[Icon], [m0].[Label], [m0].[LastModifiedBy] AS [LastModifiedBy0], [m0].[LastModifiedOn] AS [LastModifiedOn0], [m0].[Order], [m0].[RouterLink], [m0].[Status] AS [Status0]
+        FROM [MenuItemRole] AS [m]
+        INNER JOIN [MenuItem] AS [m0] ON [m].[MenuItemId] = [m0].[Id]
+    ) AS [t1] ON [r].[Id] = [t1].[RoleId]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[RoleId], [t0].[UserId], [t0].[Id0], [t0].[RoleId0], [t0].[MenuItemId]
+2023-10-24 23:01:00.180 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Status], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 23:01:00.183 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status]
+FROM [MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2023-10-24 23:01:00.188 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 23:01:00.190 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 23:01:00.192 -05:00 [INF] Executed action method Security.Api.Controllers.UserController.GetById (Security.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 32.1844ms.
+2023-10-24 23:01:00.196 -05:00 [INF] Executing ObjectResult, writing value of type 'Security.Application.Base.Response`1[[Security.Application.Http.Dto.UserDto, Security.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-24 23:01:00.197 -05:00 [INF] Executed action Security.Api.Controllers.UserController.GetById (Security.Api) in 38.6652ms
+2023-10-24 23:01:00.197 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 23:01:00.198 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 04:00:59 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+2023-10-24 23:01:00.199 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - - - 200 - application/json;+charset=utf-8 100.6483ms
+2023-10-24 23:04:44.312 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - -
+2023-10-24 23:04:44.316 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [t]
+LEFT JOIN [UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2023-10-24 23:04:44.325 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 23:04:44.327 -05:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120
+Host: localhost:7193
+Authorization: [Redacted]
+traceparent: [Redacted]
+2023-10-24 23:04:44.329 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 23:04:44.329 -05:00 [INF] Route matched with {action = "GetById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[Security.Application.Http.Dto.UserDto]] GetById(System.Guid) on controller Security.Api.Controllers.UserController (Security.Api).
+2023-10-24 23:04:44.332 -05:00 [INF] Executing action method Security.Api.Controllers.UserController.GetById (Security.Api) - Validation state: "Valid"
+2023-10-24 23:04:44.334 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [t0].[RoleId], [t0].[UserId], [t0].[CreatedBy], [t0].[CreatedOn], [t0].[Id], [t0].[LastModifiedBy], [t0].[LastModifiedOn], [t0].[Status], [t0].[Id0], [t0].[CreatedBy0], [t0].[CreatedOn0], [t0].[LastModifiedBy0], [t0].[LastModifiedOn0], [t0].[RoleName], [t0].[Status0], [t0].[RoleId0], [t0].[MenuItemId], [t0].[CreatedBy1], [t0].[CreatedOn1], [t0].[Id1], [t0].[LastModifiedBy1], [t0].[LastModifiedOn1], [t0].[Status1], [t0].[Id00], [t0].[CreatedBy00], [t0].[CreatedOn00], [t0].[Icon], [t0].[Label], [t0].[LastModifiedBy00], [t0].[LastModifiedOn00], [t0].[Order], [t0].[RouterLink], [t0].[Status00]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0], [t1].[RoleId] AS [RoleId0], [t1].[MenuItemId], [t1].[CreatedBy] AS [CreatedBy1], [t1].[CreatedOn] AS [CreatedOn1], [t1].[Id] AS [Id1], [t1].[LastModifiedBy] AS [LastModifiedBy1], [t1].[LastModifiedOn] AS [LastModifiedOn1], [t1].[Status] AS [Status1], [t1].[Id0] AS [Id00], [t1].[CreatedBy0] AS [CreatedBy00], [t1].[CreatedOn0] AS [CreatedOn00], [t1].[Icon], [t1].[Label], [t1].[LastModifiedBy0] AS [LastModifiedBy00], [t1].[LastModifiedOn0] AS [LastModifiedOn00], [t1].[Order], [t1].[RouterLink], [t1].[Status0] AS [Status00]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+    LEFT JOIN (
+        SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status], [m0].[Id] AS [Id0], [m0].[CreatedBy] AS [CreatedBy0], [m0].[CreatedOn] AS [CreatedOn0], [m0].[Icon], [m0].[Label], [m0].[LastModifiedBy] AS [LastModifiedBy0], [m0].[LastModifiedOn] AS [LastModifiedOn0], [m0].[Order], [m0].[RouterLink], [m0].[Status] AS [Status0]
+        FROM [MenuItemRole] AS [m]
+        INNER JOIN [MenuItem] AS [m0] ON [m].[MenuItemId] = [m0].[Id]
+    ) AS [t1] ON [r].[Id] = [t1].[RoleId]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[RoleId], [t0].[UserId], [t0].[Id0], [t0].[RoleId0], [t0].[MenuItemId]
+2023-10-24 23:04:44.343 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Status], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 23:04:44.347 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status]
+FROM [MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2023-10-24 23:04:44.351 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 23:04:44.358 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 23:04:44.361 -05:00 [INF] Executed action method Security.Api.Controllers.UserController.GetById (Security.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 28.945ms.
+2023-10-24 23:04:44.363 -05:00 [INF] Executing ObjectResult, writing value of type 'Security.Application.Base.Response`1[[Security.Application.Http.Dto.UserDto, Security.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-24 23:04:44.364 -05:00 [INF] Executed action Security.Api.Controllers.UserController.GetById (Security.Api) in 33.226ms
+2023-10-24 23:04:44.365 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 23:04:44.367 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 04:04:44 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+2023-10-24 23:04:44.368 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - - - 200 - application/json;+charset=utf-8 56.6878ms
+2023-10-24 23:09:04.305 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - -
+2023-10-24 23:09:04.307 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [t]
+LEFT JOIN [UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2023-10-24 23:09:04.314 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 23:09:04.317 -05:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120
+Host: localhost:7193
+Authorization: [Redacted]
+traceparent: [Redacted]
+2023-10-24 23:09:04.318 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 23:09:04.319 -05:00 [INF] Route matched with {action = "GetById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[Security.Application.Http.Dto.UserDto]] GetById(System.Guid) on controller Security.Api.Controllers.UserController (Security.Api).
+2023-10-24 23:09:04.322 -05:00 [INF] Executing action method Security.Api.Controllers.UserController.GetById (Security.Api) - Validation state: "Valid"
+2023-10-24 23:09:04.324 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [t0].[RoleId], [t0].[UserId], [t0].[CreatedBy], [t0].[CreatedOn], [t0].[Id], [t0].[LastModifiedBy], [t0].[LastModifiedOn], [t0].[Status], [t0].[Id0], [t0].[CreatedBy0], [t0].[CreatedOn0], [t0].[LastModifiedBy0], [t0].[LastModifiedOn0], [t0].[RoleName], [t0].[Status0], [t0].[RoleId0], [t0].[MenuItemId], [t0].[CreatedBy1], [t0].[CreatedOn1], [t0].[Id1], [t0].[LastModifiedBy1], [t0].[LastModifiedOn1], [t0].[Status1], [t0].[Id00], [t0].[CreatedBy00], [t0].[CreatedOn00], [t0].[Icon], [t0].[Label], [t0].[LastModifiedBy00], [t0].[LastModifiedOn00], [t0].[Order], [t0].[RouterLink], [t0].[Status00]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0], [t1].[RoleId] AS [RoleId0], [t1].[MenuItemId], [t1].[CreatedBy] AS [CreatedBy1], [t1].[CreatedOn] AS [CreatedOn1], [t1].[Id] AS [Id1], [t1].[LastModifiedBy] AS [LastModifiedBy1], [t1].[LastModifiedOn] AS [LastModifiedOn1], [t1].[Status] AS [Status1], [t1].[Id0] AS [Id00], [t1].[CreatedBy0] AS [CreatedBy00], [t1].[CreatedOn0] AS [CreatedOn00], [t1].[Icon], [t1].[Label], [t1].[LastModifiedBy0] AS [LastModifiedBy00], [t1].[LastModifiedOn0] AS [LastModifiedOn00], [t1].[Order], [t1].[RouterLink], [t1].[Status0] AS [Status00]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+    LEFT JOIN (
+        SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status], [m0].[Id] AS [Id0], [m0].[CreatedBy] AS [CreatedBy0], [m0].[CreatedOn] AS [CreatedOn0], [m0].[Icon], [m0].[Label], [m0].[LastModifiedBy] AS [LastModifiedBy0], [m0].[LastModifiedOn] AS [LastModifiedOn0], [m0].[Order], [m0].[RouterLink], [m0].[Status] AS [Status0]
+        FROM [MenuItemRole] AS [m]
+        INNER JOIN [MenuItem] AS [m0] ON [m].[MenuItemId] = [m0].[Id]
+    ) AS [t1] ON [r].[Id] = [t1].[RoleId]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[RoleId], [t0].[UserId], [t0].[Id0], [t0].[RoleId0], [t0].[MenuItemId]
+2023-10-24 23:09:04.333 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Status], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 23:09:04.341 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status]
+FROM [MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2023-10-24 23:09:04.345 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 23:09:04.350 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 23:09:04.353 -05:00 [INF] Executed action method Security.Api.Controllers.UserController.GetById (Security.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 30.743ms.
+2023-10-24 23:09:04.355 -05:00 [INF] Executing ObjectResult, writing value of type 'Security.Application.Base.Response`1[[Security.Application.Http.Dto.UserDto, Security.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-24 23:09:04.356 -05:00 [INF] Executed action Security.Api.Controllers.UserController.GetById (Security.Api) in 35.446ms
+2023-10-24 23:09:04.358 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 23:09:04.359 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 04:09:04 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+2023-10-24 23:09:04.360 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - - - 200 - application/json;+charset=utf-8 55.4283ms
+2023-10-24 23:19:28.022 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - -
+2023-10-24 23:19:28.078 -05:00 [INF] Executed DbCommand (10ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [t]
+LEFT JOIN [UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2023-10-24 23:19:28.088 -05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 23:19:28.091 -05:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120
+Host: localhost:7193
+Authorization: [Redacted]
+traceparent: [Redacted]
+2023-10-24 23:19:28.092 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 23:19:28.095 -05:00 [INF] Route matched with {action = "GetById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[Security.Application.Http.Dto.UserDto]] GetById(System.Guid) on controller Security.Api.Controllers.UserController (Security.Api).
+2023-10-24 23:19:28.098 -05:00 [INF] Executing action method Security.Api.Controllers.UserController.GetById (Security.Api) - Validation state: "Valid"
+2023-10-24 23:19:28.114 -05:00 [INF] Executed DbCommand (14ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [t0].[RoleId], [t0].[UserId], [t0].[CreatedBy], [t0].[CreatedOn], [t0].[Id], [t0].[LastModifiedBy], [t0].[LastModifiedOn], [t0].[Status], [t0].[Id0], [t0].[CreatedBy0], [t0].[CreatedOn0], [t0].[LastModifiedBy0], [t0].[LastModifiedOn0], [t0].[RoleName], [t0].[Status0], [t0].[RoleId0], [t0].[MenuItemId], [t0].[CreatedBy1], [t0].[CreatedOn1], [t0].[Id1], [t0].[LastModifiedBy1], [t0].[LastModifiedOn1], [t0].[Status1], [t0].[Id00], [t0].[CreatedBy00], [t0].[CreatedOn00], [t0].[Icon], [t0].[Label], [t0].[LastModifiedBy00], [t0].[LastModifiedOn00], [t0].[Order], [t0].[RouterLink], [t0].[Status00]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0], [t1].[RoleId] AS [RoleId0], [t1].[MenuItemId], [t1].[CreatedBy] AS [CreatedBy1], [t1].[CreatedOn] AS [CreatedOn1], [t1].[Id] AS [Id1], [t1].[LastModifiedBy] AS [LastModifiedBy1], [t1].[LastModifiedOn] AS [LastModifiedOn1], [t1].[Status] AS [Status1], [t1].[Id0] AS [Id00], [t1].[CreatedBy0] AS [CreatedBy00], [t1].[CreatedOn0] AS [CreatedOn00], [t1].[Icon], [t1].[Label], [t1].[LastModifiedBy0] AS [LastModifiedBy00], [t1].[LastModifiedOn0] AS [LastModifiedOn00], [t1].[Order], [t1].[RouterLink], [t1].[Status0] AS [Status00]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+    LEFT JOIN (
+        SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status], [m0].[Id] AS [Id0], [m0].[CreatedBy] AS [CreatedBy0], [m0].[CreatedOn] AS [CreatedOn0], [m0].[Icon], [m0].[Label], [m0].[LastModifiedBy] AS [LastModifiedBy0], [m0].[LastModifiedOn] AS [LastModifiedOn0], [m0].[Order], [m0].[RouterLink], [m0].[Status] AS [Status0]
+        FROM [MenuItemRole] AS [m]
+        INNER JOIN [MenuItem] AS [m0] ON [m].[MenuItemId] = [m0].[Id]
+    ) AS [t1] ON [r].[Id] = [t1].[RoleId]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[RoleId], [t0].[UserId], [t0].[Id0], [t0].[RoleId0], [t0].[MenuItemId]
+2023-10-24 23:19:28.126 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Status], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 23:19:28.131 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status]
+FROM [MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2023-10-24 23:19:28.135 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 23:19:28.137 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 23:19:28.140 -05:00 [INF] Executed action method Security.Api.Controllers.UserController.GetById (Security.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 41.1473ms.
+2023-10-24 23:19:28.141 -05:00 [INF] Executing ObjectResult, writing value of type 'Security.Application.Base.Response`1[[Security.Application.Http.Dto.UserDto, Security.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-24 23:19:28.146 -05:00 [INF] Executed action Security.Api.Controllers.UserController.GetById (Security.Api) in 49.6808ms
+2023-10-24 23:19:28.147 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 23:19:28.148 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 04:19:27 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+2023-10-24 23:19:28.148 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - - - 200 - application/json;+charset=utf-8 126.6082ms
+2023-10-24 23:20:32.594 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - -
+2023-10-24 23:20:32.600 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [t]
+LEFT JOIN [UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2023-10-24 23:20:32.607 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 23:20:32.611 -05:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120
+Host: localhost:7193
+Authorization: [Redacted]
+traceparent: [Redacted]
+2023-10-24 23:20:32.612 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 23:20:32.613 -05:00 [INF] Route matched with {action = "GetById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[Security.Application.Http.Dto.UserDto]] GetById(System.Guid) on controller Security.Api.Controllers.UserController (Security.Api).
+2023-10-24 23:20:32.617 -05:00 [INF] Executing action method Security.Api.Controllers.UserController.GetById (Security.Api) - Validation state: "Valid"
+2023-10-24 23:20:32.632 -05:00 [INF] Executed DbCommand (13ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [t0].[RoleId], [t0].[UserId], [t0].[CreatedBy], [t0].[CreatedOn], [t0].[Id], [t0].[LastModifiedBy], [t0].[LastModifiedOn], [t0].[Status], [t0].[Id0], [t0].[CreatedBy0], [t0].[CreatedOn0], [t0].[LastModifiedBy0], [t0].[LastModifiedOn0], [t0].[RoleName], [t0].[Status0], [t0].[RoleId0], [t0].[MenuItemId], [t0].[CreatedBy1], [t0].[CreatedOn1], [t0].[Id1], [t0].[LastModifiedBy1], [t0].[LastModifiedOn1], [t0].[Status1], [t0].[Id00], [t0].[CreatedBy00], [t0].[CreatedOn00], [t0].[Icon], [t0].[Label], [t0].[LastModifiedBy00], [t0].[LastModifiedOn00], [t0].[Order], [t0].[RouterLink], [t0].[Status00]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0], [t1].[RoleId] AS [RoleId0], [t1].[MenuItemId], [t1].[CreatedBy] AS [CreatedBy1], [t1].[CreatedOn] AS [CreatedOn1], [t1].[Id] AS [Id1], [t1].[LastModifiedBy] AS [LastModifiedBy1], [t1].[LastModifiedOn] AS [LastModifiedOn1], [t1].[Status] AS [Status1], [t1].[Id0] AS [Id00], [t1].[CreatedBy0] AS [CreatedBy00], [t1].[CreatedOn0] AS [CreatedOn00], [t1].[Icon], [t1].[Label], [t1].[LastModifiedBy0] AS [LastModifiedBy00], [t1].[LastModifiedOn0] AS [LastModifiedOn00], [t1].[Order], [t1].[RouterLink], [t1].[Status0] AS [Status00]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+    LEFT JOIN (
+        SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status], [m0].[Id] AS [Id0], [m0].[CreatedBy] AS [CreatedBy0], [m0].[CreatedOn] AS [CreatedOn0], [m0].[Icon], [m0].[Label], [m0].[LastModifiedBy] AS [LastModifiedBy0], [m0].[LastModifiedOn] AS [LastModifiedOn0], [m0].[Order], [m0].[RouterLink], [m0].[Status] AS [Status0]
+        FROM [MenuItemRole] AS [m]
+        INNER JOIN [MenuItem] AS [m0] ON [m].[MenuItemId] = [m0].[Id]
+    ) AS [t1] ON [r].[Id] = [t1].[RoleId]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[RoleId], [t0].[UserId], [t0].[Id0], [t0].[RoleId0], [t0].[MenuItemId]
+2023-10-24 23:20:32.643 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Status], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 23:20:32.653 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status]
+FROM [MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2023-10-24 23:20:32.658 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 23:20:32.663 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 23:20:32.665 -05:00 [INF] Executed action method Security.Api.Controllers.UserController.GetById (Security.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 47.5797ms.
+2023-10-24 23:20:32.667 -05:00 [INF] Executing ObjectResult, writing value of type 'Security.Application.Base.Response`1[[Security.Application.Http.Dto.UserDto, Security.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-24 23:20:32.668 -05:00 [INF] Executed action Security.Api.Controllers.UserController.GetById (Security.Api) in 51.571ms
+2023-10-24 23:20:32.669 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 23:20:32.670 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 04:20:32 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+2023-10-24 23:20:32.672 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - - - 200 - application/json;+charset=utf-8 77.2724ms
+2023-10-24 23:24:26.763 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - -
+2023-10-24 23:24:26.770 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [t]
+LEFT JOIN [UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2023-10-24 23:24:26.778 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 23:24:26.783 -05:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120
+Host: localhost:7193
+Authorization: [Redacted]
+traceparent: [Redacted]
+2023-10-24 23:24:26.784 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 23:24:26.785 -05:00 [INF] Route matched with {action = "GetById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[Security.Application.Http.Dto.UserDto]] GetById(System.Guid) on controller Security.Api.Controllers.UserController (Security.Api).
+2023-10-24 23:24:26.787 -05:00 [INF] Executing action method Security.Api.Controllers.UserController.GetById (Security.Api) - Validation state: "Valid"
+2023-10-24 23:24:26.804 -05:00 [INF] Executed DbCommand (14ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [t0].[RoleId], [t0].[UserId], [t0].[CreatedBy], [t0].[CreatedOn], [t0].[Id], [t0].[LastModifiedBy], [t0].[LastModifiedOn], [t0].[Status], [t0].[Id0], [t0].[CreatedBy0], [t0].[CreatedOn0], [t0].[LastModifiedBy0], [t0].[LastModifiedOn0], [t0].[RoleName], [t0].[Status0], [t0].[RoleId0], [t0].[MenuItemId], [t0].[CreatedBy1], [t0].[CreatedOn1], [t0].[Id1], [t0].[LastModifiedBy1], [t0].[LastModifiedOn1], [t0].[Status1], [t0].[Id00], [t0].[CreatedBy00], [t0].[CreatedOn00], [t0].[Icon], [t0].[Label], [t0].[LastModifiedBy00], [t0].[LastModifiedOn00], [t0].[Order], [t0].[RouterLink], [t0].[Status00]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0], [t1].[RoleId] AS [RoleId0], [t1].[MenuItemId], [t1].[CreatedBy] AS [CreatedBy1], [t1].[CreatedOn] AS [CreatedOn1], [t1].[Id] AS [Id1], [t1].[LastModifiedBy] AS [LastModifiedBy1], [t1].[LastModifiedOn] AS [LastModifiedOn1], [t1].[Status] AS [Status1], [t1].[Id0] AS [Id00], [t1].[CreatedBy0] AS [CreatedBy00], [t1].[CreatedOn0] AS [CreatedOn00], [t1].[Icon], [t1].[Label], [t1].[LastModifiedBy0] AS [LastModifiedBy00], [t1].[LastModifiedOn0] AS [LastModifiedOn00], [t1].[Order], [t1].[RouterLink], [t1].[Status0] AS [Status00]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+    LEFT JOIN (
+        SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status], [m0].[Id] AS [Id0], [m0].[CreatedBy] AS [CreatedBy0], [m0].[CreatedOn] AS [CreatedOn0], [m0].[Icon], [m0].[Label], [m0].[LastModifiedBy] AS [LastModifiedBy0], [m0].[LastModifiedOn] AS [LastModifiedOn0], [m0].[Order], [m0].[RouterLink], [m0].[Status] AS [Status0]
+        FROM [MenuItemRole] AS [m]
+        INNER JOIN [MenuItem] AS [m0] ON [m].[MenuItemId] = [m0].[Id]
+    ) AS [t1] ON [r].[Id] = [t1].[RoleId]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[RoleId], [t0].[UserId], [t0].[Id0], [t0].[RoleId0], [t0].[MenuItemId]
+2023-10-24 23:24:26.819 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Status], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 23:24:26.825 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status]
+FROM [MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2023-10-24 23:24:26.834 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 23:24:26.840 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 23:24:26.842 -05:00 [INF] Executed action method Security.Api.Controllers.UserController.GetById (Security.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 53.7037ms.
+2023-10-24 23:24:26.844 -05:00 [INF] Executing ObjectResult, writing value of type 'Security.Application.Base.Response`1[[Security.Application.Http.Dto.UserDto, Security.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-24 23:24:26.845 -05:00 [INF] Executed action Security.Api.Controllers.UserController.GetById (Security.Api) in 58.89ms
+2023-10-24 23:24:26.846 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 23:24:26.847 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 04:24:25 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+2023-10-24 23:24:26.848 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - - - 200 - application/json;+charset=utf-8 85.2608ms
+2023-10-24 23:24:44.126 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - -
+2023-10-24 23:24:44.129 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__userId_0
+) AS [t]
+LEFT JOIN [UserRole] AS [u0] ON [t].[Id] = [u0].[UserId]
+ORDER BY [t].[Id], [u0].[RoleId]
+2023-10-24 23:24:44.135 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 23:24:44.137 -05:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120
+Host: localhost:7193
+Authorization: [Redacted]
+traceparent: [Redacted]
+2023-10-24 23:24:44.138 -05:00 [INF] Executing endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 23:24:44.139 -05:00 [INF] Route matched with {action = "GetById", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Security.Application.Base.Response`1[Security.Application.Http.Dto.UserDto]] GetById(System.Guid) on controller Security.Api.Controllers.UserController (Security.Api).
+2023-10-24 23:24:44.140 -05:00 [INF] Executing action method Security.Api.Controllers.UserController.GetById (Security.Api) - Validation state: "Valid"
+2023-10-24 23:24:44.142 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[Email], [t].[LastModifiedBy], [t].[LastModifiedOn], [t].[Name], [t].[Password], [t].[Status], [t].[Username], [t0].[RoleId], [t0].[UserId], [t0].[CreatedBy], [t0].[CreatedOn], [t0].[Id], [t0].[LastModifiedBy], [t0].[LastModifiedOn], [t0].[Status], [t0].[Id0], [t0].[CreatedBy0], [t0].[CreatedOn0], [t0].[LastModifiedBy0], [t0].[LastModifiedOn0], [t0].[RoleName], [t0].[Status0], [t0].[RoleId0], [t0].[MenuItemId], [t0].[CreatedBy1], [t0].[CreatedOn1], [t0].[Id1], [t0].[LastModifiedBy1], [t0].[LastModifiedOn1], [t0].[Status1], [t0].[Id00], [t0].[CreatedBy00], [t0].[CreatedOn00], [t0].[Icon], [t0].[Label], [t0].[LastModifiedBy00], [t0].[LastModifiedOn00], [t0].[Order], [t0].[RouterLink], [t0].[Status00]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedOn], [u].[Email], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Name], [u].[Password], [u].[Status], [u].[Username]
+    FROM [User] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[RoleId], [u0].[UserId], [u0].[CreatedBy], [u0].[CreatedOn], [u0].[Id], [u0].[LastModifiedBy], [u0].[LastModifiedOn], [u0].[Status], [r].[Id] AS [Id0], [r].[CreatedBy] AS [CreatedBy0], [r].[CreatedOn] AS [CreatedOn0], [r].[LastModifiedBy] AS [LastModifiedBy0], [r].[LastModifiedOn] AS [LastModifiedOn0], [r].[RoleName], [r].[Status] AS [Status0], [t1].[RoleId] AS [RoleId0], [t1].[MenuItemId], [t1].[CreatedBy] AS [CreatedBy1], [t1].[CreatedOn] AS [CreatedOn1], [t1].[Id] AS [Id1], [t1].[LastModifiedBy] AS [LastModifiedBy1], [t1].[LastModifiedOn] AS [LastModifiedOn1], [t1].[Status] AS [Status1], [t1].[Id0] AS [Id00], [t1].[CreatedBy0] AS [CreatedBy00], [t1].[CreatedOn0] AS [CreatedOn00], [t1].[Icon], [t1].[Label], [t1].[LastModifiedBy0] AS [LastModifiedBy00], [t1].[LastModifiedOn0] AS [LastModifiedOn00], [t1].[Order], [t1].[RouterLink], [t1].[Status0] AS [Status00]
+    FROM [UserRole] AS [u0]
+    INNER JOIN [Role] AS [r] ON [u0].[RoleId] = [r].[Id]
+    LEFT JOIN (
+        SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status], [m0].[Id] AS [Id0], [m0].[CreatedBy] AS [CreatedBy0], [m0].[CreatedOn] AS [CreatedOn0], [m0].[Icon], [m0].[Label], [m0].[LastModifiedBy] AS [LastModifiedBy0], [m0].[LastModifiedOn] AS [LastModifiedOn0], [m0].[Order], [m0].[RouterLink], [m0].[Status] AS [Status0]
+        FROM [MenuItemRole] AS [m]
+        INNER JOIN [MenuItem] AS [m0] ON [m].[MenuItemId] = [m0].[Id]
+    ) AS [t1] ON [r].[Id] = [t1].[RoleId]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[RoleId], [t0].[UserId], [t0].[Id0], [t0].[RoleId0], [t0].[MenuItemId]
+2023-10-24 23:24:44.152 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[RoleId], [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[Id], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[Status], [r].[Id], [r].[CreatedBy], [r].[CreatedOn], [r].[LastModifiedBy], [r].[LastModifiedOn], [r].[RoleName], [r].[Status]
+FROM [UserRole] AS [u]
+INNER JOIN [Role] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__user_Id_0
+2023-10-24 23:24:44.155 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userDtoRole_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[RoleId], [m].[MenuItemId], [m].[CreatedBy], [m].[CreatedOn], [m].[Id], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Status]
+FROM [MenuItemRole] AS [m]
+WHERE [m].[RoleId] = @__userDtoRole_Id_0
+2023-10-24 23:24:44.158 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 23:24:44.161 -05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__r_MenuItemId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreatedBy], [m].[CreatedOn], [m].[Icon], [m].[Label], [m].[LastModifiedBy], [m].[LastModifiedOn], [m].[Order], [m].[RouterLink], [m].[Status]
+FROM [MenuItem] AS [m]
+WHERE [m].[Id] = @__r_MenuItemId_0
+ORDER BY [m].[Order]
+2023-10-24 23:24:44.163 -05:00 [INF] Executed action method Security.Api.Controllers.UserController.GetById (Security.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 22.8839ms.
+2023-10-24 23:24:44.165 -05:00 [INF] Executing ObjectResult, writing value of type 'Security.Application.Base.Response`1[[Security.Application.Http.Dto.UserDto, Security.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-24 23:24:44.166 -05:00 [INF] Executed action Security.Api.Controllers.UserController.GetById (Security.Api) in 26.0793ms
+2023-10-24 23:24:44.166 -05:00 [INF] Executed endpoint 'Security.Api.Controllers.UserController.GetById (Security.Api)'
+2023-10-24 23:24:44.167 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 04:24:44 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+2023-10-24 23:24:44.168 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7193/api/v1/User/FindById/4a77cee4-5cfa-4c90-b41a-08da36159120 - - - 200 - application/json;+charset=utf-8 41.7611ms
+2023-10-24 23:24:53.799 -05:00 [INF] Application is shutting down...

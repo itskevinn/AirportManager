@@ -6,20 +6,24 @@ using AirportGateway.App.Base;
 using AirportGateway.App.Core.Helpers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace AirportGateway.App.AirportManagement.Service.Implementation;
 
+/// <summary>
+/// Class representing the implementation of the <see cref="IAirlineService"/> interface
+/// </summary>
 public class AirlineService : BaseService, IAirlineService
 {
     private readonly IAirlineRestEaseClient _airlineRestEaseClient;
     private readonly ILogger<AirlineService> _logger;
 
-    public AirlineService(ILogger<AirlineService> logger, AppSettings appSettings,
+    public AirlineService(ILogger<AirlineService> logger, IOptions<AppSettings> appSettings,
         IHttpContextAccessor accessor) :
         base(accessor)
     {
         _airlineRestEaseClient =
-            RestEase.RestClient.For<IAirlineRestEaseClient>(appSettings.MicroservicesUrls.FlightsManagementUrl);
+            RestEase.RestClient.For<IAirlineRestEaseClient>(appSettings.Value.MicroservicesUrls.AirportManagementUrl);
         _logger = logger;
     }
 

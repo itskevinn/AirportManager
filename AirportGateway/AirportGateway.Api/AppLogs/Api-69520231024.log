@@ -1,0 +1,6 @@
+2023-10-24 23:39:59.251 -05:00 [INF] User profile is available. Using 'C:\Users\AuxiliarN-PC\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-24 23:39:59.429 -05:00 [INF] Now listening on: https://localhost:7144
+2023-10-24 23:39:59.432 -05:00 [INF] Now listening on: http://localhost:5176
+2023-10-24 23:39:59.439 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-24 23:39:59.442 -05:00 [INF] Hosting environment: Development
+2023-10-24 23:39:59.445 -05:00 [INF] Content root path: C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\AirportGateway\AirportGateway.Api

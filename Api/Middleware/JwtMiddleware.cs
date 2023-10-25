@@ -1,5 +1,4 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 using System.Text;
 using Application.Http.Dto;
 using Domain.Exceptions;
@@ -51,14 +50,12 @@ public class JwtMiddleware
     private static UserDto BuildUserInfo(JwtSecurityToken jwtToken)
     {
         Guid.TryParse(jwtToken.Claims.First(x => x.Type.ToLower() == "id").Value, out var userId);
-        var userRolesJson = GetUserRoles(jwtToken.Claims.Where(x => x.Type.ToLower() == "roles"));
+        var roles = GetUserRoles(jwtToken.Payload.First(x => x.Key == "Roles"));
         if (userId == Guid.Empty) throw new InvalidOperationException("id must be in the claims");
-        if (userRolesJson == null) throw new InvalidOperationException("roles must be in the claims");
-        var userRoles = JsonConvert.DeserializeObject<IEnumerable<RoleDto>>(userRolesJson);
         var userDto = new UserDto
         {
             Id = userId,
-            Roles = userRoles
+            Roles = roles
         };
         return userDto;
     }
@@ -80,8 +77,10 @@ public class JwtMiddleware
         return jwtToken;
     }
 
-    private static string GetUserRoles(IEnumerable<Claim> claims)
+    private static IEnumerable<RoleDto> GetUserRoles(KeyValuePair<string, object> claims)
     {
-        return claims.Aggregate("", (current, claim) => current + claim.Value);
+        var rolesJson = claims.Value.ToString()!;
+        var roles = JsonConvert.DeserializeObject<IEnumerable<RoleDto>>(rolesJson);
+        return roles;
     }
 }

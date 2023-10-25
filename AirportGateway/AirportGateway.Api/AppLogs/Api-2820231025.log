@@ -1,0 +1,320 @@
+2023-10-25 00:42:54.197 -05:00 [INF] User profile is available. Using 'C:\Users\AuxiliarN-PC\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-25 00:42:54.321 -05:00 [INF] Now listening on: https://localhost:7144
+2023-10-25 00:42:54.321 -05:00 [INF] Now listening on: http://localhost:5176
+2023-10-25 00:42:54.324 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-25 00:42:54.325 -05:00 [INF] Hosting environment: Development
+2023-10-25 00:42:54.325 -05:00 [INF] Content root path: C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\AirportGateway\AirportGateway.Api
+2023-10-25 00:42:54.721 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/swagger/index.html - -
+2023-10-25 00:42:54.851 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/swagger/index.html - - - 200 - text/html;charset=utf-8 130.9758ms
+2023-10-25 00:42:55.068 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - -
+2023-10-25 00:42:55.214 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 145.3324ms
+2023-10-25 00:44:50.061 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7144/api/v1/Auth/Authenticate application/json 48
+2023-10-25 00:44:50.066 -05:00 [INF] CORS policy execution successful.
+2023-10-25 00:44:50.090 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/v1/Auth/Authenticate
+Accept: text/plain
+Host: localhost:7144
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 48
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-10-25 00:44:50.121 -05:00 [INF] Executing endpoint 'AirportGateway.Api.Controllers.AuthController.Authenticate (AirportGateway.Api)'
+2023-10-25 00:44:50.144 -05:00 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[AirportGateway.App.Base.Response`1[AirportGateway.App.Security.Http.Dto.AuthenticateDto]] Authenticate(AirportGateway.App.Security.Http.Request.AuthenticateRequest) on controller AirportGateway.Api.Controllers.AuthController (AirportGateway.Api).
+2023-10-25 00:44:50.895 -05:00 [INF] Executing ObjectResult, writing value of type 'AirportGateway.App.Base.Response`1[[AirportGateway.App.Security.Http.Dto.AuthenticateDto, AirportGateway.App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-25 00:44:50.940 -05:00 [INF] Executed action AirportGateway.Api.Controllers.AuthController.Authenticate (AirportGateway.Api) in 786.339ms
+2023-10-25 00:44:50.947 -05:00 [INF] Executed endpoint 'AirportGateway.Api.Controllers.AuthController.Authenticate (AirportGateway.Api)'
+2023-10-25 00:44:50.952 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 05:44:50 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2023-10-25 00:44:50.954 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7144/api/v1/Auth/Authenticate application/json 48 - 200 - application/json;+charset=utf-8 893.2368ms
+2023-10-25 00:46:10.552 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/swagger/index.html - -
+2023-10-25 00:46:10.554 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/swagger/index.html - - - 200 - text/html;charset=utf-8 1.8165ms
+2023-10-25 00:46:10.730 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - -
+2023-10-25 00:46:10.744 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 13.4888ms
+2023-10-25 00:53:14.575 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7144/api/v1/User/Create application/json 187
+2023-10-25 00:53:14.577 -05:00 [INF] CORS policy execution successful.
+2023-10-25 00:53:14.580 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/v1/User/Create
+Accept: text/plain
+Host: localhost:7144
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 187
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-10-25 00:53:14.583 -05:00 [INF] Executing endpoint 'AirportGateway.Api.Controllers.UserController.Save (AirportGateway.Api)'
+2023-10-25 00:53:14.587 -05:00 [INF] Route matched with {action = "Save", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[AirportGateway.App.Base.Response`1[AirportGateway.App.Security.Http.Dto.UserDto]] Save(AirportGateway.App.Security.Http.Request.UserRequest) on controller AirportGateway.Api.Controllers.UserController (AirportGateway.Api).
+2023-10-25 00:53:14.589 -05:00 [INF] Authorization failed for the request at filter 'AirportGateway.App.Security.AuthorizeAttribute'.
+2023-10-25 00:53:14.590 -05:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-10-25 00:53:14.591 -05:00 [INF] Executed action AirportGateway.Api.Controllers.UserController.Save (AirportGateway.Api) in 3.4531ms
+2023-10-25 00:53:14.592 -05:00 [INF] Executed endpoint 'AirportGateway.Api.Controllers.UserController.Save (AirportGateway.Api)'
+2023-10-25 00:53:14.593 -05:00 [INF] Response:
+StatusCode: 401
+Content-Type: application/problem+json; charset=utf-8
+Date: Wed, 25 Oct 2023 05:53:13 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2023-10-25 00:53:14.595 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7144/api/v1/User/Create application/json 187 - 401 - application/problem+json;+charset=utf-8 19.6042ms
+2023-10-25 00:53:25.436 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7144/api/v1/User/Create application/json 187
+2023-10-25 00:53:25.697 -05:00 [INF] CORS policy execution successful.
+2023-10-25 00:53:25.699 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/v1/User/Create
+Accept: text/plain
+Host: localhost:7144
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 187
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-10-25 00:53:25.710 -05:00 [INF] Executing endpoint 'AirportGateway.Api.Controllers.UserController.Save (AirportGateway.Api)'
+2023-10-25 00:53:25.710 -05:00 [INF] Route matched with {action = "Save", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[AirportGateway.App.Base.Response`1[AirportGateway.App.Security.Http.Dto.UserDto]] Save(AirportGateway.App.Security.Http.Request.UserRequest) on controller AirportGateway.Api.Controllers.UserController (AirportGateway.Api).
+2023-10-25 00:53:25.765 -05:00 [ERR] Ocurrió un error POST "https://localhost:7193/api/v1/User/Create?userRequest=AirportGateway.App.Security.Http.Request.UserRequest" failed because response status code does not indicate success: 415 (Unsupported Media Type).
+2023-10-25 00:53:25.767 -05:00 [INF] Executing ObjectResult, writing value of type 'AirportGateway.App.Base.Response`1[[AirportGateway.App.Security.Http.Dto.UserDto, AirportGateway.App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-25 00:53:25.770 -05:00 [INF] Executed action AirportGateway.Api.Controllers.UserController.Save (AirportGateway.Api) in 58.5226ms
+2023-10-25 00:53:25.771 -05:00 [INF] Executed endpoint 'AirportGateway.Api.Controllers.UserController.Save (AirportGateway.Api)'
+2023-10-25 00:53:25.772 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 05:53:24 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2023-10-25 00:53:25.773 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7144/api/v1/User/Create application/json 187 - 200 - application/json;+charset=utf-8 336.9453ms
+2023-10-25 00:55:53.709 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/api/v1/Airline/GetAll - -
+2023-10-25 00:55:53.772 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/Airline/GetAll
+Accept: text/plain
+Host: localhost:7144
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-10-25 00:55:53.775 -05:00 [INF] Executing endpoint 'AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api)'
+2023-10-25 00:55:53.778 -05:00 [INF] Route matched with {action = "GetAll", controller = "Airline"}. Executing controller action with signature System.Threading.Tasks.Task`1[AirportGateway.App.Base.Response`1[System.Collections.Generic.IEnumerable`1[AirportGateway.App.AirportManagement.Http.Dto.AirlineDto]]] GetAll() on controller AirportGateway.Api.Controllers.AirlineController (AirportGateway.Api).
+2023-10-25 00:56:25.491 -05:00 [INF] Executing ObjectResult, writing value of type 'AirportGateway.App.Base.Response`1[[System.Collections.Generic.IEnumerable`1[[AirportGateway.App.AirportManagement.Http.Dto.AirlineDto, AirportGateway.App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-10-25 00:56:25.495 -05:00 [INF] Executed action AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api) in 31715.1737ms
+2023-10-25 00:56:25.496 -05:00 [INF] Executed endpoint 'AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api)'
+2023-10-25 00:56:25.496 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 05:56:25 GMT
+Server: Kestrel
+2023-10-25 00:56:25.497 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/api/v1/Airline/GetAll - - - 200 - application/json;+charset=utf-8 31788.0587ms
+2023-10-25 00:57:32.269 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7144/api/v1/Auth/Authenticate application/json 48
+2023-10-25 00:57:32.323 -05:00 [INF] CORS policy execution successful.
+2023-10-25 00:57:32.323 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/v1/Auth/Authenticate
+Accept: text/plain
+Host: localhost:7144
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 48
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-10-25 00:57:32.324 -05:00 [INF] Executing endpoint 'AirportGateway.Api.Controllers.AuthController.Authenticate (AirportGateway.Api)'
+2023-10-25 00:57:32.325 -05:00 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[AirportGateway.App.Base.Response`1[AirportGateway.App.Security.Http.Dto.AuthenticateDto]] Authenticate(AirportGateway.App.Security.Http.Request.AuthenticateRequest) on controller AirportGateway.Api.Controllers.AuthController (AirportGateway.Api).
+2023-10-25 00:57:32.363 -05:00 [INF] Executing ObjectResult, writing value of type 'AirportGateway.App.Base.Response`1[[AirportGateway.App.Security.Http.Dto.AuthenticateDto, AirportGateway.App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-25 00:57:32.364 -05:00 [INF] Executed action AirportGateway.Api.Controllers.AuthController.Authenticate (AirportGateway.Api) in 38.1994ms
+2023-10-25 00:57:32.364 -05:00 [INF] Executed endpoint 'AirportGateway.Api.Controllers.AuthController.Authenticate (AirportGateway.Api)'
+2023-10-25 00:57:32.365 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 05:57:31 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2023-10-25 00:57:32.366 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7144/api/v1/Auth/Authenticate application/json 48 - 200 - application/json;+charset=utf-8 97.0268ms
+2023-10-25 00:57:42.218 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/api/v1/Airline/GetAll - -
+2023-10-25 00:57:42.258 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/Airline/GetAll
+Accept: text/plain
+Host: localhost:7144
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-10-25 00:57:42.260 -05:00 [INF] Executing endpoint 'AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api)'
+2023-10-25 00:57:42.260 -05:00 [INF] Route matched with {action = "GetAll", controller = "Airline"}. Executing controller action with signature System.Threading.Tasks.Task`1[AirportGateway.App.Base.Response`1[System.Collections.Generic.IEnumerable`1[AirportGateway.App.AirportManagement.Http.Dto.AirlineDto]]] GetAll() on controller AirportGateway.Api.Controllers.AirlineController (AirportGateway.Api).
+2023-10-25 00:58:07.074 -05:00 [INF] Executing ObjectResult, writing value of type 'AirportGateway.App.Base.Response`1[[System.Collections.Generic.IEnumerable`1[[AirportGateway.App.AirportManagement.Http.Dto.AirlineDto, AirportGateway.App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-10-25 00:58:07.075 -05:00 [INF] Executed action AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api) in 24813.5206ms
+2023-10-25 00:58:07.075 -05:00 [INF] Executed endpoint 'AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api)'
+2023-10-25 00:58:07.076 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 05:58:06 GMT
+Server: Kestrel
+2023-10-25 00:58:07.077 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/api/v1/Airline/GetAll - - - 200 - application/json;+charset=utf-8 24859.1785ms
+2023-10-25 00:59:43.680 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7144/api/v1/Auth/Authenticate application/json 48
+2023-10-25 00:59:43.680 -05:00 [INF] CORS policy execution successful.
+2023-10-25 00:59:43.681 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/v1/Auth/Authenticate
+Accept: text/plain
+Host: localhost:7144
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 48
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-10-25 00:59:43.682 -05:00 [INF] Executing endpoint 'AirportGateway.Api.Controllers.AuthController.Authenticate (AirportGateway.Api)'
+2023-10-25 00:59:43.683 -05:00 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[AirportGateway.App.Base.Response`1[AirportGateway.App.Security.Http.Dto.AuthenticateDto]] Authenticate(AirportGateway.App.Security.Http.Request.AuthenticateRequest) on controller AirportGateway.Api.Controllers.AuthController (AirportGateway.Api).
+2023-10-25 00:59:43.739 -05:00 [INF] Executing ObjectResult, writing value of type 'AirportGateway.App.Base.Response`1[[AirportGateway.App.Security.Http.Dto.AuthenticateDto, AirportGateway.App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-25 00:59:43.740 -05:00 [INF] Executed action AirportGateway.Api.Controllers.AuthController.Authenticate (AirportGateway.Api) in 56.6834ms
+2023-10-25 00:59:43.742 -05:00 [INF] Executed endpoint 'AirportGateway.Api.Controllers.AuthController.Authenticate (AirportGateway.Api)'
+2023-10-25 00:59:43.742 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 05:59:42 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2023-10-25 00:59:43.743 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7144/api/v1/Auth/Authenticate application/json 48 - 200 - application/json;+charset=utf-8 63.6880ms
+2023-10-25 00:59:52.272 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/api/v1/Airline/GetAll - -
+2023-10-25 00:59:52.313 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/Airline/GetAll
+Accept: text/plain
+Host: localhost:7144
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-10-25 00:59:52.314 -05:00 [INF] Executing endpoint 'AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api)'
+2023-10-25 00:59:52.315 -05:00 [INF] Route matched with {action = "GetAll", controller = "Airline"}. Executing controller action with signature System.Threading.Tasks.Task`1[AirportGateway.App.Base.Response`1[System.Collections.Generic.IEnumerable`1[AirportGateway.App.AirportManagement.Http.Dto.AirlineDto]]] GetAll() on controller AirportGateway.Api.Controllers.AirlineController (AirportGateway.Api).
+2023-10-25 01:00:14.615 -05:00 [INF] Executing ObjectResult, writing value of type 'AirportGateway.App.Base.Response`1[[System.Collections.Generic.IEnumerable`1[[AirportGateway.App.AirportManagement.Http.Dto.AirlineDto, AirportGateway.App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-10-25 01:00:14.616 -05:00 [INF] Executed action AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api) in 22300.209ms
+2023-10-25 01:00:14.617 -05:00 [INF] Executed endpoint 'AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api)'
+2023-10-25 01:00:14.617 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 06:00:14 GMT
+Server: Kestrel
+2023-10-25 01:00:14.618 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/api/v1/Airline/GetAll - - - 200 - application/json;+charset=utf-8 22345.7814ms
+2023-10-25 01:10:20.744 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/api/v1/Airline/GetAll - -
+2023-10-25 01:10:25.608 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/Airline/GetAll
+Accept: text/plain
+Host: localhost:7144
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-10-25 01:10:25.609 -05:00 [INF] Executing endpoint 'AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api)'
+2023-10-25 01:10:25.610 -05:00 [INF] Route matched with {action = "GetAll", controller = "Airline"}. Executing controller action with signature System.Threading.Tasks.Task`1[AirportGateway.App.Base.Response`1[System.Collections.Generic.IEnumerable`1[AirportGateway.App.AirportManagement.Http.Dto.AirlineDto]]] GetAll() on controller AirportGateway.Api.Controllers.AirlineController (AirportGateway.Api).
+2023-10-25 01:10:25.617 -05:00 [INF] Executing action method AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api) - Validation state: "Valid"
+2023-10-25 01:10:28.170 -05:00 [INF] Executed action method AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2548.8846ms.
+2023-10-25 01:10:28.173 -05:00 [INF] Executing ObjectResult, writing value of type 'AirportGateway.App.Base.Response`1[[System.Collections.Generic.IEnumerable`1[[AirportGateway.App.AirportManagement.Http.Dto.AirlineDto, AirportGateway.App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-10-25 01:10:28.174 -05:00 [INF] Executed action AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api) in 2562.6609ms
+2023-10-25 01:10:28.175 -05:00 [INF] Executed endpoint 'AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api)'
+2023-10-25 01:10:28.175 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 06:10:27 GMT
+Server: Kestrel
+2023-10-25 01:10:28.176 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/api/v1/Airline/GetAll - - - 200 - application/json;+charset=utf-8 7431.7740ms
+2023-10-25 01:10:34.077 -05:00 [INF] Application is shutting down...

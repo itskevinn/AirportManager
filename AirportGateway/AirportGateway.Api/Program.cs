@@ -45,7 +45,7 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
 
-builder.Services.AddServices().AddScopedServices();
+builder.Services.AddServices();
 builder.Services.AddAuthorization();
 
 var appSettingsSection = config.GetSection("AppSettings");
@@ -76,7 +76,7 @@ if (appSettings != null)
         });
 }
 
-builder.Services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new() { Title = "Airport Api", Version = "v1" }); });
+builder.Services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new() { Title = "Airport Gateway", Version = "v1" }); });
 builder.Services.Configure<AppSettings>(builder.Configuration);
 
 
@@ -90,7 +90,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Airport Api"));
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Airport Gateway"));
 }
 
 app.UseMiddleware<SecurityMiddleware>();

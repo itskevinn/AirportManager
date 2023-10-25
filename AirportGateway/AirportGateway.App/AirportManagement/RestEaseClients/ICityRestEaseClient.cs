@@ -9,7 +9,7 @@ public interface ICityRestEaseClient
     [Get("api/v1/City/GetAll")]
     Task<Base.Response<IEnumerable<CityDto>>> GetAll([Header("Authorization")] string token);
 
-    [Get("api/v1/City/GetById/{id:guid}")]
+    [Get("api/v1/City/GetById/{id}")]
     Task<Base.Response<CityDto>> GetById([Path] Guid cityId, [Header("Authorization")] string token);
 
     [Post("api/v1/City/Create")]
@@ -18,6 +18,6 @@ public interface ICityRestEaseClient
     [Put("api/v1/City/Update")]
     Task<Base.Response<CityDto>> UpdateAsync([Body] CityUpdateRequest request, [Header("Authorization")] string token);
 
-    [Delete("api/v1/City/Delete/{id:guid}")]
+    [Delete("api/v1/City/Delete/{id}")]
     Task<Base.Response<bool>> Delete([Path] Guid id, [Header("Authorization")] string token);
 }

@@ -1,0 +1,11 @@
+2023-10-25 00:01:28.153 -05:00 [ERR] Ocurrió un error The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+2023-10-25 00:01:28.160 -05:00 [INF] Executed action method AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 100041.389ms.
+2023-10-25 00:01:28.162 -05:00 [INF] Executing ObjectResult, writing value of type 'AirportGateway.App.Base.Response`1[[System.Collections.Generic.IEnumerable`1[[AirportGateway.App.AirportManagement.Http.Dto.AirlineDto, AirportGateway.App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-10-25 00:01:28.164 -05:00 [INF] Executed action AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api) in 100046.1871ms
+2023-10-25 00:01:28.165 -05:00 [INF] Executed endpoint 'AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api)'
+2023-10-25 00:01:28.166 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 05:01:28 GMT
+Server: Kestrel
+2023-10-25 00:01:28.166 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/api/v1/Airline/GetAll - - - 200 - application/json;+charset=utf-8 100108.4153ms

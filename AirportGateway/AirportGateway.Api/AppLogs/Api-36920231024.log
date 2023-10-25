@@ -1,0 +1,135 @@
+2023-10-24 22:50:57.602 -05:00 [INF] User profile is available. Using 'C:\Users\AuxiliarN-PC\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-24 22:50:57.814 -05:00 [INF] Now listening on: https://localhost:7144
+2023-10-24 22:50:57.817 -05:00 [INF] Now listening on: http://localhost:5176
+2023-10-24 22:50:57.824 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-24 22:50:57.827 -05:00 [INF] Hosting environment: Development
+2023-10-24 22:50:57.830 -05:00 [INF] Content root path: C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\AirportGateway\AirportGateway.Api
+2023-10-24 22:50:58.383 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/swagger/index.html - -
+2023-10-24 22:50:58.544 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/swagger/index.html - - - 200 - text/html;charset=utf-8 161.7442ms
+2023-10-24 22:50:58.806 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - -
+2023-10-24 22:50:59.001 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 194.5197ms
+2023-10-24 22:51:34.914 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7144/api/v1/Auth/Authenticate application/json 48
+2023-10-24 22:51:34.922 -05:00 [INF] CORS policy execution successful.
+2023-10-24 22:51:34.957 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: POST
+Scheme: https
+PathBase: 
+Path: /api/v1/Auth/Authenticate
+Accept: text/plain
+Host: localhost:7144
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Content-Type: application/json
+Origin: [Redacted]
+Referer: [Redacted]
+Content-Length: 48
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-10-24 22:51:35.054 -05:00 [INF] Executing endpoint 'AirportGateway.Api.Controllers.AuthController.Authenticate (AirportGateway.Api)'
+2023-10-24 22:51:35.088 -05:00 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[AirportGateway.App.Base.Response`1[AirportGateway.App.Security.Http.Dto.AuthenticateDto]] Authenticate(AirportGateway.App.Security.Http.Request.AuthenticateRequest) on controller AirportGateway.Api.Controllers.AuthController (AirportGateway.Api).
+2023-10-24 22:51:37.099 -05:00 [INF] Executing ObjectResult, writing value of type 'AirportGateway.App.Base.Response`1[[AirportGateway.App.Security.Http.Dto.AuthenticateDto, AirportGateway.App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-10-24 22:51:37.123 -05:00 [INF] Executed action AirportGateway.Api.Controllers.AuthController.Authenticate (AirportGateway.Api) in 2029.0567ms
+2023-10-24 22:51:37.126 -05:00 [INF] Executed endpoint 'AirportGateway.Api.Controllers.AuthController.Authenticate (AirportGateway.Api)'
+2023-10-24 22:51:37.130 -05:00 [INF] Response:
+StatusCode: 200
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 03:51:37 GMT
+Server: Kestrel
+Access-Control-Allow-Origin: [Redacted]
+2023-10-24 22:51:37.131 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7144/api/v1/Auth/Authenticate application/json 48 - 200 - application/json;+charset=utf-8 2217.0570ms
+2023-10-24 22:51:57.259 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7144/api/v1/Airline/GetAll - -
+2023-10-24 22:51:57.674 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /api/v1/Airline/GetAll
+Accept: text/plain
+Host: localhost:7144
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Authorization: [Redacted]
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-10-24 22:51:57.692 -05:00 [INF] Executing endpoint 'AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api)'
+2023-10-24 22:51:57.697 -05:00 [INF] Route matched with {action = "GetAll", controller = "Airline"}. Executing controller action with signature System.Threading.Tasks.Task`1[AirportGateway.App.Base.Response`1[System.Collections.Generic.IEnumerable`1[AirportGateway.App.AirportManagement.Http.Dto.AirlineDto]]] GetAll() on controller AirportGateway.Api.Controllers.AirlineController (AirportGateway.Api).
+2023-10-24 22:52:09.671 -05:00 [ERR] Method 'GetById': unable to find a [Path("id:guid")] property or parameter for the path placeholder '   at RestEase.Implementation.Emission.DiagnosticReporter.ReportMissingPathPropertyOrParameterForPlaceholder(MethodModel method, AttributeModel`1 _, String placeholder)
+   at RestEase.Implementation.ImplementationGenerator.ValidatePathParams(MethodModel method, AttributeModel`1 requestAttribute)
+   at RestEase.Implementation.ImplementationGenerator.GenerateMethod(TypeEmitter typeEmitter, List`1 emittedProperties, MethodModel method)
+   at RestEase.Implementation.ImplementationGenerator.GenerateMethods(TypeEmitter typeEmitter, List`1 emittedProperties)
+   at RestEase.Implementation.ImplementationGenerator.Generate()
+   at RestEase.Implementation.EmitImplementationFactory.BuildEmitImplementation(Type interfaceType)
+   at RestEase.Implementation.ImplementationFactory.BuildImplementation(Type interfaceType)
+   at RestEase.Implementation.ImplementationFactory.GetImplementation(Type interfaceType)
+   at RestEase.Implementation.ImplementationFactory.CreateImplementation[T](IRequester requester)
+   at RestEase.RestClient.For[T]()
+   at RestEase.RestClient.For[T](String baseUrl)
+   at AirportGateway.App.AirportManagement.Service.Implementation.AirlineService..ctor(ILogger`1 logger, AppSettings appSettings, IHttpContextAccessor accessor) in C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\AirportGateway\AirportGateway.App\AirportManagement\Service\Implementation\AirlineService.cs:line 21
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.ConstructorInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method58(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)'
+RestEase.Implementation.ImplementationCreationException: Method 'GetById': unable to find a [Path("id:guid")] property or parameter for the path placeholder '{id:guid}'
+   at RestEase.Implementation.Emission.DiagnosticReporter.ReportMissingPathPropertyOrParameterForPlaceholder(MethodModel method, AttributeModel`1 _, String placeholder)
+   at RestEase.Implementation.ImplementationGenerator.ValidatePathParams(MethodModel method, AttributeModel`1 requestAttribute)
+   at RestEase.Implementation.ImplementationGenerator.GenerateMethod(TypeEmitter typeEmitter, List`1 emittedProperties, MethodModel method)
+   at RestEase.Implementation.ImplementationGenerator.GenerateMethods(TypeEmitter typeEmitter, List`1 emittedProperties)
+   at RestEase.Implementation.ImplementationGenerator.Generate()
+   at RestEase.Implementation.EmitImplementationFactory.BuildEmitImplementation(Type interfaceType)
+   at RestEase.Implementation.ImplementationFactory.BuildImplementation(Type interfaceType)
+   at RestEase.Implementation.ImplementationFactory.GetImplementation(Type interfaceType)
+   at RestEase.Implementation.ImplementationFactory.CreateImplementation[T](IRequester requester)
+   at RestEase.RestClient.For[T]()
+   at RestEase.RestClient.For[T](String baseUrl)
+   at AirportGateway.App.AirportManagement.Service.Implementation.AirlineService..ctor(ILogger`1 logger, AppSettings appSettings, IHttpContextAccessor accessor) in C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\AirportGateway\AirportGateway.App\AirportManagement\Service\Implementation\AirlineService.cs:line 21
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.ConstructorInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method58(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2023-10-24 22:52:09.686 -05:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-10-24 22:52:09.689 -05:00 [INF] Executed action AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api) in 11990.6644ms
+2023-10-24 22:52:09.690 -05:00 [INF] Executed endpoint 'AirportGateway.Api.Controllers.AirlineController.GetAll (AirportGateway.Api)'
+2023-10-24 22:52:09.691 -05:00 [INF] Response:
+StatusCode: 400
+Content-Type: application/json; charset=utf-8
+Date: Wed, 25 Oct 2023 03:52:09 GMT
+Server: Kestrel
+2023-10-24 22:52:09.692 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7144/api/v1/Airline/GetAll - - - 400 - application/json;+charset=utf-8 12432.6616ms

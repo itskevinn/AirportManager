@@ -1,0 +1,75 @@
+2023-10-24 23:46:37.722 -05:00 [INF] User profile is available. Using 'C:\Users\AuxiliarN-PC\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-24 23:46:37.954 -05:00 [INF] Now listening on: https://localhost:7170
+2023-10-24 23:46:37.958 -05:00 [INF] Now listening on: http://localhost:5094
+2023-10-24 23:46:37.964 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-24 23:46:37.968 -05:00 [INF] Hosting environment: Development
+2023-10-24 23:46:37.971 -05:00 [INF] Content root path: C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\Api\
+2023-10-24 23:46:38.189 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7170/ - -
+2023-10-24 23:46:38.251 -05:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Host: localhost:7170
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61
+:method: [Redacted]
+Accept-Encoding: gzip, deflate, br
+Accept-Language: es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-10-24 23:46:38.312 -05:00 [INF] Response:
+StatusCode: 404
+2023-10-24 23:46:38.317 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7170/ - - - 404 0 - 129.7640ms
+2023-10-24 23:47:30.893 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/v1/Airline/GetAll - -
+2023-10-24 23:47:31.257 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+Domain.Exceptions.AppException: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.IEnumerable`1[Application.Http.Dto.RoleDto]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'Id', line 1, position 6.
+   at Api.Middleware.JwtMiddleware.AttachUserToContext(HttpContext context, String token) in C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\Api\Middleware\JwtMiddleware.cs:line 47
+   at Api.Middleware.JwtMiddleware.Invoke(HttpContext context) in C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\Api\Middleware\JwtMiddleware.cs:line 32
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-10-24 23:47:31.278 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/api/v1/Airline/GetAll - - - 500 - text/plain;+charset=utf-8 384.9883ms
+2023-10-24 23:47:41.696 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/v1/Airline/GetAll - -
+2023-10-24 23:47:41.736 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+Domain.Exceptions.AppException: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.IEnumerable`1[Application.Http.Dto.RoleDto]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'Id', line 1, position 6.
+   at Api.Middleware.JwtMiddleware.AttachUserToContext(HttpContext context, String token) in C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\Api\Middleware\JwtMiddleware.cs:line 47
+   at Api.Middleware.JwtMiddleware.Invoke(HttpContext context) in C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\Api\Middleware\JwtMiddleware.cs:line 32
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-10-24 23:47:41.743 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/api/v1/Airline/GetAll - - - 500 - text/plain;+charset=utf-8 47.4623ms
+2023-10-24 23:48:48.653 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/v1/Airline/GetAll - -
+2023-10-24 23:49:04.743 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+Domain.Exceptions.AppException: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.IEnumerable`1[Application.Http.Dto.RoleDto]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'Id', line 1, position 6.
+   at Api.Middleware.JwtMiddleware.AttachUserToContext(HttpContext context, String token) in C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\Api\Middleware\JwtMiddleware.cs:line 47
+   at Api.Middleware.JwtMiddleware.Invoke(HttpContext context) in C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\Api\Middleware\JwtMiddleware.cs:line 32
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-10-24 23:49:04.746 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/api/v1/Airline/GetAll - - - 500 - text/plain;+charset=utf-8 16093.7064ms
+2023-10-24 23:49:05.782 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/v1/Airline/GetAll - -
+2023-10-24 23:50:31.811 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+Domain.Exceptions.AppException: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.IEnumerable`1[Application.Http.Dto.RoleDto]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'Id', line 1, position 6.
+   at Api.Middleware.JwtMiddleware.AttachUserToContext(HttpContext context, String token) in C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\Api\Middleware\JwtMiddleware.cs:line 47
+   at Api.Middleware.JwtMiddleware.Invoke(HttpContext context) in C:\Users\AuxiliarN-PC\RiderProjects\AirportManager\Api\Middleware\JwtMiddleware.cs:line 32
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-10-24 23:50:31.814 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7170/api/v1/Airline/GetAll - - - 500 - text/plain;+charset=utf-8 86032.0498ms
+2023-10-24 23:52:53.702 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7170/api/v1/Airline/GetAll - -
