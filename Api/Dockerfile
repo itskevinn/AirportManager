@@ -4,20 +4,20 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["Security.Api/Security.Api.csproj", "Security.Api/"]
-COPY ["Security.Domain/Security.Domain.csproj", "Security.Domain/"]
-COPY ["Security.Infrastructure/Security.Infrastructure.csproj", "Security.Infrastructure/"]
-COPY ["Security.Application/Security.Application.csproj", "Security.Application/"]
+COPY ["AirportManagement.Api/AirportManagement.Api.csproj", "AirportManagement.Api/"]
+COPY ["AirportManagement.Domain/AirportManagement.Domain.csproj", "AirportManagement.Domain/"]
+COPY ["AirportManagement.Infrastructure/AirportManagement.Infrastructure.csproj", "AirportManagement.Infrastructure/"]
+COPY ["AirportManagement.Application/AirportManagement.Application.csproj", "AirportManagement.Application/"]
 
-RUN dotnet restore "Security.Api/Security.Api.csproj"
+RUN dotnet restore "AirportManagement.Api/AirportManagement.Api.csproj"
 COPY . .
-WORKDIR "/src/Security.Api"
-RUN dotnet build "Security.Api.csproj" -c Release -o /app/build
+WORKDIR "/src/AirportManagement.Api"
+RUN dotnet build "AirportManagement.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Security.Api.csproj" -c Release -o /app/publish
+RUN dotnet publish "AirportManagement.Api.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Security.Api.dll"]
+ENTRYPOINT ["dotnet", "AirportManagement.Api.dll"]

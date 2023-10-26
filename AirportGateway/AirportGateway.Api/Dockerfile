@@ -6,6 +6,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["AirportGateway/AirportGateway.Api/AirportGateway.Api.csproj", "AirportGateway/AirportGateway.Api/"]
+COPY ["AirportGateway/AirportGateway.Api/AirportGateway.App.csproj", "AirportGateway/AirportGateway.App/"]
 RUN dotnet restore "AirportGateway/AirportGateway.Api/AirportGateway.Api.csproj"
 COPY . .
 WORKDIR "/src/AirportGateway/AirportGateway.Api"
