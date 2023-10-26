@@ -9,6 +9,6 @@ namespace Domain.Entities.Base
 		[StringLength(35)] [Required] public string CreatedBy { get; set; } = default!;
 		[StringLength(35)] public string UpdatedBy { get; set; } = default!;
 		public DateTime CreatedOn { get; set; }
-		public DateTime LastModifiedOn { get; set; }
+		public DateTime? LastModifiedOn { get; set; }
 	}
 }

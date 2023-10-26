@@ -106,6 +106,7 @@ Log.Logger = new LoggerConfiguration().Enrich.FromLogContext()
 
 var app = builder.Build();
 
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

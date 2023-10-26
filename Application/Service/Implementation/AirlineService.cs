@@ -91,6 +91,7 @@ public class AirlineService : BaseService<Airline>, IAirlineService
                 throw new NoNullAllowedException("Aereolínea no encontrada");
             var airline = _mapper.Map<Airline>(airlineUpdateRequest);
             SetAuditValuesToEntity(airline, true);
+            airline.CreatedBy = oldAirline.CreatedBy;
             _airlineRepository.ClearTracking();
             var airlineUpdated = await _airlineRepository.UpdateAsync(airline);
             var airlineUpdatedDto = _mapper.Map<AirlineDto>(airlineUpdated);

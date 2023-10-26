@@ -23,5 +23,7 @@ public class FlightConfiguration : IEntityTypeConfiguration<Flight>
             .OnDelete(DeleteBehavior.NoAction);
         builder.HasOne(f => f.DestinyCity).WithMany().HasForeignKey(f => f.DestinyCityId)
             .OnDelete(DeleteBehavior.NoAction);
+        builder.Property(f => f.UpdatedBy).IsRequired(false);
+        builder.Property(f => f.LastModifiedOn).IsRequired(false);
     }
 }

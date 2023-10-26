@@ -24,7 +24,10 @@ public class JwtUtils : IJwtUtils
         if (idPropertyInfo == null) return "Property 'Id' not found.";
         var rolePropertyInfo = userDto.GetType().GetProperty("Roles");
         if (rolePropertyInfo == null) return "Property 'Role' not found.";
+        var usernamePropertyInfo = userDto.GetType().GetProperty("Username");
+        if (usernamePropertyInfo == null) return "Property 'Username' not found.";
         var id = Guid.Parse(idPropertyInfo.GetValue(userDto)?.ToString() ?? string.Empty);
+        var username = usernamePropertyInfo.GetValue(userDto)?.ToString() ?? string.Empty;
         string roles;
         try
         {
@@ -43,9 +46,10 @@ public class JwtUtils : IJwtUtils
             Subject = new ClaimsIdentity(new[]
             {
                 new Claim("Id", id.ToString()),
+                new Claim("Username", username),
                 new Claim("Roles", roles, JsonClaimValueTypes.JsonArray)
             }),
-            Expires = DateTime.UtcNow.AddDays(7),
+            Expires = DateTime.UtcNow.AddMinutes(60),
             SigningCredentials =
                 new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
         };

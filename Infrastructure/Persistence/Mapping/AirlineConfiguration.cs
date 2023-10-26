@@ -10,5 +10,7 @@ public class AirlineConfiguration : IEntityTypeConfiguration<Airline>
     {
         builder.HasKey(a => a.Id);
         builder.Property(a => a.Name).IsRequired();
+        builder.Property(f => f.UpdatedBy).IsRequired(false);
+        builder.Property(f => f.LastModifiedOn).IsRequired(false);
     }
 }

@@ -1,6 +1,5 @@
 using System.Reflection;
 using System.Text;
-using Amazon.DynamoDBv2;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -95,8 +94,6 @@ builder.Services.AddDbContext<SecurityContext>(opt =>
 
 builder.Services.AddScoped(typeof(IJwtUtils), typeof(JwtUtils));
 
-builder.Services.AddDefaultAWSOptions(config.GetAWSOptions());
-builder.Services.AddAWSService<IAmazonDynamoDB>();
 builder.Services.AddHttpContextAccessor();
 
 builder.Configuration.SetBasePath(builder.Environment.ContentRootPath);

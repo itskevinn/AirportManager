@@ -8,6 +8,6 @@ namespace Domain.Entities.Base
         string CreatedBy { get; set; }
         string UpdatedBy { get; set; }
         DateTime CreatedOn { get; set; }
-        DateTime LastModifiedOn { get; set; }
+        DateTime? LastModifiedOn { get; set; }
     }
 }

@@ -50,11 +50,14 @@ public class JwtMiddleware
     private static UserDto BuildUserInfo(JwtSecurityToken jwtToken)
     {
         Guid.TryParse(jwtToken.Claims.First(x => x.Type.ToLower() == "id").Value, out var userId);
+        var username = jwtToken.Claims.First(x => x.Type.ToLower() == "username").Value;
         var roles = GetUserRoles(jwtToken.Payload.First(x => x.Key == "Roles"));
         if (userId == Guid.Empty) throw new InvalidOperationException("id must be in the claims");
+        if (username == string.Empty) throw new InvalidOperationException("username must be in the claims");
         var userDto = new UserDto
         {
             Id = userId,
+            Username = username,
             Roles = roles
         };
         return userDto;

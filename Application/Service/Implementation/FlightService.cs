@@ -75,6 +75,7 @@ public class FlightService : BaseService<Flight>, IFlightService
                 return new Response<bool>(HttpStatusCode.NotFound, AnErrorHappenedMessage, false);
             var flight = _mapper.Map<Flight>(flightUpdateRequest);
             SetAuditValuesToEntity(flight, true);
+            flight.CreatedBy = oldFlight.CreatedBy;
             await _flightRepository.UpdateAsync(flight);
             return new Response<bool>(HttpStatusCode.OK, "Vuelo actualizado", true, true);
         }

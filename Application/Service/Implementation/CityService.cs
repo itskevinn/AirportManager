@@ -90,6 +90,7 @@ public class CityService : BaseService<City>, ICityService
                 return new Response<bool>(HttpStatusCode.InternalServerError, AnErrorHappenedMessage, false);
             var city = _mapper.Map<City>(cityUpdateRequest);
             SetAuditValuesToEntity(city, true);
+            city.CreatedBy = oldCity.CreatedBy;
             await _cityRepository.UpdateAsync(city);
             return new Response<Boolean>(HttpStatusCode.OK, "Ciudad actualizada", true, true);
         }
