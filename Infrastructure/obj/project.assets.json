@@ -9165,11 +9165,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\AuxiliarN-PC\\OneDrive\\Documentos\\Git\\AirportManager\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Infrastructure\\Infrastructure.csproj",
+      "projectPath": "C:\\Users\\AuxiliarN-PC\\OneDrive\\Documentos\\Git\\AirportManager\\Infrastructure\\Infrastructure.csproj",
       "packagesPath": "C:\\Users\\AuxiliarN-PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\AuxiliarN-PC\\OneDrive\\Documentos\\Git\\AirportManager\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\AuxiliarN-PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -9184,8 +9184,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Domain\\Domain.csproj"
+            "C:\\Users\\AuxiliarN-PC\\OneDrive\\Documentos\\Git\\AirportManager\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\AuxiliarN-PC\\OneDrive\\Documentos\\Git\\AirportManager\\Domain\\Domain.csproj"
             }
           }
         }

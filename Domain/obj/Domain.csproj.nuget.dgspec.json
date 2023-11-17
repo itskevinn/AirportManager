@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Domain\\Domain.csproj": {}
+    "C:\\Users\\AuxiliarN-PC\\OneDrive\\Documentos\\Git\\AirportManager\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Domain\\Domain.csproj": {
+    "C:\\Users\\AuxiliarN-PC\\OneDrive\\Documentos\\Git\\AirportManager\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\AuxiliarN-PC\\OneDrive\\Documentos\\Git\\AirportManager\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\AuxiliarN-PC\\OneDrive\\Documentos\\Git\\AirportManager\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\AuxiliarN-PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\AuxiliarN-PC\\OneDrive\\Documentos\\Git\\AirportManager\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\AuxiliarN-PC\\AppData\\Roaming\\NuGet\\NuGet.Config"

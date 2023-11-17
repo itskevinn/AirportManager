@@ -1,12 +1,10 @@
 using System.Net;
 using AirportGateway.App.Base;
-using AirportGateway.App.Core.Helpers;
 using AirportGateway.App.Security.Http.Dto;
 using AirportGateway.App.Security.Http.Request;
 using AirportGateway.App.Security.RestEaseClients;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace AirportGateway.App.Security.Services.Implementation;
 
@@ -15,12 +13,12 @@ public class UserService : BaseService, IUserService
     private readonly IUserRestEaseClient _userRestEaseClient;
     private readonly ILogger<UserService> _logger;
 
-    public UserService(IOptions<AppSettings> appSettings, ILogger<UserService> logger,
+    public UserService(ILogger<UserService> logger,
         IHttpContextAccessor httpContextAccessor) : base(httpContextAccessor)
     {
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         _userRestEaseClient =
-            RestEase.RestClient.For<IUserRestEaseClient>(appSettings.Value.MicroservicesUrls.SecurityUrl);
+            RestEase.RestClient.For<IUserRestEaseClient>(ConfigMap.GetConfiguration()["airport-security-service-url"]);
     }
 
     public async Task<Response<UserDto>> GetById(Guid id, string token)

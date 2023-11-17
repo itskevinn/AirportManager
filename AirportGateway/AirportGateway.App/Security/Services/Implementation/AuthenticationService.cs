@@ -1,12 +1,10 @@
 using System.Net;
 using AirportGateway.App.Base;
-using AirportGateway.App.Core.Helpers;
 using AirportGateway.App.Security.Http.Dto;
 using AirportGateway.App.Security.Http.Request;
 using AirportGateway.App.Security.RestEaseClients;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace AirportGateway.App.Security.Services.Implementation;
 
@@ -15,12 +13,12 @@ public class AuthenticationService : BaseService, IAuthenticationService
     private readonly IAuthenticationRestEaseClient _authenticationRestClient;
     private readonly ILogger<AuthenticationService> _logger;
 
-    public AuthenticationService(IOptions<AppSettings> appSettings, ILogger<AuthenticationService> logger,
+    public AuthenticationService(ILogger<AuthenticationService> logger,
         IHttpContextAccessor httpContextAccessor) : base(httpContextAccessor)
     {
         _logger = logger;
         _authenticationRestClient =
-            RestEase.RestClient.For<IAuthenticationRestEaseClient>(appSettings.Value.MicroservicesUrls.SecurityUrl);
+            RestEase.RestClient.For<IAuthenticationRestEaseClient>(ConfigMap.GetConfiguration()["airport-security-service-url"]);
     }
 
     public async Task<Response<AuthenticateDto>> AuthenticateAsync(AuthenticateRequest authenticateRequest)

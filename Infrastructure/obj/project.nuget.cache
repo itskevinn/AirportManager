@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iUsq0wRuRxYAuHFSLh+2gW8+Q8QbND/aJFPHlsWMX5d0K7WTTZf8xnVENHjEyEdD6+bMt+Z9EubZm/Nzt/OMaw==",
+  "dgSpecHash": "DefCX3a8jQnIU0QAhpdh5Xupdp1UpfXu/iwmWIWFRhZ7pRfWWl0mkpFRVEMNkiWlvg0peikuKzaFRfzXLYNWnA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\AuxiliarN-PC\\OneDrive\\Documentos\\Git\\AirportManager\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AuxiliarN-PC\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\AuxiliarN-PC\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",

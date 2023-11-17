@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kQO1k2rVvrlm+UTIvBpMoT7Wion2wHAhDE8C1UKLXeYTHEQkLgimrVndzXcHI9vN49sRnYgZiKmBCcRYXxTWAg==",
+  "dgSpecHash": "PZDAKMKDjtdc1cPCRYOjOHSxt/a25vL8gNGwXcscIvFJ/Edpj5YCLKu3gZdLi/Z8AKSAbPYBkeV6lqcWGNeH+Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\AuxiliarN-PC\\RiderProjects\\AirportManager\\Api\\Api.csproj",
+  "projectFilePath": "C:\\Users\\AuxiliarN-PC\\OneDrive\\Documentos\\Git\\AirportManager\\Api\\Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AuxiliarN-PC\\.nuget\\packages\\aspnetcore.healthchecks.sqlserver\\6.0.2\\aspnetcore.healthchecks.sqlserver.6.0.2.nupkg.sha512",
     "C:\\Users\\AuxiliarN-PC\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",

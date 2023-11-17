@@ -59,12 +59,16 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 builder.Services.AddAutoMapper(Assembly.Load("Application"));
+builder.Services.Configure<AppSettings>(builder.Configuration);
 builder.Services.AddDbContext<PersistenceContext>(opt =>
 {
     opt.UseSqlServer(config.GetConnectionString("local"),
-        sqlOpts => { sqlOpts.MigrationsHistoryTable("_MigrationHistory", config.GetValue<string>("SchemaName")); });
-});
-
+        sqlOpts =>
+        {
+            sqlOpts.MigrationsHistoryTable("_MigrationHistory",
+                config.GetValue<string>("SchemaName"));
+        });
+}, ServiceLifetime.Singleton);
 builder.Services.AddHealthChecks().AddSqlServer(config["ConnectionStrings:local"]);
 
 builder.Services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
@@ -111,6 +115,13 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Airport Api"));
+}
+
+//Apply migrations automatically
+var context = app.Services.GetRequiredService<PersistenceContext>();
+if (context.Database.GetPendingMigrations().Any())
+{
+    context.Database.Migrate();
 }
 
 app.UseMiddleware<JwtMiddleware>();

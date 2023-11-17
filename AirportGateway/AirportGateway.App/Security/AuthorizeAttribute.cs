@@ -30,7 +30,7 @@ public class AuthorizeAttribute : Attribute, IAuthorizationFilter
         foreach (var rol in _validRoles)
         {
             if (isAuthorized) break;
-            isAuthorized = user.Roles.FirstOrDefault(ur => ur.RoleName == rol) != null;
+            isAuthorized = user?.Roles?.FirstOrDefault(ur => ur.RoleName == rol) != null;
         }
 
         if (!isAuthorized)
