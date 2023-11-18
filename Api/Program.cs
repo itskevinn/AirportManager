@@ -5,7 +5,7 @@ using Api.Filters;
 using Api.Middleware;
 using Application.Http.Profiles;
 using AutoMapper;
-using Infrastructure.Core.Helpers;
+using Infrastructure.Core;
 using Infrastructure.Persistence.Context;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -15,7 +15,6 @@ using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 var myAllowSpecificOrigins = "_myAllowSpecificOrigins";
-var config = builder.Configuration;
 
 builder.Services.AddControllers(opts => { opts.Filters.Add(typeof(AppExceptionFilterAttribute)); });
 var mapperConfig = new MapperConfiguration(m =>
@@ -59,30 +58,21 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 builder.Services.AddAutoMapper(Assembly.Load("Application"));
-builder.Services.Configure<AppSettings>(builder.Configuration);
 builder.Services.AddDbContext<PersistenceContext>(opt =>
 {
-    opt.UseSqlServer(config.GetConnectionString("local"),
-        sqlOpts =>
-        {
-            sqlOpts.MigrationsHistoryTable("_MigrationHistory",
-                config.GetValue<string>("SchemaName"));
-        });
+    opt.UseSqlServer(SecretsService.GetValue("db-string-conn"),
+        sqlOpts => { sqlOpts.MigrationsHistoryTable("_MigrationHistory"); });
 }, ServiceLifetime.Singleton);
-builder.Services.AddHealthChecks().AddSqlServer(config["ConnectionStrings:local"]);
+builder.Services.AddHealthChecks().AddSqlServer(SecretsService.GetValue("db-string-conn"));
 
 builder.Services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
 
-builder.Services.AddPersistence(config).AddServices().AddScopedServices();
+builder.Services.AddPersistence(SecretsService.GetValue("db-string-conn")).AddServices().AddScopedServices();
 builder.Services.AddAuthorization();
 
-var appSettingsSection = config.GetSection("AppSettings");
-builder.Services.Configure<AppSettings>(appSettingsSection);
-builder.Services.AddSingleton<AppSettings>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-var appSettings = appSettingsSection.Get<AppSettings>();
-var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+var key = Encoding.ASCII.GetBytes(SecretsService.GetValue("secret"));
 builder.Services.AddAuthentication(x =>
     {
         x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -101,7 +91,6 @@ builder.Services.AddAuthentication(x =>
         };
     });
 builder.Services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new() { Title = "Airport Api", Version = "v1" }); });
-builder.Services.Configure<AppSettings>(builder.Configuration);
 
 Log.Logger = new LoggerConfiguration().Enrich.FromLogContext()
     .WriteTo.Console()

@@ -22,7 +22,7 @@ public class CityService : BaseService, ICityService
     {
         _logger = logger;
         _cityRestEaseClient =
-            RestEase.RestClient.For<ICityRestEaseClient>(ConfigMap.GetConfiguration()["airport-manager-service-url"]);
+            RestEase.RestClient.For<ICityRestEaseClient>(ConfigMapService.GetConfiguration()["airport-manager-service-url"]);
     }
 
 

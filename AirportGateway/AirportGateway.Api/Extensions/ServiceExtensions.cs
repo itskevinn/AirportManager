@@ -1,5 +1,4 @@
-﻿
-using AirportGateway.App.Core.Interface;
+﻿using AirportGateway.App.Core.Interface;
 
 namespace AirportGateway.Api.Extensions;
 
@@ -8,7 +7,8 @@ public static class ServiceExtensions
     public static IServiceCollection AddServices(this IServiceCollection services) =>
         services
             .AddServices(typeof(ITransientService), ServiceLifetime.Transient)
-            .AddServices(typeof(IScopedService), ServiceLifetime.Scoped);
+            .AddServices(typeof(IScopedService), ServiceLifetime.Scoped)
+            .AddServices(typeof(ISingletonService), ServiceLifetime.Singleton);
 
     private static IServiceCollection AddServices(this IServiceCollection services, Type interfaceType,
         ServiceLifetime lifetime)

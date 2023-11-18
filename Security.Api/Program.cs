@@ -7,9 +7,9 @@ using Microsoft.OpenApi.Models;
 using Security.Api.Utils.Extensions;
 using Security.Api.Utils.Filters;
 using Security.Application.Http.Dto;
-using Security.Infrastructure.Core.Helpers;
 using Security.Infrastructure.Persistence.Context;
 using Security.Infrastructure.Security.Jwt;
+using Security.Infrastructure.Utils;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -56,12 +56,9 @@ builder.Services.AddPersistence(config).AddServices();
 builder.Services.AddAuthorization();
 
 var appSettingsSection = config.GetSection("AppSettings");
-builder.Services.Configure<AppSettings>(appSettingsSection);
-builder.Services.AddSingleton<AppSettings>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-var appSettings = appSettingsSection.Get<AppSettings>();
-var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+var key = Encoding.ASCII.GetBytes(SecretsService.GetValue("secret"));
 builder.Services.AddAuthentication(x =>
     {
         x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -80,15 +77,10 @@ builder.Services.AddAuthentication(x =>
         };
     });
 
-builder.Services.Configure<AppSettings>(builder.Configuration);
 builder.Services.AddDbContext<SecurityContext>(opt =>
 {
-    opt.UseSqlServer(config.GetConnectionString("local"),
-        sqlOpts =>
-        {
-            sqlOpts.MigrationsHistoryTable("_MigrationHistory",
-                config.GetValue<string>("SchemaName"));
-        });
+    opt.UseSqlServer(SecretsService.GetValue("db-string-conn"),
+        sqlOpts => { sqlOpts.MigrationsHistoryTable("_MigrationHistory"); });
 }, ServiceLifetime.Singleton);
 
 

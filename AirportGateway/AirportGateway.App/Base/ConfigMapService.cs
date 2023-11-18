@@ -1,8 +1,9 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using AirportGateway.App.Core.Interface;
+using Microsoft.Extensions.Configuration;
 
 namespace AirportGateway.App.Base;
 
-public static class ConfigMap
+public class ConfigMapService : ISingletonService
 {
     public static IConfigurationRoot GetConfiguration()
     {

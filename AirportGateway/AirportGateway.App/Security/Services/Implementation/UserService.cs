@@ -18,7 +18,7 @@ public class UserService : BaseService, IUserService
     {
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         _userRestEaseClient =
-            RestEase.RestClient.For<IUserRestEaseClient>(ConfigMap.GetConfiguration()["airport-security-service-url"]);
+            RestEase.RestClient.For<IUserRestEaseClient>(ConfigMapService.GetConfiguration()["airport-security-service-url"]);
     }
 
     public async Task<Response<UserDto>> GetById(Guid id, string token)

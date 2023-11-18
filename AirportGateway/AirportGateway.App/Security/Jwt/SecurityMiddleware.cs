@@ -1,10 +1,9 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Text;
-using AirportGateway.App.Core.Helpers;
+using AirportGateway.App.Base;
 using AirportGateway.App.Exceptions;
 using AirportGateway.App.Security.Http.Dto;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 
@@ -16,12 +15,10 @@ namespace AirportGateway.App.Security.Jwt;
 public class SecurityMiddleware
 {
     private readonly RequestDelegate _next;
-    private readonly AppSettings _appSettings;
 
-    public SecurityMiddleware(RequestDelegate next, IOptions<AppSettings> appSettings)
+    public SecurityMiddleware(RequestDelegate next)
     {
         _next = next;
-        _appSettings = appSettings.Value;
     }
 
     public async Task Invoke(HttpContext context)
@@ -67,7 +64,7 @@ public class SecurityMiddleware
     private JwtSecurityToken ValidateToken(string token)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
-        var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+        var key = Encoding.ASCII.GetBytes(ConfigMapService.GetConfiguration()["secret"]);
         tokenHandler.ValidateToken(token, new TokenValidationParameters
         {
             ValidateIssuerSigningKey = true,

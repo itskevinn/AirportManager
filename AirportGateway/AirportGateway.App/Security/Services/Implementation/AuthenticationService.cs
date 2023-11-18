@@ -18,7 +18,8 @@ public class AuthenticationService : BaseService, IAuthenticationService
     {
         _logger = logger;
         _authenticationRestClient =
-            RestEase.RestClient.For<IAuthenticationRestEaseClient>(ConfigMap.GetConfiguration()["airport-security-service-url"]);
+            RestEase.RestClient.For<IAuthenticationRestEaseClient>(
+                ConfigMapService.GetConfiguration()["airport-security-service-url"]);
     }
 
     public async Task<Response<AuthenticateDto>> AuthenticateAsync(AuthenticateRequest authenticateRequest)

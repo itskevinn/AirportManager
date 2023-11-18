@@ -2,12 +2,11 @@
 using System.Text;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Security.Domain.Entity;
 using Security.Domain.Exceptions;
 using Security.Domain.Ports;
-using Security.Infrastructure.Core.Helpers;
+using Security.Infrastructure.Utils;
 
 namespace Security.Infrastructure.Security.Jwt;
 
@@ -18,19 +17,17 @@ namespace Security.Infrastructure.Security.Jwt;
 public class JwtMiddleware<T>
 {
     private readonly RequestDelegate _next;
-    private readonly AppSettings _appSettings;
     private readonly IMapper _mapper;
     private readonly IUserRepository _userRepository;
     private readonly IUserRoleRepository _userRoleRepository;
 
-    public JwtMiddleware(RequestDelegate next, IOptions<AppSettings> appSettings, IMapper mapper,
+    public JwtMiddleware(RequestDelegate next, IMapper mapper,
         IUserRepository userRepository, IUserRoleRepository userRoleRepository)
     {
         _next = next;
         _mapper = mapper;
         _userRepository = userRepository;
         _userRoleRepository = userRoleRepository;
-        _appSettings = appSettings.Value;
     }
 
     public async Task Invoke(HttpContext context)
@@ -49,7 +46,7 @@ public class JwtMiddleware<T>
         try
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+            var key = Encoding.ASCII.GetBytes(SecretsService.GetValue("secret"));
             tokenHandler.ValidateToken(token, new TokenValidationParameters
             {
                 ValidateIssuerSigningKey = true,

@@ -4,20 +4,13 @@ using System.Text;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
-using Security.Infrastructure.Core.Helpers;
 using Security.Infrastructure.Security.Models;
+using Security.Infrastructure.Utils;
 
 namespace Security.Infrastructure.Security.Jwt;
 
 public class JwtUtils : IJwtUtils
 {
-    private readonly AppSettings _appSettings;
-
-    public JwtUtils(IOptions<AppSettings> appSettings)
-    {
-        _appSettings = appSettings.Value;
-    }
-
     public string GenerateJwtToken(UserDto userDto)
     {
         var idPropertyInfo = userDto.GetType().GetProperty("Id");
@@ -40,7 +33,7 @@ public class JwtUtils : IJwtUtils
         }
 
         var tokenHandler = new JwtSecurityTokenHandler();
-        var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+        var key = Encoding.ASCII.GetBytes(SecretsService.GetValue("secret"));
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Subject = new ClaimsIdentity(new[]
@@ -63,7 +56,7 @@ public class JwtUtils : IJwtUtils
             return Guid.Empty;
 
         var tokenHandler = new JwtSecurityTokenHandler();
-        var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+        var key = Encoding.ASCII.GetBytes(SecretsService.GetValue("secret"));
         try
         {
             tokenHandler.ValidateToken(token, new TokenValidationParameters

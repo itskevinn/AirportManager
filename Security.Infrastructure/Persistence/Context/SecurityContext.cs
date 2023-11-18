@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using Security.Domain.Entity.Base;
-using Security.Infrastructure.Core.Helpers;
 using Security.Infrastructure.Persistence.Configuration;
 using Security.Infrastructure.Persistence.Seeding;
 
@@ -8,18 +7,13 @@ namespace Security.Infrastructure.Persistence.Context;
 
 public class SecurityContext : DbContext
 {
-    private readonly AppSettings? _settings;
-
-    public SecurityContext(DbContextOptions<SecurityContext> options,
-        AppSettings repoSettings) : base(options)
+    public SecurityContext(DbContextOptions<SecurityContext> options) : base(options)
     {
-        _settings = repoSettings;
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        modelBuilder.HasDefaultSchema(_settings?.SchemaName);
         SetDefaultValues(modelBuilder);
         EntitiesConfigurator.Configure(modelBuilder);
     }

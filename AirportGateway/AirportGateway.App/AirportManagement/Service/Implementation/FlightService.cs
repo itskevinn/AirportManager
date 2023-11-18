@@ -21,7 +21,7 @@ public class FlightService : BaseService, IFlightService
 
     {
         _flightRestEaseClient =
-            RestEase.RestClient.For<IFlightRestEaseClient>(ConfigMap.GetConfiguration()["airport-manager-service-url"]);
+            RestEase.RestClient.For<IFlightRestEaseClient>(ConfigMapService.GetConfiguration()["airport-manager-service-url"]);
         _logger = logger;
     }
 

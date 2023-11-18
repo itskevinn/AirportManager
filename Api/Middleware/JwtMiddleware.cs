@@ -2,8 +2,7 @@
 using System.Text;
 using Application.Http.Dto;
 using Domain.Exceptions;
-using Infrastructure.Core.Helpers;
-using Microsoft.Extensions.Options;
+using Infrastructure.Core;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 
@@ -15,12 +14,10 @@ namespace Api.Middleware;
 public class JwtMiddleware
 {
     private readonly RequestDelegate _next;
-    private readonly AppSettings _appSettings;
 
-    public JwtMiddleware(RequestDelegate next, IOptions<AppSettings> appSettings)
+    public JwtMiddleware(RequestDelegate next)
     {
         _next = next;
-        _appSettings = appSettings.Value;
     }
 
     public async Task Invoke(HttpContext context)
@@ -66,7 +63,7 @@ public class JwtMiddleware
     private JwtSecurityToken ValidateToken(string token)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
-        var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+        var key = Encoding.ASCII.GetBytes(SecretsService.GetValue("secret"));
         tokenHandler.ValidateToken(token, new TokenValidationParameters
         {
             ValidateIssuerSigningKey = true,
